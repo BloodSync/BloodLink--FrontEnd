@@ -4,7 +4,7 @@ Conectando doadores a hemocentros, salvando vidas com agilidade, humanidade e te
 
 ---
 
-## 📖 Sobre o Projeto
+Sobre o Projeto
 
 O **BloodLink** é uma plataforma que conecta usuários que desejam doar sangue aos hemocentros de suas cidades, de forma clara, ágil e humanizada.
 
