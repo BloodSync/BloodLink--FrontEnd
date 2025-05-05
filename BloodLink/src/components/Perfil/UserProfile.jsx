@@ -72,7 +72,7 @@ function UserProfile() {
           <p className="friends-count"> | Doador Astuto </p>
           <p className="bio-text">Nem todos os segredos estão escondidos. Alguns apenas sabem onde não olhar.</p>
           <hr/>
-          <p className="friends-count"> 4 amigos </p>
+          <p className="friends-count"> 4 amigos! </p>
           <p className="friends-count"> Sua posição no rank é 120° </p>
           
         </section>

@@ -7,13 +7,12 @@
 /* Sidebar */
 .sidebar {
   width: 250px;
-  height: 100vh; /* agora ela acompanha a altura da tela */
+  height: 100vh;
   background-color: #0f2c44;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 0 10px 10px 0;
-  /* Ordem: topo esquerdo, topo direito, inferior direito, inferior esquerdo */
+  border-radius: 0 10px 10px 0; /* Ordem: topo esquerdo, topo direito, inferior direito, inferior esquerdo */
 }
 
 .profile-card {
@@ -29,7 +28,6 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-  /* espaço entre o círculo e o texto */
   vertical-align: middle;
 }
 
@@ -106,8 +104,7 @@
   background-color: #255d8b;
   color: #00aeff;
   font-weight: 500;
-  transform: scale(1.05);
-  /* aumenta no hover */
+  transform: scale(1.05); /* aumenta no hover */
 }
 
 .nav-item.red {
@@ -137,7 +134,7 @@ hr {
   margin-bottom: 20px;
 }
 
-/*sitância das divs*/
+/* Distância das divs */
 .profile-info {
   display: flex;
   gap: 20px;
@@ -196,7 +193,7 @@ hr {
   font-weight: bold;
 }
 
-/*link amigos*/
+/*Link amigos*/
 .link {
   color: #56C4FF;
   font-size: 14px;
