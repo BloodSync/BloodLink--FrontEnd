@@ -1,4 +1,5 @@
 import { Button } from './components/Button/Button'
+import UserProfile from './components/Perfil/UserProfile'
 import './App.css'
 
 function App() {
@@ -18,7 +19,11 @@ function App() {
         Aguarde...
       </Button>
     </div>
-  
+
+
+    <div>
+      <UserProfile />
+    </div>
   </>
 )
 }

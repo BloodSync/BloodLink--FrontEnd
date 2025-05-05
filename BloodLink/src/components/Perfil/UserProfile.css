@@ -1,0 +1,230 @@
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* impede que o conteúdo vaze */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh; /* agora ela acompanha a altura da tela */
+  background-color: #0f2c44;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 10px 10px 0;
+  /* Ordem: topo esquerdo, topo direito, inferior direito, inferior esquerdo */
+}
+
+.profile-card {
+  background: linear-gradient(80deg, #113a5ca8, rgba(62, 107, 158, 0.41) 35%, #27dbff6b 100%);
+  border-radius: 0 10px 0 0;
+  padding: 5px;
+  text-align: center;
+}
+
+.perfil {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* espaço entre o círculo e o texto */
+  vertical-align: middle;
+}
+
+.username {
+  font-weight: 700;
+}
+
+.bio {
+  font-size: 10px;
+  color: #bbb;
+}
+
+/*Nível*/
+.level-container {
+  display: flex;
+  gap: 130px;
+  /* espaçamento entre os elementos */
+  padding-left: 15px;
+}
+
+.level {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.level-percent {
+  font-size: 10px;
+  font-weight: 600;
+
+}
+
+/*Nível Barra de progresso*/
+.xp-bar {
+  height: 6px;
+  background-color: #2a2d3198;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+.xp-fill {
+  height: 100%;
+  width: 75%;
+  background-color: #2EA9FF;
+  border-radius: 4px;
+}
+
+/*Streak de dias*/
+.streak {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+/*Menus*/
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  text-align: left;
+  padding: 15px;
+}
+
+.nav-item {
+  padding: 7px;
+  padding-left: 15px;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+  transition: 0.4s all ease-in-out;
+}
+/*Sidebar Hover*/
+.nav-item:hover {
+  background-color: #255d8b;
+  color: #00aeff;
+  font-weight: 500;
+  transform: scale(1.05);
+  /* aumenta no hover */
+}
+
+.nav-item.red {
+  color: #FF4C4C;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #cccccc1f;
+  margin: 0px;
+}
+
+/* Conteúdo */
+.main-content {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto; /* ativa o scroll vertical */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.goal-box {
+  border: 1px solid #113A5C;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/*sitância das divs*/
+.profile-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Avatar */
+.avatar-box {
+  position: relative;
+  width: 600px;
+  background: linear-gradient(180deg, rgba(1, 137, 171, 0.548) 0%, #081b2b 100%);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.avatar-edit {
+  cursor: pointer;
+  font-size: 25px;
+  position: absolute;
+  top: 1px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.582);
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.info-box {
+  width: 200px;
+  background-color: #081b2b;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  color: #ccc;
+  font-size: 20px;
+}
+
+.highlight {
+  color: #2EE1FF;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/*link amigos*/
+.link {
+  color: #56C4FF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*Barra do usuário*/
+.bio-box {
+  background-color: #081b2b;
+  padding: 20px;
+  border-radius: 12px;
+  height: 230px;
+  text-align: left;
+}
+
+.bio-box h3 span {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 10px;
+}
+
+.bio-text {
+  margin-top: 10px;
+  color: #bbb;
+}
+
+.friends-count {
+  margin-top: 15px;
+  color: #56C4FF;
+}
