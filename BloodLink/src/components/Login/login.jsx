@@ -1,9 +1,11 @@
 import React from 'react';
 import './Login.css';
 import logoImage from '../../assets/logo.png'; // Importe a imagem
+import Cadastro from '../Cadastro/cadastro';
 
+<Cadastro></Cadastro>
 function Login() {
-    return (
+    return (      
       <div className="login-container">
         <div className="login-form">
             <div className="logo">
@@ -37,5 +39,4 @@ function Login() {
       </div>
     );
 }
-  
  export default Login;

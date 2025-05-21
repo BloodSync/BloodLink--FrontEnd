@@ -5,6 +5,8 @@ import Input from './components/Input/Input'
 import Navbar from './components/Sidebar/Sidebar'
 import Logo from './assets/logo.png'
 import { useState } from "react"
+import Cadastro from './components/Cadastro/cadastro'
+
 
 
 function App() {
@@ -13,10 +15,8 @@ function App() {
   return (
     <>
     <img className='logo' src={Logo} alt="Logo" onClick={()=> setShowNav(!showNav) }/>
-   
+<Cadastro></Cadastro>
 <Navbar show={showNav}/>
-
-<Input/>
  <div style={{ padding: "40px", display: "flex", gap: "20px" }}>
       <Button type="primary" onClick={() => alert("Doar Agora!")}>
         Doar Agora
