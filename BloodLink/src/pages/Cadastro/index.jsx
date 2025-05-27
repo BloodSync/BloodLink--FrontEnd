@@ -1,5 +1,5 @@
-import './Cadastro.css';
-import logoImage from '../../assets/logo.png';
+import './styles.css';
+// import logoImage from '../../assets/logo.png';
 
 function Cadastro() {
 

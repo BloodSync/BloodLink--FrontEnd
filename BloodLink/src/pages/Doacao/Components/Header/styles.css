@@ -1,0 +1,15 @@
+.header-container {
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.header-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 0.25rem;
+}

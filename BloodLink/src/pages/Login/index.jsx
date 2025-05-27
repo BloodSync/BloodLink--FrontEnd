@@ -1,9 +1,6 @@
-import React from 'react';
-import './Login.css';
 import logoImage from '../../assets/logo.png'; // Importe a imagem
-import Cadastro from '../Cadastro/cadastro';
+import './styles.css';
 
-<Cadastro></Cadastro>
 function Login() {
     return (      
       <div className="login-container">

@@ -22,26 +22,28 @@ header svg {
 .sidenav {
     width: 240px;
     background-color: #0f2c44;
-    position: absolute;
-    height: 95vh;
-    padding: 0 30px;
+    position: fixed;
+    z-index: 100;
+    height: 100vh;
+    top: 0;
     left: -100%;
     transition: all 1s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    border-radius: 0 24px 0 0;
+    /* justify-content: space-between; */
 }
 
 .sidenav.active {
-    left: 0;
+  left: 0;
 }
-
+  
 /* Menu moderno */
 .nav-menu {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 15px 0;
+    padding: 15px 30px;
 }
 
 .nav-item {
@@ -75,8 +77,8 @@ hr {
 
 .profile-card {
   background: linear-gradient(80deg, #113a5ca8, rgba(62, 107, 158, 0.41) 35%, #27dbff6b 100%);
-  border-radius: 0 10px 0 0;
-  padding: 10px;
+  border-radius: 0 24px 0 0;
+  padding: 24px 10px 10px;
   text-align: center;
 }
 
@@ -129,4 +131,11 @@ hr {
   font-size: 12px;
   margin-top: 10px;
   font-weight: 700;
+}
+
+.sidenav-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 16px;
 }

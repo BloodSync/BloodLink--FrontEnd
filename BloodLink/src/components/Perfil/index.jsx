@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import './UserProfile.css';
 
 function UserProfile() {
@@ -22,7 +22,7 @@ function UserProfile() {
         </div>
 
         <nav className="nav-menu">
-          <a href="#" className="nav-item active">&#127968; Home</a>
+          <Link to="/" className="nav-item active">&#127968; Home</Link>
           <a href="#" className="nav-item">&#128100; Perfil</a>
           <a href="#" className="nav-item red">🩸 Doe Sangue</a>
           <a href="#" className="nav-item">🛍️ Loja</a>

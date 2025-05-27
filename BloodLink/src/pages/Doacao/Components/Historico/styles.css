@@ -1,0 +1,78 @@
+.history-container {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: #e8eff0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.history-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.history-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #004d7a, #008793);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.history-card .left-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.dot {
+  font-size: 1.25rem;
+  margin-top: 4px;
+}
+
+.dot.marcada {
+  color: black;
+}
+
+.dot.concluida {
+  color: red;
+}
+
+.dot.nao-concluida {
+  color: black;
+}
+
+.text p {
+  margin: 0;
+}
+
+.reason {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.right-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.center-name {
+  font-weight: bold;
+}
+
+.cancel-btn {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.qr-icon {
+  font-size: 1.5rem;
+}
