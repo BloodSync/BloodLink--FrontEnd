@@ -1,0 +1,50 @@
+.hemocentro-container {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-header label {
+  font-weight: bold;
+}
+
+.busca-cep input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.lista-criticos ul,
+.busca-cep ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-criticos li,
+.busca-cep li {
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lista-criticos li:hover,
+.busca-cep li:hover {
+  background-color: #f4f4f4;
+}
+
+.selected {
+  background-color: #ff5c4d;
+  color: white;
+}

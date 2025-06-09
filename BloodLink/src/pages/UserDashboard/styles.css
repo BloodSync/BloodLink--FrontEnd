@@ -1,0 +1,67 @@
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f9ff;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../../assets/background.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+}
+
+.home-main {
+  flex-grow: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.home-header {
+  display: flex;
+  width: 100vh;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.home-logo {
+  width: 60px;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.home-header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+} 
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.home-logo {
+  height: 15vh; /* ajuste conforme necessário */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  color: black;
+}
+
+.logo-blood {
+  color: #ff4d4d; 
+}

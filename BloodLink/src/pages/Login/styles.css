@@ -1,0 +1,120 @@
+.login-container {
+    display: flex; /* Usa Flexbox para alinhar os itens */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    height: 100vh; /* Garante que o container ocupa toda a altura da viewport */
+    background-color: #e0e0e0; /* Define a cor de fundo da página */
+}
+
+/* Estilos para o formulário de login */
+.login-form {
+    background-color: #00aaff; /* Define a cor de fundo do formulário (azul claro) */
+    padding: 40px; /* Adiciona um espaçamento interno de 40 pixels em todos os lados */
+    border-radius: 30px; /* Arredonda as bordas do formulário */
+    width: 420px; /* Define a largura do formulário para 420 pixels */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave ao redor do formulário */
+    color: #000; /* Define a cor do texto dentro do formulário para preto */
+}
+
+/* Estilos para a área do logo */
+.logo {
+    display: flex; /* Usa Flexbox para alinhar a imagem e o texto */
+    align-items: center; /* Alinha verticalmente a imagem e o texto ao centro */
+    justify-content: center; /* Centraliza horizontalmente a imagem e o texto */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo da área do logo */
+}
+
+/* Estilos para a imagem do logo */
+.logo-image {
+    width: 60px; /* Define a largura da imagem para 60 pixels */
+    margin-right: 15px; /* Adiciona um espaço de 15 pixels à direita da imagem */
+}
+
+/* Estilos para o título h1 dentro do logo */
+.logo h1 {
+    margin: 0; /* Remove as margens padrão do h1 para melhor alinhamento */
+    font-size: 2em; /* Define o tamanho da fonte do título para 2 vezes o tamanho padrão */
+}
+
+/* Estilos para os grupos de input (label e input) */
+.input-group {
+    margin-bottom: 20px; /* Adiciona um espaço abaixo de cada grupo de input */
+}
+
+/* Estilos para as labels dos inputs */
+.input-group label {
+    display: block; /* Faz com que a label ocupe toda a largura disponível, indo para a próxima linha */
+    font-weight: bold; /* Deixa o texto da label em negrito */
+    margin-bottom: 8px; /* Adiciona um espaço de 8 pixels abaixo da label */
+}
+
+/* Estilos para os campos de input (email e senha) */
+.input-group input {
+    width: 100%; /* Faz com que o input ocupe toda a largura do seu container pai */
+    padding: 15px; /* Adiciona um espaçamento interno de 15 pixels em todos os lados */
+    font-size: 14px; /* Define o tamanho da fonte do texto dentro do input */
+    border: none; /* Remove a borda padrão do input */
+    border-radius: 15px; /* Arredonda as bordas do input */
+    background-color: white; /* Define a cor de fundo do input para branco */
+    color: #333; /* Define a cor do texto dentro do input para um cinza escuro */
+}
+
+/* Estilos para o placeholder dos inputs */
+.input-group input::placeholder {
+    color: #bbb; /* Define a cor do texto do placeholder para um cinza claro */
+}
+
+.password {
+    text-align: right; /* Alinha o texto à direita dentro da div */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo do link */
+}
+
+/* Estilos para o link dentro de "Esqueceu sua senha?" */
+.password a {
+    color: #000; /* Define a cor do link para preto */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+}
+
+.password a:hover {
+    text-decoration: underline; /* Adiciona um sublinhado ao passar o mouse */
+}
+
+.buttons {
+    display: flex; /* Usa Flexbox para dispor os botões lado a lado */
+    justify-content: space-between; /* Coloca um espaço máximo entre os botões */
+    gap: 10px; /* Adiciona um espaço de 10 pixels entre os botões */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo dos botões */
+}
+
+/* Estilos para os botões de login e registrar */
+.login-button,
+.register-button {
+    flex: 1; /* Faz com que os botões ocupem o mesmo espaço disponível dentro do container */
+    padding: 12px; /* Adiciona um espaçamento interno de 12 pixels em todos os lados */
+    background-color: #ff4c4c; /* Define a cor de fundo dos botões para vermelho */
+    color: white; /* Define a cor do texto dos botões para branco */
+    font-weight: bold; /* Deixa o texto dos botões em negrito */
+    border: none; /* Remove a borda padrão dos botões */
+    border-radius: 15px; /* Arredonda as bordas dos botões */
+    cursor: pointer; /* Altera o cursor para indicar que é um elemento clicável */
+    transition: background 0.3s; /* Adiciona uma transição suave na propriedade background com duração de 0.3 segundos */
+}
+
+/* Estilos para o estado de hover dos botões */
+.login-button:hover,
+.register-button:hover {
+    background-color: #e03d3d; /* Altera a cor de fundo dos botões para um vermelho mais escuro ao passar o mouse */
+}
+
+/* Estilos para a área do link "Voltar para home" */
+.back-home {
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilos para o link "Voltar para home" */
+.back-home a {
+    color: #000; /* Define a cor do link para preto */
+    font-size: 14px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+}

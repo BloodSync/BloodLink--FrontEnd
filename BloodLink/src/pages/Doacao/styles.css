@@ -1,0 +1,28 @@
+.pagina-doacao {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+}
+
+.conteudo {
+  flex: 1;
+  padding: 2rem;
+}
+
+.doacao-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.esquerda, .direita {
+  flex: 1;
+  min-width: 300px;
+}
