@@ -1,0 +1,66 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Botão com a carinha da Linky */
+.chatbot-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chatbot-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed; /* Fixando o ícone no canto da tela */
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001; /* Faz o ícone ficar sobre a caixa de diálogo */
+}
+
+/* Caixa de diálogo */
+.chatbot-box {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  max-width: 280px;
+  min-width: 300px;
+  width: auto;
+  animation: slideInUp 0.4s ease forwards;
+}
+
+.chatbot-message {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+  word-wrap: break-word; /* Permite que o texto quebre quando necessário */
+  flex-grow: 1;
+  white-space: normal; /* Impede a quebra de linha indesejada */
+}
+
+/* Animação */
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
