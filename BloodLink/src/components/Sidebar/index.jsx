@@ -34,8 +34,8 @@ function Navbar() {
         {/* Menu de Navegação */}
         <nav className="nav-menu">
           <Link to="/" className="nav-item active">&#127968; Home</Link>
-          <Link to="/" className="nav-item">&#128100; Perfil</Link>
-          <Link to="/" className="nav-item red">🩸 Doe Sangue</Link>
+          <Link to="perfil" className="nav-item">&#128100; Perfil</Link>
+          <Link to="doacao" className="nav-item red">🩸 Doe Sangue</Link>
           <Link to="/" className="nav-item">🛍️ Loja</Link>
           <Link to="/" className="nav-item">🥇 Ranking</Link>
           <Link to="/" className="nav-item">&#128204; Missões</Link>
