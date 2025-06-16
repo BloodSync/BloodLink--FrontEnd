@@ -1,15 +1,13 @@
 import "./styles.css";
-import { Link } from 'react-router';
-import { Outlet } from 'react-router'
-import { FaX } from 'react-icons/fa6'
+import { Link, Outlet } from 'react-router-dom';
+import { FaX } from 'react-icons/fa6';
 import { showNav } from "../../utils/showNav";
-
 
 function Navbar() {
   return (
     <>
       <div className="sidenav">
-        <div onClick={showNav}>
+        <div onClick={showNav} role="button" aria-label="Fechar menu">
           <FaX color="#fff" className="sidenav-close" />
         </div>
         <div className="profile-card">
@@ -40,7 +38,7 @@ function Navbar() {
           <Link to="/" className="nav-item">🥇 Ranking</Link>
           <Link to="/" className="nav-item">&#128204; Missões</Link>
           <Link to="/" className="nav-item">🏆 Conquistas</Link>
-          <hr />
+          <div className="nav-divider" />
           <Link to="/" className="nav-item">&#128736; Configurações</Link>
           <Link to="/" className="nav-item">⏻ Sair</Link>
         </nav>

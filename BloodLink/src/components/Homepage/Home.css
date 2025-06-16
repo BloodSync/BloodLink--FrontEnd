@@ -272,7 +272,7 @@ a {
 /* Parte 1 do site - img */
 .part-one-img {
   flex: 1;
-  max-width: 50rem;
+  max-width: 45rem;
   width: 100%;
   height: auto;
   margin-top: 3.80rem;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../components/LinkyBot.css';
+import '../LinkyBot/LinkyBot.css'
 
 function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
