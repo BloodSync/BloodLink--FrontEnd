@@ -1,0 +1,16 @@
+.header-container {
+  padding: 5rem 3rem;
+  color: #000000;
+}
+
+.header-title-donate {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-subtitle-donate {
+  font-size: 1rem;
+  color: #000000;
+  margin-top: 0.40rem;
+}

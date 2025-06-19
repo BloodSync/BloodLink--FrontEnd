@@ -1,0 +1,222 @@
+.LojinhaBg {
+  background-color: #ffffff;
+}
+
+/* Container Lojinha */
+.loja-wrapper {
+  padding: 10rem 12rem;
+  color: #1b1b1b;
+}
+
+/* Tabs da loja */
+.loja-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+/* Botões */
+.tab-btn {
+  background: #e4e4e4;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #444;
+  transition: background 0.3s;
+}
+
+.tab-btn:hover {
+  background: #003b63aa;
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: #003b63;
+  color: #fff;
+}
+
+/* Seção superior */
+.loja-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+/*Categorias */
+.carousel-and-categorias {
+  display: flex;
+  gap: 50rem;
+  align-items: flex-start;
+}
+
+/* Carrossel banner */
+.banner-carousel {
+  background: #000;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 50rem;
+  height: 20rem;
+  position: relative;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-title {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Categorias */
+.loja-categorias {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.categorias-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1rem);
+  gap: 4rem;
+}
+
+.categoria-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  background-color: #3b82a9;
+  border: none;
+  cursor: pointer;
+}
+
+/* User Info top */
+.loja-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+/* User Info top - Img */
+.user-thumb {
+  width: 25rem;
+  height: 6rem;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+/* User Info top - Moedas */
+.user-coins {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.coin-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.coin-amount {
+  color: #f59e0b;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.coin-size {
+  font-size: 2rem;
+}
+
+/* Divider */
+.loja-divider {
+  margin: 40px 0 32px;
+  border: none;
+  height: 0.1rem;
+  background-color: #d2d2d2;
+}
+
+/* Prévia e items */
+.loja-preview-section {
+  display: flex;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+/* Prévia */
+.preview-box {
+  width: 20rem;
+  text-align: center;
+}
+
+.preview-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.preview-img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+/* ITENS */
+.item-section {
+  flex: 1;
+}
+
+.item-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.item-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.item-card {
+  background-color: #0e172c;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 8rem;
+  text-align: center;
+}
+
+.item-name {
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.item-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: 500;
+}
+
+.coin-icon-sm {
+  width: 2rem;
+  height: 2rem;
+}

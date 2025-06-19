@@ -1,7 +1,9 @@
 .pagina-doacao {
   display: flex;
   min-height: 100vh;
-  background-color: #f8f8f8;
+  background-image: url('../../assets/doeBg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .sidebar {
@@ -22,7 +24,8 @@
   margin-top: 2rem;
 }
 
-.esquerda, .direita {
+.esquerda,
+.direita {
   flex: 1;
   min-width: 300px;
 }

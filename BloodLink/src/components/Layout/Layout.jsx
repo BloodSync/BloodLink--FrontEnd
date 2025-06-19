@@ -1,6 +1,6 @@
 
 import ChatBot from '../LinkyBot/LinkyBot';
-import Sidebar from '../Sidebar/index'
+import Sidebar from '../Sidebar/SidebarUser'
 
 export default function Layout({ children }) {
   return (

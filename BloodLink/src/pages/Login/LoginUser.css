@@ -1,0 +1,158 @@
+/*Background*/
+.loginBg {
+    background-image: url('../../assets/registerBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Logo*/
+.logologin{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.9rem;
+}
+
+.logologin img {
+    height: 5rem;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.logologin h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #000;
+    display: flex;
+}
+
+.logologin h1 span:first-child {
+    color: #FF4B42;
+}
+
+/* Register Caixa */
+.LogIn {
+    position: relative;
+    max-width: 35rem;
+    width: 90%;
+    padding: 3.4rem 3rem;
+    background: #fff;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Barra de blur no topo */
+.LogIn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.151);
+    z-index: -1;
+}
+
+.label-login label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #000;
+}
+
+h2 {
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+.buttons-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttons-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.buttons-row .continuar-btn {
+  width: 12rem;
+  padding: 1.5rem;
+  background-color: #FF4B42;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttons-row .continuar-btn:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+.login-Google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 4.5rem; /* igual altura exata do continuar-btn com padding */
+    border: 0.1rem solid #000;
+    background: #fff;
+    width: 85%;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem; /* padding lateral apenas */
+}
+
+.login-Google-button img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.login-Google-button span {
+    position: static;
+    transform: none;
+}
+.login-Google-button:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+.voltar-home {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #000;
+    text-decoration: none;
+    margin-top: 2rem;
+}

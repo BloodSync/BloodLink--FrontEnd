@@ -1,0 +1,412 @@
+/*Vitalink Background*/
+.VitalinkBg {
+  background-image: url('../../assets/VitalinkBg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+/*Vitalink Titulo Header*/
+.vitalink-container {
+  color: #222;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vitalink-header {
+  background: linear-gradient(to bottom, transparent 30%, #f4f6f9 100%);
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.vitalink-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/*A distancia do titulo, tópicos e hr */
+.vitalink-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-bottom: 0.1rem solid rgb(0, 0, 0);
+  padding-bottom: 1rem;
+}
+
+.vitalink-tabs .tab {
+  cursor: pointer;
+  color: #666;
+  padding: 1rem 5rem;
+}
+
+/* Linha na nav */
+.nav-divider {
+  color: #999;
+  font-size: 0.65rem;
+}
+
+/*A distância do conteúdo */
+.vitalink-content {
+  display: flex;
+  margin-top: 3rem;
+  gap: 4rem;
+}
+
+/*Conteiner Conquistas */
+.vitalink-left {
+  flex: 3;
+}
+
+.vitalink-right {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+/*Atividades*/
+/*Atividades Distâncias */
+.atividade-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, transparent 30%, #f4f6f9 100%);
+}
+
+.atividade-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15rem;
+}
+
+.atividade-data {
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/*Texto das img Atividades*/
+.atividade-linha {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.atividade-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.azul {
+  color: #0189AB;
+  font-weight: 600;
+}
+
+.ver-mais {
+  font-size: 1rem;
+  color: #0189AB;
+  text-align: right;
+  display: block;
+  margin-top: 2rem;
+}
+
+/*Missões*/
+/*Missões botões distâncias*/
+.missoes-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/*Missões botões*/
+.m-tab {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #d7dcdf;
+  color: #000;
+  font-weight: 500;
+  cursor: pointer;
+}
+/* Missão mesma linha */
+.missoes-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.m-tab:hover {
+  background: #042333;
+  color: white;
+}
+/* Card missão */
+.missao-card {
+  background: #042333;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Parte de cima com imagem */
+.missao-img {
+  position: relative;
+  height: 12rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #042333;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Img fundo */
+.missao-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/suaImagem.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Missão div */
+.missao-img-wrapper {
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+}
+
+/* Missão div */
+.missao-autor {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Missão icone*/
+.missao-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 0.2rem solid #fff;
+}
+
+/* Missão proposta */
+.proposto {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Informações da missão */
+.missao-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.missao-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.missao-desc {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin: 0 0 0.5rem;
+}
+
+.missao-rewards {
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Durabilidade da missão */
+.missao-selo {
+  font-size: 0.65rem;
+  color: #999;
+  text-align: right;
+  margin-top: auto;
+}
+
+/* Botão */
+.missao-btn {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 0.7rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.missao-btn:hover {
+  background-color: #0189AB;
+  border-color: #0189AB;
+}
+
+
+/*Conquistas*/
+/*Conquistas Conteiner*/
+.conquistas-box {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.151);
+  padding: 2rem;
+  width: 100%;
+  border-top: 0.5rem solid #1B4D68;
+}
+
+/*Conquistas Textos*/
+.conquistas-txt {
+  margin-bottom: 1rem;
+}
+
+.conquistas-txt h3 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.qtd-conquistas {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+/*Conquistas img */
+.conquistas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.conquista-img {
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid #191919;
+}
+
+/*Ver conquistas txt */
+.ver-conquistas {
+  font-size: 0.6rem;
+  margin-top: 1rem;
+  font-weight: 800;
+  color: #000000a3;
+  display: block;
+  text-align: right;
+}
+
+/*Metas */
+/* Conteiner Metas */
+.metas-box {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.151);
+  padding: 1rem;
+  text-align: justify;
+  width: 100%;
+}
+
+/*Botão Metas */
+.nova-meta-btn {
+  border: none;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ranking */
+
+/* Container ranking */
+.ranking-box {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Header */
+.ranking-title {
+  background: #042333;
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Parte inferior com blur */
+.ranking-content {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.151);
+  padding: 1rem;
+}
+
+/* Item do ranking */
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Posição */
+.rank-pos {
+  width: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  flex-shrink: 0;
+}
+
+/* Avatar */
+.ranking-avatar1 {
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid #191919;
+  object-fit: cover;
+}
+
+/* Nome e XP empilhados */
+.ranking-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ranking-nome {
+  font-weight: 300;
+  color: #222;
+  font-size: 1rem;
+}
+
+.ranking-xp {
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #0189AB;
+}

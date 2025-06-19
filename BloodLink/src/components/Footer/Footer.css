@@ -1,0 +1,118 @@
+
+.footer {
+    background-color: #073954;
+    color: #f0f0f0;
+  padding: 3rem 2rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 75rem;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+/* Parte 8 do site - Dimensões */
+.footer-brand {
+  flex: 1;
+  min-width: 2rem;
+}
+
+.footer-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-container-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  width: 3.5rem;
+  height: auto;
+  margin-bottom: -0.2rem;
+}
+
+.footer-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.blood-red {
+  color: #FB3F3A;
+}
+
+.link-black {
+  color: rgb(255, 255, 255);
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+  max-width: 300px;
+  margin-top: 1rem;
+}
+
+
+/* Parte 8 do site - Colunas*/
+.footer-content {
+    display: flex;
+    flex: 2;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: flex-start;
+}
+
+.footer-column {
+    min-width: 2rem;
+}
+
+.footer-column h4 {
+    font-size: 1.10rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #FB3F3A;
+}
+
+/* Parte 8 do site - Rodapé Final*/
+.footer hr {
+    margin: 2rem;
+    width: 90%;
+    border: none;
+    height: 0.10rem;
+    background: linear-gradient(to right, #1c3a4f, #386381, #1c3a4f);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+    padding-top: 1rem;
+}

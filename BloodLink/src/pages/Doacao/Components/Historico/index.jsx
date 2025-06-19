@@ -30,7 +30,8 @@ const donations = [
 const HistoricoDoacao = () => {
   return (
     <div className="history-container">
-      <h2>Histórico de Doações</h2>
+      <h2 className="header-title-history">Doação - Histórico</h2>
+      <p className="header-subtitle-history">Confira seu histórico de doações.</p>
       <hr />
       {donations.map((item, index) => (
         <div

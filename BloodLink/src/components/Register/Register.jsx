@@ -1,7 +1,0 @@
-function Register(){
-    return(
-        <>
-        
-        </>
-    )
-}

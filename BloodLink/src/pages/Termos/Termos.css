@@ -1,0 +1,122 @@
+.TermsBg {
+  background-color: white;
+}
+.page-wrapper {
+  margin-left: 15rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FB3F3A;
+  color: #fff;
+  padding: 1rem 5rem;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+.navbar-title {
+  font-size: 1.7rem;
+  font-weight: 650;
+}
+
+.navbar-right .nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 5rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+.navbar-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+.navbar {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-right .nav-link:hover {
+  opacity: 0.85;
+}
+
+/* Layout */
+.terms-container {
+  display: flex;
+  padding: 5%;
+  padding-top: 4rem;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 15rem;
+  margin-right: 5rem;
+  position: sticky;
+  top: 5rem;
+  height: fit-content;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin: 1.1rem 0;
+  cursor: pointer;
+  font-weight: 400;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.sidebar ul li:hover {
+  color: #FB3F3A;
+}
+
+.sidebar ul li.active-link {
+  font-weight: 700;
+  color: #FB3F3A;
+}
+
+/* Conteúdo */
+.terms-content {
+  max-width: 45rem;
+  line-height: 1.6;
+}
+
+.intro {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.terms-content h2 {
+  font-size: 1.8rem;
+  margin: 4rem 0 1rem;
+}
+
+.updated {
+  font-size: 0.9rem;
+  color: #969696;
+}
+
+/* Vetor final */
+.part-seven-vetor {
+  width: 100%;
+  height: 30rem;
+  background-image: url('../../assets/Vector7.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

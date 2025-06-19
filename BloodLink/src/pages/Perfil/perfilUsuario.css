@@ -1,0 +1,266 @@
+body {
+  background-image: url('../../assets/profileBg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.userprofile-page {
+  max-width: 110rem;
+  margin: 5rem auto;
+  padding-left: 10rem;
+}
+
+.usercover-photo {
+  background: url('../../assets/profile.png') center/cover no-repeat;
+  padding: 4rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 8rem;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.usercover-photo h2 {
+  font-size: 1.8rem;
+  color: white;
+  margin: 0;
+}
+
+/* Linha de baixo: bio, tipo sanguíneo e avatar */
+.userprofile-bottom-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.userprofile-title {
+  color: #252525;
+  font-size: 1.1rem;
+  font-weight: 800;
+  max-width: 30rem;
+  margin-bottom: 1rem;
+}
+
+/* Bio */
+.userprofile-bio {
+  color: #606060;
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 30rem;
+  flex: 1 1 20rem;
+}
+
+/* Tipo sanguíneo */
+.userprofile-type {
+  text-align: center;
+  font-weight: 500;
+  color: #252525;
+  flex: 1 1 20rem;
+}
+
+.userprofile-type strong {
+  font-size: 2rem;
+  color: #1B4D68;
+}
+
+/* Avatar */
+.userprofile-avatarpic {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.userprofile-pic {
+  width: 13rem;
+  height: 13rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.userprofile-usernamep {
+  color: #252525;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+/* Botão editar */
+.userprofile-editbutton {
+  position: absolute;
+  top: 4rem;
+  right: 5.2rem;
+  background: rgba(255, 255, 255, 0.784);
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.userprofile-editbutton:hover {
+  background-color: #e5e5e5;
+}
+
+.userprofile-content {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch; /* garante mesma altura */
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.userprofile-ranking-card {
+  border-top: 1.2rem solid #1B4D68;
+  height: 100%;
+  background-color: #0000001e;
+  backdrop-filter: blur(70px);
+  padding: 2rem;
+  border-radius: 1rem;
+  flex: 1 1 26rem;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.4rem;
+}
+
+/* Títulos principais */
+.userprofile-ranking-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.ranking-pos {
+  font-weight: 450;
+  font-size: 1.8rem;
+  color: #3E3E3E;
+}
+
+.achievements-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+  border: 0.3rem solid #000000;
+}
+
+/* Ícones de conquistas */
+.userprofile-achievements {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Lista de amigos */
+.userprofile-friends-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.userprofile-friends-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 1rem;
+  color: #2F2F2F;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+
+.userprofile-friends-list img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+  border: 0.3rem solid #000000;
+}
+
+.userprofile-achievements {
+  align-items: center;
+}
+
+/*Bloomii div*/
+.userprofile-bloomii-card {
+  flex: 2 1 50rem;
+  background-color: #0000001e;
+  backdrop-filter: blur(70px);
+  padding: 3rem 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.bloomii-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3rem;
+}
+
+.bloomii-text {
+  flex: 1;
+}
+
+.bloomii-text p {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.bloomii-text ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 5rem;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bloomii-text li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+}
+.bloomii-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bloomii-header h3 {
+  font-size: 2.4rem;
+  color: #000;
+  margin: 0;
+}
+
+.bloomii-header svg {
+  font-size: 2rem;
+  color: #000;
+  cursor: pointer;
+  margin-left: auto;
+}
+.bloomii-sprite-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+.userprofile-bloomii-sprite {
+  width: 26rem;
+  height: auto;
+}

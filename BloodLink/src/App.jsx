@@ -5,19 +5,16 @@ import { BrowserRouter } from 'react-router';
 import { Router } from './routes/index.routes';
 
 function App() {
+
   return (
-    //<>
-     //  <Home/>
-     // <ChatBot />
-    
-    //</>
-  // );
-   <>
-     <BrowserRouter>
-       <Router />
-     </BrowserRouter>
-     </>
- )
+
+    <>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+
+    </>
+  );
 }
 
 export default App;

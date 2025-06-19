@@ -1,0 +1,195 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+/* Sidebar */
+/* Sidebar recolhida */
+.sidenav {
+  width: 8rem;
+  background: linear-gradient(180deg, #08273A, #123C53, #2e80ad 74%);
+  position: fixed;
+  z-index: 100;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: width 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #ffffff;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar recolhida */
+.sidenav.active {
+  width: 20rem;
+  align-items: flex-start;
+}
+
+/* Perfil */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  transition: opacity 2s ease;
+}
+
+.profile {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.3rem solid white;
+  display: block;
+    transition: all 0.4s ease 0.1s;
+}
+
+.username {
+  font-weight: 700;
+  font-size: 1.4rem;
+ transition: all 0.4s ease 0.15s;
+}
+
+.bio {
+  font-size: 0.7rem;
+  color: #999898;
+  padding: 0 2rem;
+  margin-top: 0;
+    transition: all 0.4s ease 0.2s;
+}
+
+/* Nível */
+.level-container {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin-top: 2rem;
+  font-weight: 600;
+    transition: all 0.4s ease 0.25s;
+}
+
+.level-xp {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #999898;
+  margin-top: 1.4rem;
+    transition: all 0.4s ease 0.3s;
+}
+
+.streak {
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.4s ease 0.35s;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 20px 30px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.nav-item:hover {
+  transform: scale(1.05);
+  font-weight: 700;
+}
+
+/* Ícones */
+.nav-item svg {
+  font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-item {
+  justify-content: center;
+}
+
+.sidenav.active .nav-item {
+  justify-content: flex-start;
+}
+
+hr {
+  margin-top: 1.4rem;
+  width: 100%;
+  border: 0.01rem solid rgba(255, 255, 255, 0.219);
+  transition: all 0.4s ease 0.4s;
+}
+
+.others-elements {
+  margin-top: 1.4rem;
+ transition: all 0.4s ease 0.45s;
+}
+
+.nav-text {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.sidenav.active .nav-text {
+  opacity: 1;
+  width: auto;
+  margin-left: 1rem;
+}
+
+.profile,
+.username,
+.bio,
+.level-container,
+.streak{
+  opacity: 0;
+  height: 1.5rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.sidenav.active .profile,
+.sidenav.active .username,
+.sidenav.active .bio,
+.sidenav.active .level-container,
+.sidenav.active .streak,
+.sidenav.active hr,
+.sidenav.active .others-elements {
+  opacity: 1;
+  height: auto;
+  margin-left: 8px;
+}
+/* Botão de fechar */
+.sidenav-close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+

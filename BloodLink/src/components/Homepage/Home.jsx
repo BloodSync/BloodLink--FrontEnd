@@ -8,6 +8,13 @@ import "../Homepage/Home.css";
 import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from "../Homepage/Scroll"; //Animações scroll
 import { enableLogoTiltEffect } from "../Homepage/teste.js"; //Animação logo parceiros
 import '../Homepage/Linguagens.js';
+import { Link } from 'react-router-dom'; //router
+import logo from '../../assets/logo2.png';
+import LinkyIcon from '../../assets/Linky-Icon.png';
+import BloomiiIcon from '../../assets/Bloomii-Icon.png';
+import PartnersLogo from '../../assets/partners.png';
+import Footer from "../Footer/Footer.jsx";
+
 
 //Animações scroll
 const Section = ({ children, animation = "fadeInUp" }) => {
@@ -49,6 +56,21 @@ function Home() {
   useEffect(() => {
     enableLogoTiltEffect();
   }, []);
+
+  // Animação da seta
+  const nextAvatar1 = () => {
+    setAvatarIndex((prev) => (prev + 1) % avatars.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextAvatar1();
+    }, 3000); // troca a cada 3 segundos
+
+
+    return () => clearInterval(interval);
+  }, []);
+
   //Avatar setinha
   const [avatarIndex, setAvatarIndex] = useState(1);
   const avatars = ["/img/miiTriste.gif", "/img/miiFeliz.gif", "/img/idle.gif"];
@@ -67,11 +89,15 @@ function Home() {
       {/* Nav Bar */}
       <div className={darkMode ? 'dark-mode' : ''}>
         <header className="header">
-          <div className="logo-container">
-            <a href="Home.jsx">
-              <img src="/img/logo.png" alt="Logotipo de uma fênix vermelha estilizada, com asas amplas e penas vermelhas, voltada para a direita. O corpo da ave é simplificado, com um longo pescoço curvado e um bico pontiagudo. Uma longa cauda curva e ondulada se estende para trás, também com um design formando uma gota. Representando renascimento e poder." className="logo-nav" /> </a>
-            <a href="Home.jsx"> <span className="logo-nav-text">BloodLink</span> </a>
-          </div>
+
+          <Link to="/" className="logo-container">
+            <img
+              src={logo}
+              alt="Logotipo de uma fênix vermelha estilizada, com asas amplas e penas vermelhas, voltada para a direita. O corpo da ave é simplificado, com um longo pescoço curvado e um bico pontiagudo. Uma longa cauda curva e ondulada se estende para trás, também com um design formando uma gota. Representando renascimento e poder."
+              className="logo-nav"
+            />
+            <span className="logo-nav-text">BloodLink </span>
+          </Link>
           <div className="nav-wrapper">
             <button className="modeButton" onClick={toggleDarkMode}>
               <img
@@ -95,9 +121,7 @@ function Home() {
                   <option value="es">🇪🇸 ES-ES</option>
                 </select>
               </div>
-              <a href="#">
-                <button className="register-btn">Cadastrar</button>
-              </a>
+              <Link to="login"> <button className="register-btn">Entrar</button> </Link>
             </div>
           </div>
         </header>
@@ -111,7 +135,7 @@ function Home() {
             <div className="part-one">
               <Section animation="fadeInUp">
                 <div className="text-content-part-one">
-                  <p>| Doe sangue, doe esperança.</p>
+                  <p>| Conecte vidas, doe sangue.</p>
                   <h2>
                     Uma única doação pode ajudar até <span className="highlight-part-one"><br />quatro pessoas</span>
                   </h2>
@@ -175,36 +199,36 @@ function Home() {
                   <li className="ranking-top1">
                     <div className="ranking-container">
                       <span className="ranking-crown">👑</span>
-                      <img src="img/pfp.jpg" alt="Avatar personalizados por jogador de posição: 1º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
-                      <span>🥇 Kindred <span className="ranking-title">| Herói</span></span>
+                      <img src={LinkyIcon} alt="Avatar personalizados por jogador de posição: 1º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
+                      <span>🥇 Linky <span className="ranking-title">| Super</span></span>
                     </div>
                     <div className="ranking-xp-area">
                       <div className="ranking-line" />
-                      <span>1880XP</span>
+                      <span>7000XP</span>
                     </div>
                   </li>
 
                   <li className="ranking-top2">
                     <div className="ranking-container">
                       <span className="ranking-crown">👑</span>
-                      <img src="img/pfp.jpg" alt="Avatar personalizados por jogador de posição: 2º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
-                      <span>🥈 Monegats <span className="ranking-title">| Lendário</span></span>
+                      <img src={BloomiiIcon} alt="Avatar personalizados por jogador de posição: 2º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
+                      <span>🥈 Bloomiinky <span className="ranking-title">| Lendário</span></span>
                     </div>
                     <div className="ranking-xp-area">
                       <div className="ranking-line" />
-                      <span>1700XP</span>
+                      <span>2500XP</span>
                     </div>
                   </li>
 
                   <li className="ranking-top3">
                     <div className="ranking-container">
                       <span className="ranking-crown">👑</span>
-                      <img src="img/pfp.jpg" alt="Avatar personalizados por jogador de posição: 3º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
-                      <span>🥉 AlineZz <span className="ranking-title">| Guardião</span></span>
+                      <img src={BloomiiIcon} alt="Avatar personalizados por jogador de posição: 3º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
+                      <span>🥉 Bloomii <span className="ranking-title">| Guardião</span></span>
                     </div>
                     <div className="ranking-xp-area">
                       <div className="ranking-line" />
-                      <span>1000XP</span>
+                      <span>2000XP</span>
                     </div>
                   </li>
 
@@ -221,9 +245,9 @@ function Home() {
         <section className="part-five-partners">
           <h3>EMPRESAS PARCEIRAS</h3>
           <div className="partners-logos">
-            <img src="img/empresa1.png" alt="Parceiro 1" />
-            <img src="img/proa.png" alt="Parceiro 2" />
-            <img src="img/empresa1.png" alt="Parceiro 3" />
+            <img src={PartnersLogo} alt="Parceiro 1" />
+            <img src={PartnersLogo} alt="Parceiro 2" />
+            <img src={PartnersLogo} alt="Parceiro 3" />
           </div>
           <a href="#">
             <button className="become-partner-btn">Seja parceiro</button>
@@ -355,9 +379,8 @@ function Home() {
                   <div class="footer-column">
                     <h4>Projeto BloodLink</h4>
                     <ul>
-                      <li><a href="#">Sobre</a></li>
+                      <li><a href="#">Sobre nós </a></li>
                       <li><a href="#">Apoie o BloodLink</a></li>
-                      <li><a href="#">Equipe</a></li>
                       <li><a href="#">Termos e condições</a></li>
                       <li><a href="#">Privacidade</a></li>
                     </ul>
@@ -368,9 +391,8 @@ function Home() {
                     <ul>
                       <li><a href="#">Como funciona a doação?</a></li>
                       <li><a href="#">Requisitos para doar</a></li>
-                      <li><a href="#">Benefícios</a></li>
+                      <li><a href="#">Quem Precisa de sangue?</a></li>
                       <li><a href="#">Desafios e recompensas</a></li>
-                      <li><a href="#">Voluntários</a></li>
                     </ul>
                   </div>
 
@@ -380,7 +402,6 @@ function Home() {
                       <li><a href="#">Email: doei@bloodsync.com</a></li>
                       <li><a href="#">SAC: (11) 99999-0000</a></li>
                       <li><a href="#">WhatsApp: (11) 98888-1234</a></li>
-                      <li><a href="#">Chat ao vivo: 8h às 20h</a></li>
                     </ul>
                   </div>
                 </div>

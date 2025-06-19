@@ -1,0 +1,197 @@
+/*Background*/
+.RegisterBg {
+    background-image: url('../../assets/registerBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Logo*/
+.logoRegister {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.9rem;
+}
+
+.logoRegister img {
+    height: 5rem;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.logoRegister h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #000;
+    display: flex;
+}
+
+.logoRegister h1 span:first-child {
+    color: #FF4B42;
+}
+
+/* Register Caixa */
+.Register {
+    position: relative;
+    max-width: 35rem;
+    width: 90%;
+    padding: 3.4rem 3rem;
+    background: #fff;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    z-index: 1;
+    color: #000;
+}
+
+/* Barra de blur no topo */
+.Register::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.151);
+    z-index: -1;
+}
+
+.label-info-register label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+h2 {
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* Botões */
+input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    border-bottom: 0.1rem solid #FF4B42;
+    font-size: 0.8rem;
+    background-color: transparent;
+}
+
+.inline-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Data de nascimento */
+.input-group input {
+    display: flex;
+    border: 0.1rem solid #FF4B42;
+    border-radius: 5rem;
+    padding: 0 2rem;
+    height: 2.5rem;
+    font-size: 0.8rem;
+    background-color: transparent;
+}
+
+
+.username-wrapper {
+    display: flex;
+    border: 0.1rem solid #FF4B42;
+    border-radius: 5rem;
+    padding: 0 2rem;
+    height: 2.5rem;
+    font-size: 0.8rem;
+    background-color: transparent;
+    color: #858585;
+}
+
+.username-wrapper input {
+    border: none;
+    border-bottom: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+
+/* Botão continuar */
+.continuar-btn {
+    width: 85%;
+    padding: 1.5rem;
+    background-color: #FF4B42;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.continuar-btn:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+.register-Google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 4.5rem; /* igual altura exata do continuar-btn com padding */
+    border: 0.1rem solid #000;
+    background: #fff;
+    width: 85%;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem; /* padding lateral apenas */
+}
+
+.register-Google-button img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.register-Google-button span {
+    position: static;
+    transform: none;
+}
+.register-Google-button:hover {
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+.voltar-home {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #000;
+    text-decoration: none;
+    margin-top: 2rem;
+}

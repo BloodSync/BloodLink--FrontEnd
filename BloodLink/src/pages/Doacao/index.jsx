@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SlideTabs from './Components/SlideTab';
-import Header from './Components/Header';
+import Header from './Components/Header/HeaderDonate';
 import Calendario from './Components/calendario';
 import SeletorHemocentro from './Components/SeletorHemocentro';
 import ConfirmarModal from './Components/ConfirmacaoModal';
 import Historico from './Components/Historico';
 import './styles.css';
-import Navbar from '../../components/Sidebar';
+import Navbar from '../../components/Sidebar/SidebarUser';
 
 export default function Doacao() {
   const [abaAtual, setAbaAtual] = useState('doacao');

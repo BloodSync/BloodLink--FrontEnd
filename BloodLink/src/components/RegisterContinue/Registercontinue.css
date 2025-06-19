@@ -1,0 +1,198 @@
+/* Fundo */
+.RegisterContinueBg {
+  background-image: url('../../assets/registercontinueBg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteiner */
+.RegisterContinue {
+  position: relative;
+  max-width: 35rem;
+  width: 90%;
+  padding: 4rem 3rem;
+  background: #fff;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Barra de blur no topo */
+.RegisterContinue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.5rem;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.151);
+  z-index: -1;
+}
+
+
+/* Logo */
+.logoRegisterContinue {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.logoRegisterContinue img {
+  height: 5rem;
+  object-fit: contain;
+}
+
+.logoRegisterContinue h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-left: 0.5rem;
+  color: #000;
+}
+
+.logoRegisterContinue h1 span:first-child {
+  color: #FF4B42;
+}
+
+.form-register-continue label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Título */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  color: #000;
+}
+
+/* Label geral */
+.user-info-form label {
+
+  color: #000;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.button-group button {
+  flex: 0 0 auto;
+  padding: 0.5rem 0.5rem;
+  border: 0.1rem solid #FF4B42;
+  background-color: transparent;
+  color: #FF4B42;
+  border-radius: 20rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.button-group button:hover {
+  transform: scale(1.03);
+}
+
+.button-group button.active {
+  background-color: #FF4B42;
+  color: white;
+  border-color: #FF4B42;
+  transform: none !important;
+}
+
+/* Checkbox + termos*/
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 1rem;
+
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.2rem;
+  margin: 0;
+}
+
+.checkbox-group .red-text {
+  color: #FF4B42;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* reCAPTCHA fake */
+.recaptcha-mock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #FF4B42;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.checkmark {
+  color: green;
+  font-size: 1.5rem;
+}
+
+.recaptcha-logo {
+  width: 70px;
+  height: 30px;
+  background: url('https://www.gstatic.com/recaptcha/api2/logo_48.png') no-repeat center;
+  background-size: contain;
+}
+.recaptcha-txt{
+  color: #000;
+}
+/* Botão registrar-se */
+.continuar-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #FF4B42;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.continuar-btn:hover {
+  transform: scale(1.02);
+}
+
+.red-text:hover {
+  text-decoration: underline;
+}
+
+/* Link voltar */
+.voltar-cadastro {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #000;
+  text-decoration: none;
+  margin-top: 1rem;
+}

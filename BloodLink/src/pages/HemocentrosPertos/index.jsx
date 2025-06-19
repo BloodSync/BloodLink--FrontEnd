@@ -131,7 +131,7 @@ const Mapa = () => {
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       {/* SIDEBAR */}
-      <div style={{ width: '300px', padding: '20px', borderRight: '1px solid #ccc', overflowY: 'auto' }}>
+      <div style={{ width: '20rem', padding: '2rem', borderRight: '1px solid #ccc', overflowY: 'auto' }}>
         <h2>Buscar Hemocentros</h2>
         <input
           type="text"
