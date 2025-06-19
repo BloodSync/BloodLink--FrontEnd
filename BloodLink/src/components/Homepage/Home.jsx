@@ -200,7 +200,7 @@ function Home() {
                     <div className="ranking-container">
                       <span className="ranking-crown">👑</span>
                       <img src={LinkyIcon} alt="Avatar personalizados por jogador de posição: 1º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
-                      <span>🥇 Linky <span className="ranking-title">| Super</span></span>
+                      <span>🥇 Linky <span className="ranking-title-home">| Super</span></span>
                     </div>
                     <div className="ranking-xp-area">
                       <div className="ranking-line" />
@@ -212,7 +212,7 @@ function Home() {
                     <div className="ranking-container">
                       <span className="ranking-crown">👑</span>
                       <img src={BloomiiIcon} alt="Avatar personalizados por jogador de posição: 2º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
-                      <span>🥈 Bloomiinky <span className="ranking-title">| Lendário</span></span>
+                      <span>🥈 Bloomiinky <span className="ranking-title-home">| Lendário</span></span>
                     </div>
                     <div className="ranking-xp-area">
                       <div className="ranking-line" />
@@ -224,7 +224,7 @@ function Home() {
                     <div className="ranking-container">
                       <span className="ranking-crown">👑</span>
                       <img src={BloomiiIcon} alt="Avatar personalizados por jogador de posição: 3º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
-                      <span>🥉 Bloomii <span className="ranking-title">| Guardião</span></span>
+                      <span>🥉 Bloomii <span className="ranking-title-home">| Guardião</span></span>
                     </div>
                     <div className="ranking-xp-area">
                       <div className="ranking-line" />

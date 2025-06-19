@@ -82,7 +82,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 1;
-}
+}r
 
 .dark-mode .part-six-vector {
   background-image: url(/img/vetor7-darkmode.png);
@@ -449,7 +449,7 @@ a {
 }
 
 /* Parte 4 do site - Título */
-.ranking-title {
+.ranking-title-home {
   font-size: 0.90rem;
   font-weight: 400;
   color: #DEC612;
