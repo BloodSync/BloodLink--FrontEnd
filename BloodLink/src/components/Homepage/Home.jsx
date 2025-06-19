@@ -8,14 +8,15 @@ import "../Homepage/Home.css";
 import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from "../Homepage/Scroll"; //Animações scroll
 import { enableLogoTiltEffect } from "../Homepage/teste.js"; //Animação logo parceiros
 import '../Homepage/Linguagens.js';
-import { Link } from 'react-router-dom'; //router
 import logo from '../../assets/logo2.png';
 import LinkyIcon from '../../assets/Linky-Icon.png';
 import BloomiiIcon from '../../assets/Bloomii-Icon.png';
 import PartnersLogo from '../../assets/partners.png';
-import Footer from "../Footer/Footer.jsx";
-
-
+import { Link } from 'react-router-dom'; //router
+import Plans from "./Plans/PlansPrice.jsx";
+import Bloomii1 from '../../assets/fraquinha.gif';
+import Bloomii2 from '../../assets/normalzinha.gif';
+import Bloomii3 from '../../assets/fortinha.gif';
 //Animações scroll
 const Section = ({ children, animation = "fadeInUp" }) => {
   const controls = useAnimation();
@@ -73,7 +74,7 @@ function Home() {
 
   //Avatar setinha
   const [avatarIndex, setAvatarIndex] = useState(1);
-  const avatars = ["/img/miiTriste.gif", "/img/miiFeliz.gif", "/img/idle.gif"];
+  const avatars = [Bloomii1, Bloomii2, Bloomii3];
 
   const prevAvatar = () => {
     setAvatarIndex((prev) => (prev - 1 + avatars.length) % avatars.length);
@@ -133,14 +134,12 @@ function Home() {
           <div className="esconde-background-parceiros">
             {/* Parte 1 da Home - Introdução*/}
             <div className="part-one">
-              <Section animation="fadeInUp">
                 <div className="text-content-part-one">
                   <p>| Conecte vidas, doe sangue.</p>
                   <h2>
                     Uma única doação pode ajudar até <span className="highlight-part-one"><br />quatro pessoas</span>
                   </h2>
                 </div>
-              </Section>
               <img
                 src="img/header.png" alt="Mão segurando uma grande gota de sangue vermelha com um fundo azul claro. Dentro da gota há um símbolo de cruz branca, representando ajuda médica ou doação de sangue. A imagem transmite solidariedade, cuidado e saúde!" className="part-one-img" />
             </div>
@@ -258,111 +257,8 @@ function Home() {
           <div className="part-six-vector" />
 
           <div className="esconde-background-parceiros">
-
-            {/* Parte 6 da Home - Planos */}
-            <section className="part-six-plans">
-              <Section animation="fadeInLeft">
-                <h3>Planos para empresas</h3>
-
-                <div className="all-plans">
-                  <div className="plan blue">
-                    <h4><span className="blue-color">Blue</span>Blood</h4>
-                    <p className="description">
-                      Anúncio sutil no site, ideal para empresas que apoiam a causa e buscam visibilidade acessível.
-                    </p>
-                    <div className="price">R$20<span className="unit">/mês</span></div>
-                    <button>Saiba mais</button>
-                    <hr className="plan-divider" />
-                    <ul>
-                      <li>Anúncio discreto no site</li>
-                      <li>Visibilidade acessível</li>
-                      <li>Apoio à causa com baixo custo</li>
-                    </ul>
-                  </div>
-
-                  <div className="plan orange">
-                    <h4><span className="orange-color">Orange</span>Blood</h4>
-                    <p className="description">
-                      Anúncios em destaque no site e nas campanhas.</p>
-                    <div className="price-orange">R$40<span className="unit">/mês</span></div>
-                    <button>Saiba mais</button>
-                    <hr className="plan-divider" />
-                    <ul>
-                      <li>Anúncios em destaque</li>
-                      <li>Inclusão nas campanhas</li>
-                      <li>Itens exclusivos da empresa </li>
-                    </ul>
-                  </div>
-
-                  <div className="plan red">
-                    <h4><span className="red-color">Red</span>Blood</h4>
-                    <p className="description">
-                      Anúncios em destaque no site, campanhas e eventos especiais.</p>
-                    <div className="price-red">R$80<span className="unit">/mês</span></div>
-                    <button>Saiba mais</button>
-                    <hr className="plan-divider" />
-                    <ul>
-                      <li>Exposição em eventos e especiais</li>
-                      <li>Inclusão em campanhas</li>
-                      <li>Selos personalizados</li>
-                    </ul>
-                  </div>
-
-                </div>
-              </Section>
-            </section>
-
-            {/* Parte 7 da Home - Feedback */}
-            <div className="part-seven-vetor">
-              <Section animation="fadeInUp">
-                <section class="part-seven-feedback">
-                  <h3>O que os nossos usuários pensam da <span class="highlight-part-seven">BloodLink</span>?</h3>
-
-                  <div class="Feedback">
-                    <div class="Feedback-user">
-                      <p>“Transformei a doação em hábito com as missões da plataforma. É simples, divertido e faz a diferença!”</p>
-                      <div class="user-info">
-                        <img src="img/pfp.jpg" alt="Marcus" />
-                        <span>Marcus<br /><span className="user-occupation">Artista</span></span>
-                      </div>
-                    </div>
-
-                    <div class="Feedback-user">
-                      <p>“Nossa empresa ganhou visibilidade e ainda ajuda a salvar vidas. Uma parceria que vale a pena!”</p>
-                      <div class="user-info">
-                        <img src="img/pfp.jpg" alt="" />
-                        <span>Lola<br /><span className="user-occupation">Freelancer</span></span>
-                      </div>
-                    </div>
-
-                    <div class="Feedback-user">
-                      <p>“Comecei por curiosidade e hoje adoro ver meu nome no ranking. A BloodLink mudou minha rotina.”</p>
-                      <div class="user-info">
-                        <img src="img/pfp.jpg" alt="Lily" />
-                        <span>Lily<br /><span className="user-occupation">Designer</span></span>
-                      </div>
-                    </div>
-
-                    <div class="Feedback-user">
-                      <p>"A ideia de missões diárias me motivou a cuidar mais da minha saúde."</p>
-                      <div class="user-info">
-                        <img src="img/pfp.jpg" alt="Lily" />
-                        <span>Noah<br /><span className="user-occupation">Estudante</span></span>
-                      </div>
-                    </div>
-
-                    <div class="Feedback-user">
-                      <p>"A plataforma é intuitiva e me lembra sempre da hora de doar de novo."</p>
-                      <div class="user-info">
-                        <img src="img/pfp.jpg" alt="Lily" />
-                        <span>Binho<br /><span className="user-occupation">Professor</span></span>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </Section>
-            </div>
-
+<Plans />
+        <div className="part-seven-vetor" />
             {/* Parte 8 da Home - Footer */}
             <footer class="footer">
               <div class="footer-container">
@@ -370,6 +266,7 @@ function Home() {
                 <div class="footer-brand">
                   <div class="logo-container-footer">
                     <a href="#"><img src="/public/img/logo.png" alt="BloodLink Logo" className="footer-logo" /></a>
+                     <span className="logo-nav-text">BloodLink </span>
                   </div>
                   <p class="footer-description">
                     Conectamos doadores a quem mais precisa, tornando a doação de sangue acessível e engajadora.

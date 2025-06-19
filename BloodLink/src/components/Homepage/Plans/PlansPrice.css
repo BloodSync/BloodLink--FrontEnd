@@ -1,0 +1,180 @@
+/* Parte 6 do site - Planos*/
+.part-six-plans {
+    padding: 4rem;
+    text-align: center;
+}
+
+.part-six-plans h3 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+/* Parte 6 do site - Planos Dimensões */
+.all-plans {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    align-items: stretch;
+}
+
+.plan {
+    width: 25.90rem;
+    min-height: 10rem;
+    padding: 2rem;
+    border-radius: 1.50rem;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.190);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    border-top: 0.80rem solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.plan:hover {
+    transform: translateY(-1rem);
+}
+
+/* Parte 6 do site - Bordas */
+.plan.blue {
+    border-top-color: #2196f3;
+}
+
+.plan.oranges {
+    border-top-color: #ff9800;
+}
+
+.plan.red {
+    border-top-color: #FB3F3A;
+}
+
+/* Parte 6 do site - Nome do plano */
+.plan h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0.10rem;
+    font-weight: bold;
+}
+
+.plan h4 span {
+    font-weight: bold;
+}
+
+.blue-color {
+    color: #2196f3;
+}
+
+.orange-color {
+    color: #ff9800;
+}
+
+.red-color {
+    color: #FB3F3A;
+}
+
+/* Parte 6 do site - Descrição do plano */
+.plan p.description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Parte 6 do site - Preços */
+.price {
+    font-size: 2.6rem;
+    color: #2196f3;
+    font-weight: bold;
+}
+
+.price-orange {
+    font-size: 2.6rem;
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.price-red {
+    font-size: 2.6rem;
+    color: #FB3F3A;
+    font-weight: bold;
+}
+
+.unit {
+    font-size: 1rem;
+    color: #888;
+    margin-left: 4px;
+}
+
+/* Parte 6 do site - Benefícios dos planos */
+.plan ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.plan li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.20rem;
+    font-weight: 500;
+}
+
+.plan li::before {
+    content: "✔";
+    color: #28a745;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.plan-divider {
+    width: 100%;
+    border: none;
+    height: 0.10rem;
+    background: linear-gradient(to right, #e0e0e0, #ffffff, #e0e0e0);
+    margin: 2rem 0;
+}
+
+/* Parte 6 do site - Planos botões */
+.plan button {
+    margin-top: auto;
+    width: 24rem;
+    align-self: center;
+    background: none;
+    border: 0.1rem solid #ccc;
+    color: #333;
+    padding: 0.80rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan button:hover {
+    border-color: #FB3F3A;
+    color: #FB3F3A;
+}
+
+.dark-mode .plan {
+    color: #ffffff;
+}
+
+.dark-mode .plan button {
+    color: #ffffff;
+}
+
+.dark-mode .plan-divider {
+    background: linear-gradient(to right, #e0e0e04f, #373737, #e0e0e04f);
+}
+
+.dark-mode .plan p.description {
+    color: #ffffff80;
+}
+
+.dark-mode .part-six-plans {
+    color: #ffffff;
+}
+

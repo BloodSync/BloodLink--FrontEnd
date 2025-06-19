@@ -1,0 +1,113 @@
+/* Grid das img */
+.novos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 5rem;
+  align-items: center;
+}
+
+/* Linha de cima centralizada */
+.linha-superior {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Linha de baixo com largura fixa para servir de base */
+.linha-inferior {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: calc(6 * 8rem + 5 * 1.5rem); /* 6 cards + 5 gaps */
+}
+
+/* Estrutura base */
+.item-box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Imagem */
+.item-img-wrapper {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.item-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.item-box:hover .img-overlay {
+  opacity: 0;
+}
+
+.item-label {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  z-index: 2;
+  text-shadow: 0 0 5px #000;
+}
+
+/* Barrinha inferior */
+.item-bar {
+  height: 0.4rem;
+  width: 100%;
+  margin-top: 0;
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
+/* Tamanhos */
+.item-box.destaque {
+  width: 22rem;
+  height: 12rem;
+}
+
+.item-box.medio {
+  width: 10rem;
+  height: 12rem;
+}
+
+.item-box.pequeno {
+  width: 8rem;
+  height: 10rem;
+}
+
+
+/* Cores das barrinhas */
+.orange {
+  background-color: #f97316;
+}
+.cor-0 {
+  background-color: #9333ea;
+}
+.cor-1 {
+  background-color: #facc15;
+}
+.cor-2 {
+  background-color: #22c55e;
+}
+.cor-3 {
+  background-color: #3b82f6;
+}
