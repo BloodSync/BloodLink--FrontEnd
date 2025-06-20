@@ -17,6 +17,7 @@ import Plans from "./Plans/PlansPrice.jsx";
 import Bloomii1 from '../../assets/fraquinha.gif';
 import Bloomii2 from '../../assets/normalzinha.gif';
 import Bloomii3 from '../../assets/fortinha.gif';
+
 //Animações scroll
 const Section = ({ children, animation = "fadeInUp" }) => {
   const controls = useAnimation();

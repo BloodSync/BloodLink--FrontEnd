@@ -82,7 +82,7 @@ function UserProfile() {
                 Amigos <span className="ranking-pos"> 05 </span>
               </h3>
 
-              <ul className="userprofile-friends-list">
+              <ul className="userprofile-friend-list">
                 <li>
                   <img src={minhaFoto} alt="" />
                   <div>

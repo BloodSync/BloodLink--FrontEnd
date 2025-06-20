@@ -14,7 +14,7 @@ import Vitalink from '../pages/Vitalink/vitalink';
 import Configuracao from '../pages/Configuracoes/settings';
 import TermsPage from '../pages/Termos/Termos';
 import AboutUs from '../pages/SobreNos/AboutUs';
-
+import ItemPage from '../components/LojaItem/LojaCompra';
 export function Router() {
   return (
     <Routes>
@@ -32,6 +32,7 @@ export function Router() {
         <Route path="UserProfile" element={<Perfil />} />
         <Route path="UserDonate" element={<Doacao />} />
         <Route path="UserStore" element={<Loja />} />
+        <Route path="LojaItem" element={<ItemPage />} />
         <Route path="Vitalink" element={<Vitalink />} />
         <Route path="Settings" element={<Configuracao />} />
 

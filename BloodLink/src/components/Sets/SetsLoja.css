@@ -1,0 +1,70 @@
+.sets-section {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.2rem;
+}
+
+.set-card {
+  margin-top: 5rem;
+  position: relative;
+  width: 12rem;
+  height: 22rem;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1rem solid #ffffff;
+}
+
+.set-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.4s ease;
+}
+
+/* Camada branca que sobe */
+.set-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: rgb(255, 255, 255);
+  transition: height 0.4s ease;
+  z-index: 1;
+}
+
+.set-title {
+  position: relative;
+  z-index: 2;
+  color: #272727;
+  font-size: 1rem;
+  font-weight: 800;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effects */
+.set-card:hover::before {
+  height: 100%;
+}
+
+.set-card:hover .set-title {
+  opacity: 1;
+}

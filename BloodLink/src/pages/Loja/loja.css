@@ -1,68 +1,94 @@
-/* Plano de fundo geral */
 .LojinhaBg {
   background-image: url('../../assets/Store-ViewBg.png');
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh; 
 }
 
 /* Container principal */
 .loja-wrapper {
-  padding: 5rem 15rem;
+  padding: 8rem 15rem;
   color: #ffffff;
 }
 
 /* Abas de navegação */
 .loja-tabs {
   display: flex;
-  background-color: #e4e4e4;
+  background-color: #ffffffb1;
   border-radius: 2rem;
   width: fit-content;
-  padding: 0.25rem;
-  margin-bottom: 2rem;
+  padding: 0.30rem;
+  margin-bottom: 1.5rem;
 }
 
 .tab-btn {
+  position: relative;
   border: none;
   background: transparent;
-  padding: 0.8rem 2.5rem;
+  padding: 0.7rem 2rem;
   border-radius: 2rem;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1rem;
-  color: #000;
+  color: #000000ad;
   cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.tab-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #031924, #03293c);
+  border-radius: 2rem;
+  transition: left 0.4s ease-in-out;
+  z-index: 0;
+}
+
+.tab-btn.active::before {
+  left: 0;
 }
 
 .tab-btn.active {
-  background-color: #000;
   color: white;
+  font-weight: 600;
 }
+
+.tab-btn span {
+  position: relative;
+  z-index: 1;
+}
+
 
 /* Seção topo com vitrine e saldo */
 .loja-top-section {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* Vitrine de novos itens */
 .titulo-novos {
   font-size: 2rem;
   font-weight: 800;
+    color: #ffffff;
 }
 
 .novos-sub {
-  color: #9fcfe6;
-  font-weight: 500;
+  color: #ffffff6a;
+  font-weight: 400;
 }
-
 
 /* Saldo e avatar */
 .loja-info {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1rem;
 }
 
 .user-thumb {
@@ -78,7 +104,8 @@
   gap: 0.5rem;
   font-weight: 700;
   font-size: 1rem;
-  color: #f59e0b;
+  color: #FF8000;
+  font-style: italic;
 }
 
 .coin-icon {
@@ -86,61 +113,100 @@
   height: 1.5rem;
 }
 
-.coin-size {
-  font-size: 2rem;
+.coin-amount {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 800;
   margin-right: 0.25rem;
 }
 
 /* Divider */
 .loja-divider {
-  margin: 3rem 0 2rem;
+  margin: 6rem auto 2rem;
+  width: 65%;
+  height: 0.1rem;
+  background-color: #ffffff16;
   border: none;
-  height: 1px;
-  background-color: #ffffff55;
+  border-radius: 1rem;
 }
 
-/* Categorias */
+.categoria-elements{
+    margin-top: 7rem;
+}
+/* CATEGORIAS */
+.categorias-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30rem;
+  margin-bottom: 2rem;
+  flex-wrap: nowrap;
+}
+
 .categorias-title {
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  color: white;
+  margin: 0; 
 }
 
 .categorias-grid {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  gap: 2rem;
+  margin-bottom: 0; 
+  justify-content: flex-start;
+  flex-wrap: nowrap; 
+}
+
+.categoria-btn {
+  background-color: #031924;
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.categoria-btn:hover,
+.categoria-btn:focus {
+  transform: scale(1.1);
+  background-color: #063043;
+}
+
+.categoria-btn:active {
+  transform: scale(0.95);
+  background-color: #0a4c6b;
 }
 
 .categoria-icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 1rem;
-  background-color: #3b82f6;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s;
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-.categoria-icon:hover {
-  transform: scale(1.05);
-}
 
-/* Seção de prévia + itens */
+/* Preview e items */
 .loja-preview-section {
   display: flex;
-  gap: 4rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: flex-start; 
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
-/* Prévia */
 .preview-box {
-  width: 18rem;
-  background-color: #132c4a;
-  border-radius: 1rem;
+  flex: 0 0 20rem;
+  background: linear-gradient(to top, #040F24, transparent);
+  border-bottom: 1rem solid #AD6D2D;
   padding: 1rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .preview-title {
@@ -148,16 +214,23 @@
   font-size: 1rem;
   color: white;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .preview-img {
   width: 100%;
-  border-radius: 1rem;
+  height: 20rem; 
+  object-fit: contain; 
+  margin: auto; 
+  display: block;
 }
-
 /* Itens */
 .item-section {
   flex: 1;
+  max-width: 50rem;
+  background-color: #031924;
+  border-radius: 1rem;
+  padding: 1.5rem;
 }
 
 .item-header {
@@ -168,44 +241,52 @@
 }
 
 .item-section-title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
 }
 
 .comprar-btn {
-  background-color: #f59e0b;
-  color: #000;
+  background-color: #ff8000a7;
+  color: #2C2C2C;
   border: none;
-  padding: 0.5rem 1.2rem;
-  font-weight: bold;
-  border-radius: 0.5rem;
+  padding: 0.6rem 2.1rem;
+  font-weight: 700;
+  border-radius: 1.5rem;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .comprar-btn:hover {
-  background-color: #fbbf24;
+  background-color: #ffffff54;
 }
 
 .item-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 3rem;
+  justify-content: center;
 }
 
 .item-card {
-  background-color: #0e172c;
+  background-color: transparent;
   color: #fff;
-  border-radius: 1rem;
-  padding: 1rem;
-  width: 7rem;
+  border-radius: 0.8rem;
+  padding: 0;
+  width: 6rem;
   text-align: center;
+}
+
+.item-img-wrapper {
+  position: relative;
+  width: 100%;
 }
 
 .item-img {
   width: 100%;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  display: block;
+  border-bottom: 0.3rem solid #AD6D2D;
 }
 
 .item-price {
@@ -213,11 +294,15 @@
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 0.4rem;
+  color: #FF8000;
 }
 
 .coin-icon-sm {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
+  color: #FF8000;
 }

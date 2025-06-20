@@ -2,39 +2,40 @@
 .novos-grid {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  margin-top: 5rem;
   align-items: center;
+  gap: 4rem;
+  width: 100%;
 }
 
 /* Linha de cima centralizada */
 .linha-superior {
   display: flex;
-  gap: 1.5rem;
   justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
-
 /* Linha de baixo com largura fixa para servir de base */
 .linha-inferior {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-  max-width: calc(6 * 8rem + 5 * 1.5rem); /* 6 cards + 5 gaps */
+  width: 100%;
+  max-width: 60rem;
 }
 
 /* Estrutura base */
-.item-box {
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.5rem;
-  overflow: hidden;
+.item-box.destaque {
+  width: 32rem;
+  height: 12rem;
+  position: relative;
 }
 
 /* Imagem */
 .item-img-wrapper {
   position: relative;
-  border-radius: 0.5rem;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -50,7 +51,7 @@
 .img-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.562);
   transition: opacity 0.3s ease;
   z-index: 1;
 }
@@ -67,47 +68,54 @@
   font-weight: 800;
   font-size: 1rem;
   z-index: 2;
-  text-shadow: 0 0 5px #000;
+  text-shadow: 0 0 2rem #000;
 }
 
 /* Barrinha inferior */
 .item-bar {
-  height: 0.4rem;
+  height: 0.5rem;
   width: 100%;
   margin-top: 0;
-  border-radius: 0 0 0.3rem 0.3rem;
 }
 
 /* Tamanhos */
 .item-box.destaque {
-  width: 22rem;
-  height: 12rem;
+  width: 35rem;
+  height: 15rem;
 }
-
+.item-box.destaque:hover{
+      flex-basis: 38%;
+}
 .item-box.medio {
-  width: 10rem;
-  height: 12rem;
+  width: 12rem;
+  height: 17rem;
 }
-
+.item-box.medio:hover{
+      flex-basis: 13%;
+}
+.item-box.mediano{
+ width: 10rem;
+  height: 18rem;
+}
+.item-box.mediano:hover{
+      flex-basis: 10%;
+}
 .item-box.pequeno {
   width: 8rem;
-  height: 10rem;
+  height: 15rem;
 }
-
-
+.item-box.pequeno:hover{
+      flex-basis: 18%;
+}
 /* Cores das barrinhas */
-.orange {
-  background-color: #f97316;
+.gold {
+  background-color: #AB5E10;
 }
-.cor-0 {
-  background-color: #9333ea;
+
+.purple {
+  background-color: #972E9C;
 }
-.cor-1 {
-  background-color: #facc15;
-}
-.cor-2 {
-  background-color: #22c55e;
-}
-.cor-3 {
-  background-color: #3b82f6;
+
+.green {
+  background-color: #3A9935;
 }
