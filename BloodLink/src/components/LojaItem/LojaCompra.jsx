@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 export default function ItemPage() {
   return (
     <>
-      <div className=".LojaCBg">
-        <div className="item-page">
+      <div className="LojaBuyBg ">
+        <div className="buy-item-page">
           <div className="top-bar">
             <Link to="/UserStore">
               <button className="back-btn-loja">
