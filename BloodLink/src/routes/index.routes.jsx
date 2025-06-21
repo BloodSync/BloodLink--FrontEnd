@@ -15,6 +15,7 @@ import Configuracao from '../pages/Configuracoes/settings';
 import TermsPage from '../pages/Termos/Termos';
 import AboutUs from '../pages/SobreNos/AboutUs';
 import ItemPage from '../components/LojaItem/LojaCompra';
+import EditProfileTab from '../pages/EditProfileInfo/EditProfileUser';
 export function Router() {
   return (
     <Routes>
@@ -30,13 +31,14 @@ export function Router() {
         <Route path="UserDashboard" element={<Home1 />} />
         <Route path="hemocentrosPerto" element={<Mapa />} />
         <Route path="UserProfile" element={<Perfil />} />
+        <Route path="EditProfile" element={<EditProfileTab />} />
         <Route path="UserDonate" element={<Doacao />} />
         <Route path="UserStore" element={<Loja />} />
         <Route path="LojaItem" element={<ItemPage />} />
         <Route path="Vitalink" element={<Vitalink />} />
         <Route path="Settings" element={<Configuracao />} />
 
-        <Route path="AboutUs" element={<AboutUs/>} />
+        <Route path="AboutUs" element={<AboutUs />} />
         <Route path="Terms" element={<TermsPage />} />
 
       </Route>

@@ -28,11 +28,13 @@ function Footer() {
                             <h4>Projeto BloodLink</h4>
                             <ul>
                                 <Link to="/AboutUs" >
-                                    <li><a href="#">Sobre nós </a></li>
+                                    <li><a>Sobre nós </a></li>
                                 </Link>
                                 <li><a href="#">Apoie o BloodLink</a></li>
-                                <li><a href="#">Termos e condições</a></li>
-                                <li><a href="#">Privacidade</a></li>
+                                 <Link to="/Terms">
+                                <li><a>Termos e condições</a></li>
+                                <li><a>Privacidade</a></li>
+                                 </Link>
                             </ul>
                         </div>
 

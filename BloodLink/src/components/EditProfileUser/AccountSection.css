@@ -1,0 +1,63 @@
+/*Banner*/
+.account-banner {
+  background: url('../../assets/profile.png');
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.284);
+}
+/*Distâncias*/
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.user-avatar {
+  width: 3.2rem;
+  height: 3.2em;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: 2rem;
+}
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  color: #f79a3e;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}

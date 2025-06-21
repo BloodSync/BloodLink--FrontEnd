@@ -1,9 +1,5 @@
 import './perfilUsuario.css';
 import minhaFoto from '../../assets/avatar.jpg';
-import { BsDropletFill } from "react-icons/bs";
-import { MdStar } from "react-icons/md";
-import { RiTeamFill } from "react-icons/ri";
-import { PiCloverFill } from "react-icons/pi";
 import meuBloomii from '../../assets/Bloomii-Setgamer.gif';
 import { BsPencilFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
@@ -34,8 +30,9 @@ function UserProfile() {
                 <p className="userprofile-usernamep">Usuário</p>
               </div>
             </div>
-
-            <button className="userprofile-editbutton">Editar perfil</button>
+            <Link to="/EditProfile">
+              <button className="userprofile-editbutton">Editar perfil</button>
+            </Link>
           </div>
 
           <div className="userprofile-content">
@@ -44,7 +41,7 @@ function UserProfile() {
                 <div className="bloomii-text">
                   <div className="bloomii-header">
                     <h3>Bloomii</h3>
-                      <Link to="/personalizarBloomii"> 
+                    <Link to="/personalizarBloomii">
                       <BsPencilFill /> </Link>
                   </div>
                   <p>Personalize seu Bloomii e veja seus status.</p>
