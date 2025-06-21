@@ -13,7 +13,7 @@ function LojaSection() {
             <div className="item-img-wrapper">
               <img src={minhaFoto} alt="Set Bloomiis" />
               <div className="img-overlay" />
-              <span className="item-label">SET BLOOMIIS</span>
+              <span className="item-label">SET BLOOMIIS</span> <p className="item-label">750MON</p>
             </div>
             <div className="item-bar gold" />
           </div>
@@ -22,7 +22,7 @@ function LojaSection() {
             <div className="item-img-wrapper">
               <img src={minhaFoto} alt="Item 1" />
               <div className="img-overlay" />
-              <span className="item-label">ITEM</span>
+              <span className="item-label">ITEM</span><p className="item-label">500MON</p>
             </div>
             <div className="item-bar purple" />
           </div>
@@ -31,7 +31,7 @@ function LojaSection() {
             <div className="item-img-wrapper">
               <img src={minhaFoto} alt="Item 2" />
               <div className="img-overlay" />
-              <span className="item-label">ITEM</span>
+              <span className="item-label">ITEM</span><p className="item-label">200MON</p>
             </div>
             <div className="item-bar green" />
           </div>
@@ -44,7 +44,7 @@ function LojaSection() {
               <div className="item-img-wrapper">
                 <img src={minhaFoto} alt={`Item ${i}`} />
                 <div className="img-overlay" />
-                <span className="item-label">ITEM</span>
+                <span className="item-label">ITEM</span> <p className="item-label">100MON</p>
               </div>
               <div className="item-bar green" />
             </div>

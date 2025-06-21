@@ -1,0 +1,83 @@
+.ranking-amigos-container {
+   display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*Titulo*/
+.barra-titulo-rank {
+    background-color: #1B4D68;
+    color: white;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    width: 100%;
+}
+
+.barra-titulo-rank span {
+    font-weight: 700;
+}
+
+/*Lista rank*/
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    color: #363636;
+    margin-left: 2rem;
+}
+
+/* Card ranking */
+.ranking-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    transition: transform 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.ranking-card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.ranking-pos-friends {
+    width: 2rem;
+    text-align: right;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #0f1a56;
+}
+
+.ranking-card img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-left: 0.3rem solid #0f1a56;
+}
+
+
+.ranking-info strong {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #222;
+}
+
+.ranking-info p {
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #303030;
+    margin: 0;
+}
+
+/* Container com as 3 colunas do all rank*/
+.ranking-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 0 2rem;
+}

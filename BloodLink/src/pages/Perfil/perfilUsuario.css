@@ -4,27 +4,28 @@ body {
   background-repeat: no-repeat;
 }
 
-.userprofile-page {
+.userprofile-page1 {
   max-width: 110rem;
   margin: 5rem auto;
   padding-left: 10rem;
 }
 
-.usercover-photo {
+.user-cover-photo {
   background: url('../../assets/profile.png') center/cover no-repeat;
-  padding: 4rem 3rem 3rem;
+  padding: 1rem 3rem; 
   display: flex;
   flex-direction: column;
   position: relative;
-  gap: 8rem;
+  gap: 5rem; 
   border-radius: 1.5rem;
   margin-bottom: 2rem;
+  height: 55vh; 
+  max-height: 40rem; 
 }
 
-.usercover-photo h2 {
+.user-cover-photo h2 {
   font-size: 1.8rem;
   color: white;
-  margin: 0;
 }
 
 /* Linha de baixo: bio, tipo sanguíneo e avatar */
@@ -89,8 +90,8 @@ body {
 /* Botão editar */
 .userprofile-editbutton {
   position: absolute;
-  top: 4rem;
-  right: 5.2rem;
+  top: 3rem;
+  right: 5.7rem;
   background: rgba(255, 255, 255, 0.784);
   border: none;
   padding: 0.8rem 1rem;
@@ -160,7 +161,7 @@ body {
 }
 
 /* Lista de amigos */
-.userprofile-friend-list {
+.userprofile-friend-list2 {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -169,7 +170,7 @@ body {
   gap: 0.1rem;
 }
 
-.userprofile-friend-list li {
+.userprofile-friend-list2 li {
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -178,7 +179,7 @@ body {
   font-weight: 400;
 }
 
-.userprofile-friend-list img {
+.userprofile-friend-list2 img {
   width: 3.5rem;
   height: 3.5rem;
   object-fit: cover;

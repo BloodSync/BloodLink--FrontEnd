@@ -79,7 +79,7 @@ function Configuracao() {
             className="settings-expanded-content"
             onClick={() => toggleExpanded('ajuda')}
           >
-            Precisa de ajuda? Veja nossas perguntas frequentes e entre em contato.
+            Precisa de ajuda? Entre em contato conosco.
           </div>
         </div>
 

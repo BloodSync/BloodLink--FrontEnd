@@ -3,9 +3,23 @@ import { FaInfoCircle } from 'react-icons/fa';
 
 export default function GeneralSection() {
   const [isAtivo, setIsAtivo] = useState(null);
+  const [tituloSelecionado, setTituloSelecionado] = useState('Lobo Solitário');
+  const [dropdownAberto, setDropdownAberto] = useState(false);
 
-  const handleClick = (tipo) => {
-    setIsAtivo(tipo);
+  const opcoesTitulos = [
+    'Lobo Solitário',
+    'Guardião da Vida',
+    'Anjo da Esperança',
+    'Coração Solidário'
+  ];
+
+  const handleClickTitulo = () => {
+    setDropdownAberto(!dropdownAberto);
+  };
+
+  const handleSelecionarTitulo = (titulo) => {
+    setTituloSelecionado(titulo);
+    setDropdownAberto(false);
   };
 
   return (
@@ -34,6 +48,31 @@ export default function GeneralSection() {
       <div className="input-group-edit">
         <label>Biografia</label>
         <input type="text" placeholder="Digite sua bio..." />
+      </div>
+
+      {/* Div com os titulos*/}
+      <div className="input-group-edit">
+        <label>Título</label>
+        <div className="dropdown-titulo">
+          <button type="button" className="dropdown-button" onClick={handleClickTitulo}>
+            {tituloSelecionado} ▼
+          </button>
+          {dropdownAberto && (
+            <ul className="dropdown-list">
+              {opcoesTitulos
+                .filter(titulo => titulo !== tituloSelecionado)
+                .map((titulo) => (
+                  <li
+                    key={titulo}
+                    className="dropdown-item"
+                    onClick={() => handleSelecionarTitulo(titulo)}
+                  >
+                    {titulo}
+                  </li>
+                ))}
+            </ul>
+          )}
+        </div>
       </div>
 
       <div className="buttons-edit-profile">

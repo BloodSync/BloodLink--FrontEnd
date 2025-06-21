@@ -8,8 +8,8 @@ function UserProfile() {
   return (
     <>
       <div className='userProfileBg'>
-        <div className="userprofile-page">
-          <div className="usercover-photo">
+        <div className="userprofile-page1">
+          <div className="user-cover-photo">
             <h2>@Usuário</h2>
 
             <div className="userprofile-bottom-line">
@@ -59,10 +59,11 @@ function UserProfile() {
 
 
             <div className="userprofile-ranking-card">
-              <h3>
-                Ranking <span className="ranking-pos">› 103º</span>
-              </h3>
-
+              <Link to="/FriendsList">
+                <h3>
+                  Ranking <span className="ranking-pos">› 103º</span>
+                </h3>
+              </Link>
               <h3>
                 Conquistas <span className="ranking-pos"> 20</span>
               </h3>
@@ -74,12 +75,12 @@ function UserProfile() {
                 <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
                 <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
               </ul>
-
-              <h3>
-                Amigos <span className="ranking-pos"> 05 </span>
-              </h3>
-
-              <ul className="userprofile-friend-list">
+              <Link to="/FriendsList">
+                <h3>
+                  Amigos <span className="ranking-pos"> 05 </span>
+                </h3>
+              </Link>
+              <ul className="userprofile-friend-list2">
                 <li>
                   <img src={minhaFoto} alt="" />
                   <div>

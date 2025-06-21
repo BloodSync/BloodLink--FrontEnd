@@ -152,7 +152,6 @@ function TermsPage() {
             </main>
           </div>
         </div>
-        <div className="part-seven-vetor" />
         <Footer />
       </div>
     </>

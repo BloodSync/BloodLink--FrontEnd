@@ -571,11 +571,9 @@ a {
 .part-seven-vetor {
   width: 100%;
   height: 30rem;
-  background-image: url('../../assets/Vector7.png');
+  background-image: url('../../assets/footer-vector.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-
 
 /* Responsividade */

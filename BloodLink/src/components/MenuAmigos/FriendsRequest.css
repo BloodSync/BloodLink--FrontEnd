@@ -1,0 +1,83 @@
+.friend-request-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1B4D68;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.friend-request-header span {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* Card*/
+.friend-request-card {
+  margin-top: 1.5rem;
+  background-color: #f2f6fa;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Avatar */
+.friend-request-card img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Nome */
+.friend-request-info {
+  flex: 1;
+}
+
+.friend-request-info strong {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.friend-request-info p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Botões */
+.friend-request-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.accept-btn, .decline-btn {
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.accept-btn {
+  background-color: #1B4D68;
+  color: white;
+}
+
+.accept-btn:hover {
+  background-color: #133b50;
+}
+
+.decline-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.decline-btn:hover {
+  background-color: #bbb;
+}

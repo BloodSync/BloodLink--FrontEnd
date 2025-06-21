@@ -10,20 +10,29 @@ import { IoBulb } from "react-icons/io5";
 import Footer from '../../components/Footer/Footer';
 import logoImageWhite from '../../assets/logo-white.png';
 import { Link } from 'react-router-dom';
-import Time from '../../assets/avatar.jpg';
+import Andre from '../../assets/Andre.jpeg';
+import Ingrid from '../../assets/Ingrid.jpg';
+import AnaJulia from '../../assets/AnaJulia.JPG';
+import Guilherme from '../../assets/Guilherme.jpg';
+import Jonas from '../../assets/Jonas.jpeg';
+import Gabriel from '../../assets/Gabriel.jpeg';
+
+
+
+
 
 function AboutUs() {
     return (
         <>
-            <div className="about-page">
+            <div className="about-page-us">
 
                 <header className="about-hero">
                     <div className="overlay">
                         <div className="top-bar">
-                            <img src={logoImageWhite} alt="BloodLink" className="logo" />
+                            <img src={logoImageWhite} alt="BloodLink logo branco" className="logo-about-us" />
                             <nav className="nav-bar-AboutUs">
                                 <Link to="/" className="nav-link">Home</Link>
-                                <Link to="/Login" className="nav-link">Central de Informações</Link>
+                                <Link to="/InformationCenter" className="nav-link">Central de Informações</Link>
                             </nav>
                         </div>
 
@@ -86,42 +95,54 @@ function AboutUs() {
 
                         <div className="team-grid">
                             <div className="team-card">
-                                <img src={Time} alt="BloodLink" div className="img-placeholder" />
+                                <a href="https://www.linkedin.com/in/andr%C3%A9-luiz-santos/" target="_blank" rel="noopener noreferrer">
+                                    <img src={Andre} alt="BloodLink" className="img-placeholder" />
+                                </a>
                                 <p className="team-name">André</p>
                                 <p className="team-role">Project Owner</p>
                                 <p className="team-role">Fullstack</p>
                             </div>
 
                             <div className="team-card">
-                                  <img src={Time} alt="BloodLink" div className="img-placeholder" />
+                                <a href="http://www.linkedin.com/in/ingrid-bassi" target="_blank" rel="noopener noreferrer">
+                                    <img src={Ingrid} alt="BloodLink" div className="img-placeholder" />
+                                </a>
                                 <p className="team-name">Ingrid Bassi </p>
                                 <p className="team-role">Scrum Master</p>
                                 <p className="team-role">Fullstack</p>
                             </div>
 
                             <div className="team-card">
-                                <img src={Time} alt="BloodLink" div className="img-placeholder" />
+                                <a href="https://www.linkedin.com/in/ana-julia-dos-santos-silva-806919246/" target="_blank" rel="noopener noreferrer">
+                                    <img src={AnaJulia} alt="BloodLink" div className="img-placeholder" />
+                                </a>
                                 <p className="team-name">Ana Julia</p>
                                 <p className="team-role">Social Manager </p>
                                 <p className="team-role">Front-End</p>
                             </div>
 
                             <div className="team-card">
-                                <img src={Time} alt="BloodLink" div className="img-placeholder" />
+                                <a href="https://www.linkedin.com/in/guilhermelsilvapfor/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
+                                    <img src={Guilherme} alt="BloodLink" div className="img-placeholder" />
+                                </a>
                                 <p className="team-name">Guilherme Loures </p>
                                 <p className="team-role">Dev</p>
                                 <p className="team-role">Fullstack</p>
                             </div>
 
                             <div className="team-card">
-                              <img src={Time} alt="BloodLink" div className="img-placeholder" />
+                                <a href="https://www.linkedin.com/in/jonas-henrique-pereira-de-almeida-798720224/" target="_blank" rel="noopener noreferrer">
+                                    <img src={Jonas} alt="BloodLink" div className="img-placeholder" />
+                                </a>
                                 <p className="team-name">Jonas Henrique</p>
                                 <p className="team-role">Dev</p>
                                 <p className="team-role">Front-End</p>
                             </div>
 
                             <div className="team-card">
-                                 <img src={Time} alt="BloodLink" div className="img-placeholder" />
+                                   <a href="https://www.linkedin.com/in/gabriel-souza-almeida-032406263/" target="_blank" rel="noopener noreferrer">
+                                <img src={Gabriel} alt="BloodLink" div className="img-placeholder" />
+                                </a>
                                 <p className="team-name">Gabriel de Souza </p>
                                 <p className="team-role">Dev</p>
                                 <p className="team-role">Back-End</p>
@@ -132,10 +153,9 @@ function AboutUs() {
                 </div>
 
                 <div className="AboutUs-BgHide">
-                    <div className="part-seven-vetor" />
-
                     <Footer />
-                </div>  </div>
+                </div>
+            </div>
         </>
     );
 }

@@ -235,7 +235,7 @@ function Home() {
 
           <div className="esconde-background-parceiros">
             <Plans />
-            <div className="part-seven-vetor" />
+            <div className="footerBg" />
             {/* Parte 8 da Home - Footer */}
             <footer class="footer">
               <div class="footer-container">

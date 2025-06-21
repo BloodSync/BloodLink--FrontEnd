@@ -1,0 +1,81 @@
+.friends-content-section {
+  width: 100%;
+}
+
+.lista-amigos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Título */
+.barra-titulo-amigos {
+  background-color: #1B4D68;
+  color: white;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.barra-titulo-amigos span {
+  font-weight: 700;
+}
+
+/* Grade dos amigos */
+.friends-grid-user {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  padding-left: 5rem; 
+}
+
+/* Card */
+.friend-card-user {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  color: #363636;
+  transition: transform 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.friend-card-user:hover {
+  transform: scale(1.03);
+  z-index: 1; 
+}
+/* Imagem do amigo */
+.friend-card-user img {
+  width: 4.2rem;
+  height: 100%;
+  object-fit: cover;
+  border-right: 0.4rem solid #2640ce;
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+/* Texto com fundo grudadinho na img */
+.friend-card-user div {
+  background: rgba(15, 15, 15, 0.072);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.friend-card-user strong {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.friend-card-user p {
+  font-weight: 400;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #333;
+}

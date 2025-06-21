@@ -13,7 +13,7 @@ function SetsSection() {
     {[...Array(3)].map((_, i) => (
       <div className="set-card" key={i}>
         <img src={avatar} alt={`Set ${i}`} className="set-img" />
-        <p className="set-title">Set Bloomii {i + 1}</p>
+        <p className="set-title">Set Bloomii {i + 1} <br/> 1600Mon </p>
       </div>
     ))}
   </div>

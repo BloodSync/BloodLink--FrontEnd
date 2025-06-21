@@ -16,6 +16,9 @@ import TermsPage from '../pages/Termos/Termos';
 import AboutUs from '../pages/SobreNos/AboutUs';
 import ItemPage from '../components/LojaItem/LojaCompra';
 import EditProfileTab from '../pages/EditProfileInfo/EditProfileUser';
+import InfoCenter from '../pages/Information/CentralInfo';
+import FriendsSideTab from '../pages/Amigos/FriendList';
+
 export function Router() {
   return (
     <Routes>
@@ -30,8 +33,11 @@ export function Router() {
 
         <Route path="UserDashboard" element={<Home1 />} />
         <Route path="hemocentrosPerto" element={<Mapa />} />
+
         <Route path="UserProfile" element={<Perfil />} />
         <Route path="EditProfile" element={<EditProfileTab />} />
+        <Route path="FriendsList" element={<FriendsSideTab />} />
+
         <Route path="UserDonate" element={<Doacao />} />
         <Route path="UserStore" element={<Loja />} />
         <Route path="LojaItem" element={<ItemPage />} />
@@ -40,7 +46,7 @@ export function Router() {
 
         <Route path="AboutUs" element={<AboutUs />} />
         <Route path="Terms" element={<TermsPage />} />
-
+        <Route path="InformationCenter" element={<InfoCenter />} />
       </Route>
     </Routes>
   );

@@ -1,24 +1,37 @@
-
 .footer {
-    background-color: #073954;
-    color: #f0f0f0;
-  padding: 3rem 2rem;
+  color: #f0f0f0;
+ background-color: #073954;
+  padding: 6rem 2rem;
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 75rem;
-    margin: 0 auto;
-    gap: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem; /* ou o valor que preferir */
+  max-width: 75rem;
+  margin: 0 auto;
 }
+
+.footer-vector {
+  width: 100%;
+  height: 15rem;
+  display: block;
+}
+
 
 /* Parte 8 do site - Dimensões */
 .footer-brand {
-  flex: 1;
-  min-width: 2rem;
+  min-width: 250px;
 }
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
 
 .footer-logo-link {
   display: flex;
@@ -48,7 +61,7 @@
   color: #FB3F3A;
 }
 
-.link-black {
+.link-highlight {
   color: rgb(255, 255, 255);
 }
 
@@ -62,57 +75,51 @@
 
 
 /* Parte 8 do site - Colunas*/
-.footer-content {
-    display: flex;
-    flex: 2;
-    flex-wrap: wrap;
-    gap: 3rem;
-    justify-content: flex-start;
-}
+
 
 .footer-column {
-    min-width: 2rem;
+  min-width: 2rem;
 }
 
 .footer-column h4 {
-    font-size: 1.10rem;
-    margin-bottom: 2rem;
-    color: #fff;
+  font-size: 1.10rem;
+  margin-bottom: 2rem;
+  color: #fff;
 }
 
 .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-column ul li {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-column ul li a {
-    text-decoration: none;
-    color: #ddd;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-    color: #FB3F3A;
+  color: #FB3F3A;
 }
 
 /* Parte 8 do site - Rodapé Final*/
 .footer hr {
-    margin: 2rem;
-    width: 90%;
-    border: none;
-    height: 0.10rem;
-    background: linear-gradient(to right, #1c3a4f, #386381, #1c3a4f);
+  margin: 2rem;
+  width: 90%;
+  border: none;
+  height: 0.10rem;
+  background: linear-gradient(to right, #1c3a4f, #386381, #1c3a4f);
 }
 
 .footer-bottom {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #aaa;
-    padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+  padding-top: 1rem;
 }
