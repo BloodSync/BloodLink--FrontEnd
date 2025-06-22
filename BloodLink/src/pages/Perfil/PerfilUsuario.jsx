@@ -64,10 +64,11 @@ function UserProfile() {
                   Ranking <span className="ranking-pos">› 103º</span>
                 </h3>
               </Link>
-              <h3>
-                Conquistas <span className="ranking-pos"> 20</span>
-              </h3>
-
+              <Link to="/Achievements">
+                <h3>
+                  Conquistas <span className="ranking-pos"> 06</span>
+                </h3>
+              </Link>
               <ul className="userprofile-achievements" >
                 <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
                 <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>

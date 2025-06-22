@@ -15,7 +15,7 @@ function Plans() {
               Anúncio sutil no site, ideal para empresas que apoiam a causa e buscam visibilidade acessível.
             </p>
             <div className="price">R$20<span className="unit">/mês</span></div>
-            <button>Saiba mais</button>
+            <Link to="/Pay">  <button>Saiba mais</button></Link>
             <hr className="plan-divider" />
             <ul>
               <li>Anúncio discreto no site</li>
@@ -29,7 +29,7 @@ function Plans() {
             <p className="description">
               Anúncios em destaque no site e nas campanhas.</p>
             <div className="price-orange">R$40<span className="unit">/mês</span></div>
-            <button>Saiba mais</button>
+            <Link to="/Pay">  <button>Saiba mais</button></Link>
             <hr className="plan-divider" />
             <ul>
               <li>Anúncios em destaque</li>
@@ -43,7 +43,7 @@ function Plans() {
             <p className="description">
               Anúncios em destaque no site, campanhas e eventos especiais.</p>
             <div className="price-red">R$80<span className="unit">/mês</span></div>
-            <button>Saiba mais</button>
+            <Link to="/Pay">  <button>Saiba mais</button></Link>
             <hr className="plan-divider" />
             <ul>
               <li>Exposição em eventos e especiais</li>

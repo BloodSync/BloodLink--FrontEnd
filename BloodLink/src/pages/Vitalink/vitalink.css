@@ -5,7 +5,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  position: absolute;
   inset: 0;
   z-index: -2;
 }
@@ -274,7 +273,7 @@
 
 /*Conquistas*/
 /*Conquistas Conteiner*/
-.conquistas-box {
+.conquistas-box-vitalink {
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.151);
   padding: 2rem;
@@ -283,11 +282,11 @@
 }
 
 /*Conquistas Textos*/
-.conquistas-txt {
+.conquista-txt {
   margin-bottom: 1rem;
 }
 
-.conquistas-txt h3 {
+.conquista-txt h3 {
   font-weight: 500;
   font-size: 1rem;
 }
@@ -298,7 +297,7 @@
 }
 
 /*Conquistas img */
-.conquistas-grid {
+.conquistas-grid-vitalink {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;

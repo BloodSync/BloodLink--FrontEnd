@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     gap: 5rem;
     align-items: stretch;
+    
 }
 
 .plan {
@@ -140,18 +141,20 @@
 
 /* Parte 6 do site - Planos botões */
 .plan button {
-    margin-top: auto;
-    width: 24rem;
-    align-self: center;
-    background: none;
-    border: 0.1rem solid #ccc;
-    color: #333;
-    padding: 0.80rem;
-    border-radius: 10rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  margin-top: auto;
+  width: auto;
+  min-width: 22rem; 
+  padding: 0.80rem 2rem;
+  align-self: center;
+  background: none;
+  border: 0.1rem solid #ccc;
+  color: #333;
+  border-radius: 10rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
 
 .plan button:hover {
     border-color: #FB3F3A;

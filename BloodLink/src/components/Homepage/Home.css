@@ -419,7 +419,7 @@ a {
 }
 
 /* Parte 4 do site - Dimensões */
-.ranking-list {
+.ranking-listh {
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -449,7 +449,7 @@ a {
 }
 
 /* Parte 4 do site - Dimensões img para txt */
-.ranking-container {
+.ranking-container1 {
   display: flex;
   align-items: center;
   gap: 2rem;

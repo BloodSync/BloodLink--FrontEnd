@@ -29,7 +29,7 @@ function Footer() {
                             <ul>
                                 <li>   <Link to="/AboutUs"> Sobre nós </Link></li>
 
-                                <li><a href="#">Apoie o BloodLink</a></li>
+                                <li> <Link to="/Pay"> Apoie o BloodLink </Link></li>
 
                                 <li><Link to="/Terms"> Termos e condições </Link> </li>
 
@@ -41,8 +41,7 @@ function Footer() {
                             <h4>Central de informações</h4>
                             <ul>
                                 <Link to="/InformationCenter">
-                                    <li><a href="#">Requisitos para doar</a></li>
-                                    <li><a href="#">Como funciona a BloodLink</a></li>
+                                    <li><a href="#">Como funciona a doação?</a></li>
                                 </Link>
                             </ul>
                         </div>

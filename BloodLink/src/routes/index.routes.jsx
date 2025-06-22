@@ -18,6 +18,8 @@ import ItemPage from '../components/LojaItem/LojaCompra';
 import EditProfileTab from '../pages/EditProfileInfo/EditProfileUser';
 import InfoCenter from '../pages/Information/CentralInfo';
 import FriendsSideTab from '../pages/Amigos/FriendList';
+import Conquistas from '../pages/ConquistasUser/Conquistas';
+import PaymentWizard from '../pages/Pagamento/Pagamento';
 
 export function Router() {
   return (
@@ -37,6 +39,7 @@ export function Router() {
         <Route path="UserProfile" element={<Perfil />} />
         <Route path="EditProfile" element={<EditProfileTab />} />
         <Route path="FriendsList" element={<FriendsSideTab />} />
+        <Route path="Achievements" element={<Conquistas />} />
 
         <Route path="UserDonate" element={<Doacao />} />
         <Route path="UserStore" element={<Loja />} />
@@ -47,6 +50,7 @@ export function Router() {
         <Route path="AboutUs" element={<AboutUs />} />
         <Route path="Terms" element={<TermsPage />} />
         <Route path="InformationCenter" element={<InfoCenter />} />
+          <Route path="Pay" element={<PaymentWizard />} />
       </Route>
     </Routes>
   );

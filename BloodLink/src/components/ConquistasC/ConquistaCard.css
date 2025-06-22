@@ -1,0 +1,56 @@
+.conquista-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.151);
+    border: 1px solid #ccc;
+    padding: 1rem 1.5rem;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.conquista-line.ativa:hover {
+    background-color: #f9fbff;
+      animation: pulseDivider 2s infinite;
+    box-shadow: 0 0 5rem rgba(200, 171, 7, 0.3);
+}
+
+.conquista-icon {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.bloqueada .conquista-icon {
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+.conquista-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.conquista-info h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #222222;
+}
+
+.conquista-info p {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.data-conquista {
+    font-size: 0.8rem;
+    color: #6d6d6d;
+    margin-left: 2rem;
+    white-space: nowrap;
+}

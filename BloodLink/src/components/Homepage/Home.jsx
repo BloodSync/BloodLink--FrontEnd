@@ -16,6 +16,7 @@ import Plans from "./Plans/PlansPrice.jsx";
 import Bloomii1 from '../../assets/fraquinha.gif';
 import Bloomii2 from '../../assets/normalzinha.gif';
 import Bloomii3 from '../../assets/fortinha.gif';
+import Footer from "../Footer/Footer.jsx";
 
 //Animações scroll
 const Section = ({ children, animation = "fadeInUp" }) => {
@@ -171,10 +172,10 @@ function Home() {
             <div className="part-four-vector" />
             <section className="part-four-ranking">
               <h3>Ranking Blooders - SP</h3>
-              <ul className="ranking-list">
+              <ul className="ranking-listh">
 
                 <li className="ranking-top1">
-                  <div className="ranking-container">
+                  <div className="ranking-container1">
                     <span className="ranking-crown">👑</span>
                     <img src={LinkyIcon} alt="Avatar personalizados por jogador de posição: 1º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
                     <span>🥇 Linky <span className="ranking-title-home">| Super</span></span>
@@ -186,7 +187,7 @@ function Home() {
                 </li>
 
                 <li className="ranking-top2">
-                  <div className="ranking-container">
+                  <div className="ranking-container1">
                     <span className="ranking-crown">👑</span>
                     <img src={BloomiiIcon} alt="Avatar personalizados por jogador de posição: 2º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
                     <span>🥈 Bloomiinky <span className="ranking-title-home">| Lendário</span></span>
@@ -198,7 +199,7 @@ function Home() {
                 </li>
 
                 <li className="ranking-top3">
-                  <div className="ranking-container">
+                  <div className="ranking-container1">
                     <span className="ranking-crown">👑</span>
                     <img src={BloomiiIcon} alt="Avatar personalizados por jogador de posição: 3º lugar, ordenados por experiência adquirida" className="ranking-avatar" />
                     <span>🥉 Bloomii <span className="ranking-title-home">| Guardião</span></span>
@@ -235,56 +236,8 @@ function Home() {
 
           <div className="esconde-background-parceiros">
             <Plans />
-            <div className="footerBg" />
-            {/* Parte 8 da Home - Footer */}
-            <footer class="footer">
-              <div class="footer-container">
 
-                <div class="footer-brand">
-                  <div class="logo-container-footer">
-                    <a href="#"><img src="/public/img/logo.png" alt="BloodLink Logo" className="footer-logo" /></a>
-                    <span className="logo-nav-text">BloodLink </span>
-                  </div>
-                  <p class="footer-description">
-                    Conectamos doadores a quem mais precisa, tornando a doação de sangue acessível e engajadora.
-                  </p>
-                </div>
-                <div class="footer-content">
-                  <div class="footer-column">
-                    <h4>Projeto BloodLink</h4>
-                    <ul>
-                      <li><a href="#">Sobre nós </a></li>
-                      <li><a href="#">Apoie o BloodLink</a></li>
-                      <li><a href="#">Termos e condições</a></li>
-                      <li><a href="#">Privacidade</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="footer-column">
-                    <h4>Central de informações</h4>
-                    <ul>
-                      <li><a href="#">Como funciona a doação?</a></li>
-                      <li><a href="#">Requisitos para doar</a></li>
-                      <li><a href="#">Quem Precisa de sangue?</a></li>
-                      <li><a href="#">Desafios e recompensas</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="footer-column">
-                    <h4>Fale com a gente</h4>
-                    <ul>
-                      <li><a href="#">Email: doei@bloodsync.com</a></li>
-                      <li><a href="#">SAC: (11) 99999-0000</a></li>
-                      <li><a href="#">WhatsApp: (11) 98888-1234</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <hr />
-              <div class="footer-bottom">
-                <p>&copy; 2025 BloodLink. Todos os direitos reservados.</p>
-              </div>
-            </footer>
+            <Footer />
 
           </div>
         </div>

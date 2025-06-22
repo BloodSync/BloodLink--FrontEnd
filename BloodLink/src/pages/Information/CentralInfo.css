@@ -1,74 +1,122 @@
+/* Plano de fundo geral */
 .info-center-bg {
-  background-color: white;
-  color: #00131F;
+  background: linear-gradient(180deg, #e9f2fa 0%, #ffffff 100%);
+  min-height: 100vh;
+  color: #1b1b1b;
+  position: relative;
+  overflow-x: hidden;
 }
 
+/* Limita o conteúdo */
 .page-wrapper {
-  margin-left: 15rem;
+    padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Estrutura em duas colunas */
 .info-container {
   display: flex;
-  padding: 5%;
-  padding-top: 4rem;
-  gap: 4rem;
+  flex-direction: row;
+  gap: 2rem;
 }
 
-/* Sidebar */
+/* Barra lateral */
 .info-sidebar {
-  width: 15rem;
+  min-width: 260px;
+  background-color: #ffffff;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
   position: sticky;
-  top: 5rem;
+  top: 2rem;
   height: fit-content;
 }
 
 .info-sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.info-sidebar ul li {
-  margin: 1.2rem 0;
+.info-sidebar li {
+  margin-bottom: 1.2rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.8rem;
   cursor: pointer;
-  font-weight: 400;
-  color: #333;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #1b4d68;
+  transition: all 0.3s ease;
 }
 
-.info-sidebar ul li:hover {
-  color: #FB3F3A;
+.info-sidebar li:hover,
+.info-sidebar .active-link {
+  background-color: #1b4d68;
+  color: white;
+  font-weight: bold;
 }
 
-.info-sidebar ul .active-link {
-  font-weight: 700;
-  color: #FB3F3A;
-}
-
-/* Conteúdo */
+/* Conteúdo principal */
 .info-content {
-  max-width: 45rem;
-  line-height: 1.7;
-  font-size: 1rem;
-  padding-bottom: 6rem;
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 1.2rem;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  position: relative;
 }
 
 .info-content h2 {
+  margin-bottom: 2rem;
+  color: #1b4d68;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
 }
 
-.info-text p,
-.info-text ul {
-  margin-bottom: 1rem;
+/* Texto informativo */
+.info-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
 .info-text ul {
+  margin-bottom: 1.5rem;
   padding-left: 1.5rem;
+  line-height: 1.8;
 }
 
+.info-text li {
+  margin-bottom: 0.8rem;
+  font-size: 1.02rem;
+}
+
+/* Rodapé do texto */
 .updated {
-  font-size: 0.85rem;
-  color: #969696;
+  font-size: 0.9rem;
+  color: #888;
   margin-top: 3rem;
+  font-style: italic;
+}
+
+
+/* Efeito de flutuação suave */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .info-container {
+    flex-direction: column;
+  }
+
+  .info-sidebar {
+    width: 100%;
+    margin-bottom: 2rem;
+    position: static;
+  }
+
 }
