@@ -34,7 +34,7 @@ export default function ItemPage() {
                 <img src={avatar} alt="Item" className="item-icon" />
               </div>
 
-              <hr className="divider" />
+              <hr className="divider-store" />
 
               <div className="price-box">
                 <span className="item-price-loja">

@@ -79,7 +79,7 @@ function Configuracao() {
             className="settings-expanded-content"
             onClick={() => toggleExpanded('ajuda')}
           >
-            Precisa de ajuda? Entre em contato conosco.
+           <a href="mailto:doei@bloodsync.com">Precisa de ajuda? Entre em contato conosco.</a> 
           </div>
         </div>
 

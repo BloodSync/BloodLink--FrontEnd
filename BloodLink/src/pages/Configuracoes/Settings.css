@@ -60,6 +60,7 @@
   line-height: 1.4;
   position: relative;
   transition: color 0.3s ease;
+  
 }
 
 /* Linha que aparece e cresce no hover */
@@ -93,7 +94,10 @@
   padding: 0;
   margin: 0;
 }
-
+a{
+    color: inherit;
+  text-decoration: none; 
+}
 .settings-static {
   padding: 1rem 0;
   display: flex;

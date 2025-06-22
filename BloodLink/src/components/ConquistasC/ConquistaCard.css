@@ -12,7 +12,7 @@
 
 .conquista-line.ativa:hover {
     background-color: #f9fbff;
-      animation: pulseDivider 2s infinite;
+      animation: pulse 2s ease-in-out infinite;
     box-shadow: 0 0 5rem rgba(200, 171, 7, 0.3);
 }
 

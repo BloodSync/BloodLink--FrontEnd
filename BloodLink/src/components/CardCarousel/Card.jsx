@@ -12,7 +12,7 @@ export default function CardCarousel() {
       <div class="gallery">
         <div className="image-box">
           <p>Central de Informações </p>
-          <Link to="/" >
+           <Link to="/InformationCenter">
             <img src={Info} alt="profile" className="Dashboard-photo" />
           </Link>
 
