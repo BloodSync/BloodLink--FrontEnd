@@ -1,4 +1,10 @@
 import React from 'react';
+import "./PaymentSummary.css"
+  const formatarCPF = (cpf) => {
+  if (!cpf) return '---';
+  const numeros = cpf.replace(/\D/g, '').padStart(11, '0').slice(0, 11);
+  return numeros.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+};
 
 export default function PaymentSummary({ formData, method, price, onBack }) {
     const getMethodName = () => {
@@ -33,6 +39,7 @@ export default function PaymentSummary({ formData, method, price, onBack }) {
                 <>
                     <p><strong>Nome:</strong> {formData.nome || '---'}</p>
                     <p><strong>CPF:</strong> {formData.cpf || '---'}</p>
+
                 </>
             )}
 

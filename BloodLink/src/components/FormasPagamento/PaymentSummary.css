@@ -1,0 +1,153 @@
+.payment-summary h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2a2a2a;
+}
+
+.payment-summary p {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  color: #444;
+}
+
+.payment-summary strong {
+  color: #2a2a2a;
+}
+
+.payment-summary .form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.payment-summary .form-actions button {
+  flex: 1;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-summary .form-actions button:first-child {
+  background-color: #ccc;
+  color: #333;
+  margin-right: 1rem;
+}
+
+.payment-summary .form-actions button:first-child:hover {
+  background-color: #aaa;
+}
+
+.payment-summary .form-actions .next-button {
+  background-color: #2a60ff;
+  color: white;
+}
+
+.payment-summary .form-actions .next-button:hover {
+  background-color: #1a48cc;
+}
+
+/*Seletor de metodo*/
+/* CONTAINER PRINCIPAL */
+.payment-method-selector {
+  display: flex;
+  flex-direction: column;
+}
+
+/* TÍTULO */
+.payment-method-selector h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* TEXTO & DESTAQUES */
+.payment-method-selector p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.payment-method-selector strong {
+  color: #3e3e3e;
+  font-weight: 600;
+}
+
+/* BOTÕES DE MÉTODO */
+.method-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.method-buttons button {
+  flex: 1 1 180px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.method-buttons button:hover {
+  background-color: #eaeaea;
+}
+
+.method-buttons button.active {
+  background-color: #2a60ff;
+  color: white;
+  border-color: #2a60ff;
+}
+
+/* BOTÃO "PRÓXIMO" */
+.next-button1 {
+  align-self: center;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: #2a60ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+}
+
+.next-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.next-button:hover:not(:disabled) {
+  background-color: #1a48cc;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .method-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .method-buttons button {
+    width: 100%;
+  }
+
+  .next-button {
+    width: 100%;
+  }
+}

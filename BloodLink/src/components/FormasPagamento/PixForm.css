@@ -1,0 +1,99 @@
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 2rem 0 1rem;
+}
+
+.qr-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.qr-section .form-subtitle {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #2a2a2a;
+}
+
+.qr-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pix-chave-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.pix-chave-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.pix-chave-box input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-family: monospace;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.pix-chave-box {
+  position: relative;
+  width: 100%;
+}
+
+/* Container o ícone/QR */
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Bloco da chave Pix com botão de copiar */
+.pix-chave-box {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Botão dentro do input */
+.copy-btn {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  padding: 0.5rem 1rem;
+  background-color: #2a60ff;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #1a48cc;
+}
+
+.copy-btn:hover {
+  background-color: #1a48cc;
+}

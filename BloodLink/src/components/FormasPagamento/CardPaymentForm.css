@@ -1,0 +1,220 @@
+/*Parte de Cartão*/
+.card-form-horizontal {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Redimensionamento do card e formulário */
+.card-preview {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    height: 220px;
+    align-self: center;
+}
+
+.form-container {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+.card-preview {
+    perspective: 1000px;
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.card-preview .card-front,
+.card-preview .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(135deg,
+            #440000,
+            #b22222,
+            #ff4500
+        );
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    transition: transform 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.card-preview .card-back::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    background: black;
+    border-radius: 0;
+    transform: translateY(-50%);
+}
+
+.card-front h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2.5rem;
+    height: 2rem;
+    background: #9c7a0a;
+    border-radius: 0.3rem;
+    transform: translateY(-50%);
+    box-shadow: inset 0 0 5px rgba(255, 195, 0, 0.8);
+}
+
+.card-preview .card-back {
+    transform: rotateY(180deg);
+}
+
+.card-preview.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.card-preview.flipped .card-back {
+    transform: rotateY(0deg);
+}
+/*Textos do cartão*/
+.card-front h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffeaea;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  background: white;
+  -webkit-background-clip: text;
+}
+
+.card-front p,
+.card-back p {
+  font-family: 'Courier New', Courier, monospace;
+  color: #f5f5f5;
+  letter-spacing: 0.12rem;
+  margin: 0.4rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos individuais para alinhamento e aparência dos textos */
+.card-front p:nth-of-type(1) {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.card-front p:nth-of-type(2) {
+  text-transform: uppercase;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.card-front p:nth-of-type(3) {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/*Forms*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.form-group input {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #2a60ff;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.back-btn,
+.checkout-btn {
+    flex: 1;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn {
+    background-color: #ccc;
+    color: #333;
+    margin-right: 1rem;
+}
+
+.back-btn:hover {
+    background-color: #aaa;
+}
+
+.checkout-btn {
+    background-color: #2a60ff;
+    color: white;
+}
+
+.checkout-btn:hover {
+    background-color: #1a48cc;
+}
+
+.billing-address {
+    width: 100%;
+    max-width: 900px;
+}
+
+.billing-address .form-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2a2a2a;
+}
+
+.billing-address .payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}

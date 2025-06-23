@@ -1,5 +1,7 @@
 export default function PaymentMethodSelector({ method, setMethod, onNext, price, description }) {
+
   return (
+    
     <div className="payment-method-selector">
       <h2>Selecione a forma de pagamento</h2>
 
@@ -33,7 +35,7 @@ export default function PaymentMethodSelector({ method, setMethod, onNext, price
         </button>
       </div>
 
-      <button onClick={onNext} disabled={!method} className="next-button">Próximo</button>
+      <button onClick={onNext} disabled={!method} className="next-button1">Próximo</button>
     </div>
   );
 }
