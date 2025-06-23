@@ -12,78 +12,63 @@
 /*Vitalink Titulo Header*/
 .vitalink-container {
   color: #222;
-  max-width: 75rem;
+  max-width: 90rem;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 0 2rem;
   position: relative;
   z-index: 1;
 }
 
 .vitalink-header {
-  background: linear-gradient(to bottom, transparent 30%, #f4f6f9 100%);
-  padding-top: 2rem;
-  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%),
+    url('../../assets/VitalinkC.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2rem;
+
 }
 
 .vitalink-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  color: #222;
+  z-index: 2;
+  position: relative;
 }
 
-/*A distancia do titulo, tópicos e hr */
-.vitalink-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 5rem;
-  font-weight: 500;
-  font-size: 1rem;
-  border-bottom: 0.1rem solid rgb(0, 0, 0);
-  padding-bottom: 1rem;
-}
 
-.vitalink-tabs .tab {
-  cursor: pointer;
-  color: #666;
-  padding: 1rem 5rem;
-}
-
-/* Linha na nav */
-.nav-divider {
-  color: #999;
-  font-size: 0.65rem;
-}
-
-/*A distância do conteúdo */
 .vitalink-content {
   display: flex;
-  margin-top: 3rem;
-  gap: 4rem;
+  margin-top: 5rem;
+  gap: 3rem;
 }
 
-/*Conteiner Conquistas */
 .vitalink-left {
   flex: 3;
 }
 
 .vitalink-right {
-  flex: 1.2;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem;
 }
 
-/*Atividades*/
-/*Atividades Distâncias */
 .atividade-section {
-  padding: 4rem 2rem;
+  padding: 0 2rem;
   background: linear-gradient(to bottom, transparent 30%, #f4f6f9 100%);
 }
 
 .atividade-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  margin-bottom: 15rem;
+  margin-bottom: 3rem;
 }
 
 .atividade-data {
@@ -93,24 +78,23 @@
   color: #666;
 }
 
-/*Texto das img Atividades*/
 .atividade-linha {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
 }
 
 .atividade-avatar {
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
+  border-left:3px solid #000;
 }
 
 .azul {
   color: #0189AB;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ver-mais {
@@ -119,17 +103,15 @@
   text-align: right;
   display: block;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
-/*Missões*/
-/*Missões botões distâncias*/
 .missoes-tabs {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-/*Missões botões*/
 .m-tab {
   padding: 0.8rem 1rem;
   border: none;
@@ -138,61 +120,51 @@
   color: #000;
   font-weight: 500;
   cursor: pointer;
-}
-/* Missão mesma linha */
-.missoes-lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  transition: all 0.3s;
 }
 
 .m-tab:hover {
   background: #042333;
   color: white;
 }
-/* Card missão */
+
+.missoes-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
 .missao-card {
   background: #042333;
   border-radius: 1.2rem;
   overflow: hidden;
-  width: 22rem;
+  width: 27rem;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s;
 }
 
-/* Parte de cima com imagem */
+.missao-card:hover {
+  transform: scale(1.02);
+}
+
 .missao-img {
   position: relative;
   height: 12rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-bottom: 2px solid #042333;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-/* Img fundo */
-.missao-img::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../../assets/suaImagem.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-/* Missão div */
 .missao-img-wrapper {
   position: relative;
   height: 12rem;
   overflow: hidden;
 }
 
-/* Missão div */
 .missao-autor {
   position: absolute;
   bottom: 1rem;
@@ -202,7 +174,6 @@
   gap: 0.5rem;
 }
 
-/* Missão icone*/
 .missao-avatar {
   width: 2rem;
   height: 2rem;
@@ -210,14 +181,12 @@
   border: 0.2rem solid #fff;
 }
 
-/* Missão proposta */
 .proposto {
   font-size: 0.7rem;
   font-weight: bold;
   color: white;
 }
 
-/* Informações da missão */
 .missao-info {
   padding: 1.5rem;
   display: flex;
@@ -244,7 +213,6 @@
   font-size: 0.85rem;
 }
 
-/* Durabilidade da missão */
 .missao-selo {
   font-size: 0.65rem;
   color: #999;
@@ -252,7 +220,6 @@
   margin-top: auto;
 }
 
-/* Botão */
 .missao-btn {
   margin-top: 1rem;
   background-color: transparent;
@@ -270,20 +237,12 @@
   border-color: #0189AB;
 }
 
-
-/*Conquistas*/
-/*Conquistas Conteiner*/
 .conquistas-box-vitalink {
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.151);
-  padding: 2rem;
+  padding: 1.5rem;
   width: 100%;
-  border-top: 0.5rem solid #1B4D68;
-}
-
-/*Conquistas Textos*/
-.conquista-txt {
-  margin-bottom: 1rem;
+  border-top: 0.8rem solid #1B4D68;
 }
 
 .conquista-txt h3 {
@@ -296,115 +255,201 @@
   font-size: 1.6rem;
 }
 
-/*Conquistas img */
 .conquistas-grid-vitalink {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  justify-items: center;
 }
 
 .conquista-img {
-  width: 3rem;
-  height: 3rem;
+  width: 2.8rem;
+  height: 2.8rem;
   border: 0.3rem solid #191919;
 }
 
-/*Ver conquistas txt */
 .ver-conquistas {
   font-size: 0.6rem;
   margin-top: 1rem;
   font-weight: 800;
-  color: #000000a3;
+  color: #202020a3;
   display: block;
   text-align: right;
+  cursor: pointer;
 }
 
-/*Metas */
-/* Conteiner Metas */
+/*Metas*/
 .metas-box {
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.151);
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: justify;
   width: 100%;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/*Botão Metas */
+.metas-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Input branco, com borda azul leve */
+.input-metas {
+  background-color: rgba(255, 255, 255, 0.247);
+  border: transparent;
+  border-radius: 0.8rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #042333;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Botão adicionar */
 .nova-meta-btn {
   border: none;
-  padding: 1rem;
-  margin-top: 0.5rem;
+  padding: 1.5rem 1rem;
   cursor: pointer;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000000;
+  transition: color 0.3s ease;
+  font-size: 1.4rem;
+  margin-top: 0;
+  height: 2rem;
+  box-sizing: border-box;
 }
 
-/* Ranking */
-
-/* Container ranking */
-.ranking-box {
-  width: 100%;
-  overflow: hidden;
+.nova-meta-btn:hover {
+  color: #494949;
 }
 
-/* Header */
-.ranking-title {
+/* Lista de metas */
+.metas-lista {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Cada meta */
+.meta-item {
+  background: #f4f6f9ca;
+  padding: 0.7rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  color: #2f2f2f;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botão remover meta */
+.concluir-meta-btn,
+.remover-meta-btn {
+  background: none;
+  border: none;
+  color: #999999;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.remover-meta-btn:hover {
+  color: #e63946;
+  transform: scale(1.2);
+}
+.concluir-meta-btn:hover{
+   color: #4caf50;
+    transform: scale(1.2);
+}
+
+.meta-texto.concluida {
+  color: #4caf50;
+  text-decoration:underline;
+}
+
+.meta-botoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.concluir-meta-btn,
+.remover-meta-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*Ranking*/
+.ranking-box-vitalink {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.151);
+}
+
+.ranking-title-vitalink {
   background: #042333;
   color: white;
   padding: 1rem;
   font-size: 1.3rem;
   font-weight: 700;
-  text-align: center;
+  text-align: justify;
 }
 
-/* Parte inferior com blur */
-.ranking-content {
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.151);
-  padding: 1rem;
+.ranking-content-vitalink {
+  padding: 1.5rem;
 }
 
-/* Item do ranking */
-.ranking-item {
+.ranking-item-vitalink {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.3rem;
   margin-bottom: 1rem;
 }
 
-/* Posição */
-.rank-pos {
+.rank-pos-vitalink {
   width: 1rem;
   font-size: 1.3rem;
-  font-weight: 700;
-  color: #222;
-  flex-shrink: 0;
+  font-weight: 600;
+  color: #1a1a1a;
 }
 
-/* Avatar */
-.ranking-avatar1 {
+.ranking-avatar-vitalink {
   width: 3rem;
   height: 3rem;
-  border: 0.3rem solid #191919;
+  border-right: 0.3rem solid #191919;
   object-fit: cover;
 }
 
-/* Nome e XP empilhados */
-.ranking-info {
+.ranking-info-vitalink {
   display: flex;
   flex-direction: column;
 }
 
-.ranking-nome {
-  font-weight: 300;
-  color: #222;
+.ranking-nome-vitalink {
+  font-weight: 400;
+  color: #242424;
   font-size: 1rem;
 }
 
-.ranking-xp {
+.ranking-xp-vitalink {
   font-weight: 300;
   font-size: 0.9rem;
   color: #0189AB;
