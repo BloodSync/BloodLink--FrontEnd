@@ -33,10 +33,10 @@ import seriedade from '../../assets/seriedade.png';
 import face2 from '../../assets/rosto2.png';
 import blomimir from '../../assets/bloomimir.png';
 
-import cabelo1 from '../../assets/cabelo1.png';
+import cabelo1 from '../../assets/cabeloI1.png';
 import punk from '../../assets/punk.png';
 
-import cabelo2 from '../../assets/cabelo2.png';
+import cabelo2 from '../../assets/cabeloI2.png';
 import rabinho from '../../assets/rabinho.png';
 
 import camisa1 from '../../assets/camisa1.png';
@@ -61,7 +61,7 @@ import acessorio1 from '../../assets/acessorio1.png';
 import oclinhos from '../../assets/oculos.png';
 
 import acessorio2 from '../../assets/acessorio2.png';
-import rei from '../../assets/reizinho.png';
+import reis from '../../assets/reizinho.png';
 
 import acessorio3 from '../../assets/acessorio3.png';
 import cicatriz from '../../assets/cicatriz.png';
@@ -175,7 +175,7 @@ export const itensLoja = [
         descricao: 'Estilo casual e moderno para os Bloomiis. *Contém um Bloomii',
         previews: [bloomiin]
     },
-    
+
 ];
 export const itensMiniLojinha = {
     set: [
@@ -343,13 +343,13 @@ export const itensMiniLojinha = {
             previews: [oclinhos]
         },
         {
-            id: '24',
+            id: '244',
             nome: 'Reizinho',
             preco: 150,
             imagem: acessorio2,
             descricao: 'Para os Bloomiis Big boss! *Contém item de categoria acessório para o Bloomii',
             tipo: 'acessorio',
-            previews: [rei]
+            previews: [reis]
         },
         {
             id: '25',
@@ -377,20 +377,20 @@ export const setsSecretos = [
         id: 's1',
         nome: 'Set Especial BloodLink',
         preco: 1400,
-        imagem: bloomi4, 
+        imagem: bloomi4,
         descricao: 'Set especial com os Bloomiis que fazem a Vitalink existir! *Contém quatro Bloomiis animados e um item de categoria camisa',
         tipo: 'set',
-        partes: [bloomi1,bloomi2,bloomi3,bloomi4,bloomiuniforme],
-        previews: [bloomiiIdle,bloomiiforte,bloomiifeliz,bloomiilinky,bloomiiC]
+        partes: [bloomi1, bloomi2, bloomi3, bloomi4, bloomiuniforme],
+        previews: [bloomiiIdle, bloomiiforte, bloomiifeliz, bloomiilinky, bloomiiC]
     },
-     {
+    {
         id: 's2',
         nome: 'Set Especial PROA',
         preco: 1900,
-        imagem: proa1, 
+        imagem: proa1,
         descricao: 'Set especial do Instituto Proa, com os professores que ajudaram na jornada da BloodLink. *Contém três Bloomiis animados e dois itens de categoria camiseta especiais',
         tipo: 'set',
-        partes: [proa1,proa2,proa3,proa4,proa5],
-        previews: [jailson,aurora,julio,manto1,manto2]
+        partes: [proa1, proa2, proa3, proa4, proa5],
+        previews: [jailson, aurora, julio, manto1, manto2]
     },
 ];

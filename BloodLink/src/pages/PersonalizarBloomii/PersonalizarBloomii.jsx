@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './PersonalizarBloomii.css';
-import minhaFoto from '../../assets/avatar.jpg';
-import meuBloomii from '../../assets/Bloomii-Setgamer.gif';
+import base1 from '../../assets/base1.png';
+import base2 from '../../assets/base2.png';
+import base3 from '../../assets/base3.png';
+import base4 from '../../assets/base4.png';
+import base5 from '../../assets/base5.png';
 import logoImage from '../../assets/logo2.png';
 import { MdOutlineSave } from "react-icons/md";
 import { GiClothes } from "react-icons/gi";
@@ -10,135 +13,213 @@ import { FaRegFaceMehBlank } from "react-icons/fa6";
 import { PiHairDryerFill } from "react-icons/pi";
 import { BiCloset } from "react-icons/bi";
 import { RiTShirt2Fill } from "react-icons/ri";
-import { GiArmoredPants } from "react-icons/gi";
-import { GiBigDiamondRing } from "react-icons/gi";
+import { GiArmoredPants, GiBigDiamondRing } from "react-icons/gi";
+import { itemsData } from './ItemData';
 import { Link } from 'react-router-dom';
 
-
 function Bloomii() {
-  const [selectedColor, setSelectedColor] = useState(null);
+  const skinColors = [
+    { color: '#f9cbbe', img: base1 },
+    { color: '#d3aa8d', img: base2 },
+    { color: '#a06d49', img: base3 },
+    { color: '#523932', img: base4 },
+    { color: '#100b07', img: base5 },
+  ];
+  const categoryNamesPT = {
+    hair: 'Cabelo',
+    face: 'Rosto',
+    shirt: 'Camisa',
+    pants: 'Calça',
+    ring: 'Acessórios',
+    sets: 'Sets',
+  };
+  const [selectedSkin, setSelectedSkin] = useState(skinColors[0]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [equippedItems, setEquippedItems] = useState({
+    hair: null,
+    face: null,
+    shirt: null,
+    pants: null,
+    ring: null,
+    sets: null,
+  });
+
   const [showMessage, setShowMessage] = useState(false);
   const [selectedButton, setSelectedButton] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const categoryItems = {
-    closet: 8,
-    face: 6,
-    hair: 6,
-    shirt: 6,
-    pants: 6,
-    ring: 12
-  };
-  const skinColors = [
-    '#D8A07F', '#E4926F', '#F7E7DD', '#5C371D',
-    '#9D7653', '#7B4C2F', '#2F1C0F', '#FFF3E7',
-    '#E2B79E', '#DB8C6C'
-  ];
 
-  const handleSelect = (key) => {
-    setSelectedButton(key);
-    setSelectedCategory(key); // usar 'key' aqui, não 'category'
+  // Clicou numa categoria: se já estiver selecionada, desmarca
+  const handleSelectCategory = (category) => {
+    if (selectedCategory === category) {
+      setSelectedCategory(null);
+      setSelectedButton(null);
+    } else {
+      setSelectedCategory(category);
+      setSelectedButton(category);
+    }
   };
+
+  const handleEquipItem = (category, item) => {
+    // Se clicar no item já equipado, desseleciona ele (toggle)
+    if (equippedItems[category] === item) {
+      setEquippedItems(prev => ({ ...prev, [category]: null }));
+    } else {
+      setEquippedItems(prev => ({ ...prev, [category]: item }));
+    }
+  };
+
   const handleSave = () => {
     setShowMessage(true);
-    setTimeout(() => setShowMessage(false), 3000); // oculta após 3 segundos
+    setTimeout(() => setShowMessage(false), 3000);
   };
+
   return (
-
-    <div className="BloomiBg">
+    <div className="bloomii-bg">
       <div className="bloomii-wrapper">
-        <aside className="sidebarBloomii">
-          <h3 className="sidebar-title">Categorias</h3>
-          <hr className="sidebar-divider" />
+        <aside className="bloomii-sidebar">
+          <h3 className="bloomii-sidebar-title">Categorias</h3>
+          <hr className="bloomii-sidebar-divider" />
 
-          <div className="icon-grid">
+          <div className="bloomii-icon-grid">
             <button
-              className={`icon-btn ${selectedButton === 'closet' ? 'selected' : ''}`}
-              onClick={() => handleSelect('closet')}
+              className={`bloomii-icon-btn ${selectedButton === 'hair' ? 'selected' : ''}`}
+              onClick={() => handleSelectCategory('hair')}
             >
-              <BiCloset className="icon-icon" />
+              <PiHairDryerFill className="bloomii-icon-icon" />
             </button>
             <button
-              className={`icon-btn ${selectedButton === 'face' ? 'selected' : ''}`}
-              onClick={() => handleSelect('face')}
+              className={`bloomii-icon-btn ${selectedButton === 'face' ? 'selected' : ''}`}
+              onClick={() => handleSelectCategory('face')}
             >
-              <FaRegFaceMehBlank className="icon-icon" />
+              <FaRegFaceMehBlank className="bloomii-icon-icon" />
             </button>
             <button
-              className={`icon-btn ${selectedButton === 'hair' ? 'selected' : ''}`}
-              onClick={() => handleSelect('hair')}
+              className={`bloomii-icon-btn ${selectedButton === 'shirt' ? 'selected' : ''}`}
+              onClick={() => handleSelectCategory('shirt')}
             >
-              <PiHairDryerFill className="icon-icon" />
+              <RiTShirt2Fill className="bloomii-icon-icon" />
             </button>
             <button
-              className={`icon-btn ${selectedButton === 'shirt' ? 'selected' : ''}`}
-              onClick={() => handleSelect('shirt')}
+              className={`bloomii-icon-btn ${selectedButton === 'pants' ? 'selected' : ''}`}
+              onClick={() => handleSelectCategory('pants')}
             >
-              <RiTShirt2Fill className="icon-icon" />
+              <GiArmoredPants className="bloomii-icon-icon" />
             </button>
             <button
-              className={`icon-btn ${selectedButton === 'pants' ? 'selected' : ''}`}
-              onClick={() => handleSelect('pants')}
+              className={`bloomii-icon-btn ${selectedButton === 'ring' ? 'selected' : ''}`}
+              onClick={() => handleSelectCategory('ring')}
             >
-              <GiArmoredPants className="icon-icon" />
-            </button>
-            <button
-              className={`icon-btn ${selectedButton === 'ring' ? 'selected' : ''}`}
-              onClick={() => handleSelect('ring')}
-            >
-              <GiBigDiamondRing className="icon-icon" />
+              <GiBigDiamondRing className="bloomii-icon-icon" />
             </button>
           </div>
 
-          <div className="character-box">
-            <img src={meuBloomii} alt="Bloomii Avatar" className="bloomii-image" />
+          <div className="bloomii-character-box">
+            <div className="bloomii-avatar-layer">
+              <img src={selectedSkin.img} alt="Base avatar" className="bloomii-avatar-img base" />
+              {Object.entries(equippedItems).map(([category, item], i) =>
+                item ? (
+                  <img
+                    key={i}
+                    src={item.preview}
+                    alt={`${category} equipado`}
+                    className="bloomii-avatar-img equipped-item"
+                  />
+                ) : null
+              )}
+            </div>
           </div>
 
-          <div className="user-bar">
-            <img src={logoImage} alt="Logo BloodLink" className="user-logo" />
-            <span className="user-name">@Usuário</span>
+          <div className="bloomii-user-bar">
+            <img src={logoImage} alt="Logo BloodLink" className="bloomii-user-logo" />
+            <span className="bloomii-user-name">@Usuário</span>
 
-            <button onClick={handleSave} className="save-button">
+            <button onClick={handleSave} className="bloomii-save-button">
               <MdOutlineSave size={35} color="black" />
             </button>
-
           </div>
 
-          <div className="triangle-decoration"></div>
+          <div className="bloomii-triangle-decoration"></div>
         </aside>
 
-        <main className="customization-area">
-          <div className="custom-header">
-            <h2 className="custom-title">Bloomii - Personalização</h2>
+        <main className="bloomii-customization-area">
+          <div className="bloomii-custom-header">
+            <h2 className="bloomii-custom-title">
+              {selectedCategory
+                ? `Bloomii - ${categoryNamesPT[selectedCategory] || selectedCategory}`
+                : 'Bloomii - Personalização'}
+            </h2>
           </div>
 
-          <div className="skin-color-picker">
-            {skinColors.map((color, i) => (
-              <div
-                key={i}
-                className={`diamond-color ${selectedColor === color ? 'selected' : ''}`}
-                style={{ backgroundColor: color }}
-                onClick={() => setSelectedColor(color)}
-              />
-            ))}
-          </div>
-          <div className="items-grid">
-            {selectedCategory &&
-              Array.from({ length: categoryItems[selectedCategory] || 0 }).map((_, i) => (
-                <div className="item-slot locked" key={i}>
-                  <BsFillLockFill className="chest-lock" />
+          {/* Exibe diamante só quando nenhuma categoria estiver selecionada */}
+          {!selectedCategory && (
+            <>
+              <div className="bloomii-skin-color-picker">
+                {skinColors.map((skin, i) => (
+                  <div
+                    key={i}
+                    className={`bloomii-diamond-color ${selectedSkin.color === skin.color ? 'selected' : ''}`}
+                    style={{ backgroundColor: skin.color }}
+                    onClick={() => setSelectedSkin(skin)}
+                  />
+                ))}
+              </div>
+
+              <div className="bloomii-sets-section">
+                <h3 className="bloomii-sets-title">{categoryNamesPT.sets}</h3>
+                {itemsData.sets && itemsData.sets.length > 0 ? (
+                  <div className="bloomii-sets-grid">
+                    {itemsData.sets.map((set, i) => (
+                      <div
+                        key={i}
+                        className={`bloomii-set-slot ${equippedItems.sets === set ? 'equipped' : ''}`}
+                        onClick={() => handleEquipItem('sets', set)}
+                      >
+                        <img src={set.icon} alt={set.name} className="bloomii-set-icon" />
+                        <span className="bloomii-set-name">{set.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="bloomii-no-sets-message">
+                    Você não possui nenhum set! Quer visitar a{' '}
+                    <Link to="/UserStore" className="bloomii-loja-link">
+                      lojinha?
+                    </Link>
+                  </p>
+                )}
+              </div>
+
+
+              <div className="bloomii-switch-side">
+                <GiClothes size={30} color="black" />
+              </div>
+            </>
+          )}
+
+          <div className="bloomii-items-grid">
+            {selectedCategory ? (
+              itemsData[selectedCategory].map((item, i) => (
+                <div
+                  key={i}
+                  className={`bloomii-item-slot ${equippedItems[selectedCategory] === item ? 'equipped' : ''}`}
+                  onClick={() => handleEquipItem(selectedCategory, item)}
+                >
+                  <img src={item.icon} alt={`Item ${i + 1}`} className="bloomii-item-img-preview" />
                 </div>
-              ))}
+              ))
+            ) : null}
           </div>
-          <div className="switch-side">
-            <GiClothes size={30} color="black" />
-          </div>
+
+
+          {/* Sempre mostrar o switch-side (parte dos sets) junto com o diamante (quando diamante visível) */}
+          {!selectedCategory && (
+            <div className="bloomii-switch-side">
+              <GiClothes size={30} color="black" />
+            </div>
+          )}
         </main>
 
         {showMessage && (
-          <div className="save-message">
-            Alterações feitas com sucesso!
-          </div>
-          
+          <div className="bloomii-save-message">Alterações feitas com sucesso!</div>
         )}
       </div>
     </div>

@@ -1,4 +1,4 @@
-.BloomiBg {
+.bloomii-bg {
   background-image: url('../../assets/BloomiiBg.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -24,8 +24,7 @@
   overflow: hidden;
 }
 
-
-.sidebarBloomii {
+.bloomii-sidebar {
   width: 25rem;
   background: linear-gradient(180deg, #FB3F3A 0%, #771512 100%);
   padding: 2rem 1.5rem;
@@ -35,20 +34,20 @@
   position: relative;
 }
 
-.sidebar-title {
+.bloomii-sidebar-title {
   color: white;
   font-weight: 700;
   font-size: 1.3rem;
   text-align: center;
 }
 
-.sidebar-divider {
+.bloomii-sidebar-divider {
   border: none;
   border-top: 0.2rem solid #32020233;
   margin: 0.5rem 0 1.5rem 0;
 }
 
-.icon-grid {
+.bloomii-icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -56,7 +55,7 @@
   align-items: center;
 }
 
-.icon-btn {
+.bloomii-icon-btn {
   width: 3.5rem;
   height: 3.5rem;
   background: #ffffffc2;
@@ -70,32 +69,133 @@
   transition: all 0.2s ease;
 }
 
-.icon-icon {
+.bloomii-icon-icon {
   font-size: 1.7rem;
   color: #2b2b2b;
   transition: color 0.2s ease;
 }
 
-.icon-btn.selected {
+.bloomii-icon-btn:hover {
+  background-color: #fff;
+}
+
+.bloomii-icon-btn.selected {
   border: 0.1rem solid #ffffff34;
   transform: rotate(45deg) scale(1.1);
 }
 
-.icon-btn.selected .icon-icon {
+.bloomii-icon-btn.selected .bloomii-icon-icon {
   color: #000;
 }
 
+.bloomii-character-box {
+  position: relative;
+  width: 20rem;
+  height: 30rem;
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloomii-avatar-layer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.bloomii-avatar-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
 .character-box {
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: 0.5rem;
-}
-
-.bloomii-image {
+  position: relative; /* importante para posicionar os overlays */
+  width: 23.9rem; /* mantém o tamanho fixo da imagem */
   height: 23.9rem;
+  margin: 0 auto; /* centraliza horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.triangle-decoration {
+.bloomii-avatar-img.base,
+.bloomii-avatar-img.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.bloomii-avatar-layer {
+  position: relative;
+  width: 360px;  /* antes 240px */
+  height: 480px; /* antes 320px */
+  margin: 0 auto;
+}
+.bloomii-avatar-img.base {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.bloomii-avatar-img.equipped-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* maior que a base para aparecer em cima */
+  pointer-events: none; /* evita clicar na imagem do item, o clique fica no div pai */
+  object-fit: contain; /* manter proporção */
+}
+.bloomii-avatar-img.overlay {
+  z-index: 10;
+}
+
+
+.bloomii-user-bar {
+  background: white;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+  border-top: 0.5rem solid #e03535;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.bloomii-user-logo {
+  height: 3rem;
+}
+
+.bloomii-user-name {
+  font-weight: 500;
+  flex: 1;
+  color: #828282;
+}
+
+.bloomii-save-button {
+  background: none;
+  border: none;
+  color: rgb(38, 38, 38);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.bloomii-save-button:hover {
+  color: #e03535;
+}
+
+.bloomii-triangle-decoration {
   position: absolute;
   right: -1.9rem;
   top: 85%;
@@ -107,77 +207,52 @@
   border-left: 2rem solid #771512;
 }
 
-.user-bar {
-  background: white;
-  padding: 0.6rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 1rem;
-  border-top: 0.5rem solid #e03535;
-  border-radius: 0 0 1rem 1rem;
-}
-
-.user-logo {
-  height: 3rem;
-}
-
-.user-name {
-  font-weight: 500;
+.bloomii-customization-area {
   flex: 1;
-  color: #828282;
-}
-
-.customization-area {
-  flex: 1;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-.custom-header {
-  margin-bottom: 2rem;
+.bloomii-custom-header {
+  margin-bottom: 4rem;
   width: 100%;
 }
 
-.custom-title {
+.bloomii-custom-title {
   font-size: 3rem;
   font-weight: 700;
   color: #2b2b2b;
 }
 
-.skin-color-picker {
+.bloomii-skin-color-picker {
   display: grid;
   grid-template-columns: repeat(5, 4rem);
   gap: 1.6rem;
   margin-bottom: 10rem;
 }
 
-.diamond-color {
+.bloomii-diamond-color {
   width: 3.5rem;
   height: 3.5rem;
   transform: rotate(45deg);
   border: 0.2rem solid #9992;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.diamond-color.selected {
-  border-color: rgb(3, 0, 0);
-  transform: rotate(45deg) scale(1.1);
-}
-
-.items-grid {
+.bloomii-items-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 8rem));
   gap: 1rem;
+  justify-content: center;
+  max-width: calc(8rem * 6 + 1rem * 5);
+  margin: 0 auto;
 }
 
-
-.item-slot {
+.bloomii-item-slot {
   width: 8rem;
   height: 8rem;
   background: #708090;
@@ -185,25 +260,106 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.bloomii-sets-section {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
 }
 
-
-.chest-lock {
-  font-size: 20px;
-  color: white;
+.bloomii-sets-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.switch-side {
+.bloomii-sets-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bloomii-set-slot {
+  cursor: pointer;
+  border-radius: 0.8rem;
+  padding: 0.4rem;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border-color 0.3s ease;
+}
+.bloomii-set-slot:hover {
+  transform: scale(1.05);
+}
+
+.bloomii-set-slot.equipped {
+  border-color: #fb3f3a;
+}
+
+.bloomii-set-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 1rem; 
+}
+
+.bloomii-set-icon {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+.bloomii-set-name {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  color: #2b2b2b;
+}
+
+.bloomii-diamond-color:hover {
+  border-color: #444;
+}
+
+.bloomii-diamond-color.selected {
+  border-color: rgb(3, 0, 0);
+  transform: rotate(45deg) scale(1.1);
+}
+
+.bloomii-item-slot:hover {
+  background-color: #8899aa;
+  transform: scale(1.05);
+}
+
+.bloomii-item-slot.equipped {
+  border: 3px solid #e03535;
+  box-shadow: 0 0 10px #e03535aa;
+}
+
+.bloomii-item-img-preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bloomii-switch-side {
   position: absolute;
   right: 2rem;
   top: 2rem;
 }
-.save-button{
-  background: none;
-  border: none;
-  color: rgb(38, 38, 38)
-}
-.save-message {
+
+.bloomii-save-message {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -215,6 +371,20 @@
   z-index: 9999;
   font-weight: bold;
 }
+.bloomii-no-sets-message {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 1rem;
+}
+
+.bloomii-loja-link {
+  color: #fb3f3a;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.bloomii-loja-link:hover {
+  color: #d63630;
+}
 
 @media (max-width: 1024px) {
   .bloomii-wrapper {
@@ -223,7 +393,7 @@
     height: auto;
   }
 
-  .sidebarBloomii {
+  .bloomii-sidebar {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
@@ -233,43 +403,39 @@
     border-radius: 2rem 2rem 0 0;
   }
 
-  .triangle-decoration {
+  .bloomii-triangle-decoration {
     display: none;
   }
 
-  .customization-area {
+  .bloomii-customization-area {
     padding: 2rem 1.5rem;
   }
 
-  .skin-color-picker {
+  .bloomii-skin-color-picker {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin-bottom: 5rem;
   }
 
-  .items-grid {
+  .bloomii-items-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   }
 
-  .item-slot {
+  .bloomii-item-slot {
     width: 6.5rem;
     height: 6.5rem;
   }
 
-  .bloomii-image {
-    height: 18rem;
-  }
-
-  .custom-title {
+  .bloomii-custom-title {
     font-size: 2.2rem;
   }
 
-  .icon-grid {
+  .bloomii-icon-grid {
     gap: 1rem;
   }
 
-  .user-bar {
+  .bloomii-user-bar {
     font-size: 0.9rem;
     gap: 0.5rem;
   }
@@ -282,63 +448,59 @@
     flex-direction: column;
   }
 
-  .sidebarBloomii {
+  .bloomii-sidebar {
     padding: 1rem;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
 
-  .icon-grid {
+  .bloomii-icon-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 
-  .bloomii-image {
-    height: 14rem;
-  }
-
-  .custom-title {
+  .bloomii-custom-title {
     font-size: 1.8rem;
   }
 
-  .skin-color-picker {
+  .bloomii-skin-color-picker {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
   }
 
-  .diamond-color {
+  .bloomii-diamond-color {
     width: 3rem;
     height: 3rem;
   }
 
-  .items-grid {
+  .bloomii-items-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
   }
 
-  .item-slot {
+  .bloomii-item-slot {
     width: 5.5rem;
     height: 5.5rem;
   }
 
-  .user-bar {
+  .bloomii-user-bar {
     flex-direction: column;
     align-items: flex-start;
     font-size: 0.85rem;
     gap: 0.5rem;
   }
 
-  .user-logo {
+  .bloomii-user-logo {
     height: 2.5rem;
   }
 
-  .switch-side {
+  .bloomii-switch-side {
     right: 1rem;
     top: 1rem;
   }
 
-  .save-message {
+  .bloomii-save-message {
     font-size: 0.9rem;
     bottom: 1.5rem;
     right: 1.5rem;
