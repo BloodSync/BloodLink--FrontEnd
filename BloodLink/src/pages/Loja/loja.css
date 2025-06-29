@@ -557,3 +557,27 @@
     font-size: 1rem;
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+@media (max-height: 420px) and (orientation: landscape) {
+  .loja-wrapper {
+    padding: 2rem 2rem;
+    flex-direction: column;
+  }
+
+  .preview-box {
+    max-height: 15rem;
+  }
+
+  .item-section {
+    min-height: auto;
+  }
+}
+.item-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}

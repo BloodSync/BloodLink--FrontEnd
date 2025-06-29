@@ -1,7 +1,6 @@
 import { itensMiniLojinha } from '../../components/LojaItem/ItensLoja';
 import React, { useState } from 'react';
 import './Loja.css';
-
 import baseLoja from '../../assets/baseLoja.png';
 import Bg from '../../assets/VitalinkC.png';
 import { RiMoneyRupeeCircleFill } from 'react-icons/ri';
@@ -20,6 +19,14 @@ import SetsSection from '../../components/Sets/SetsLoja';
 
 
 function LojaPage() {
+const nomesFormatados = {
+  set: 'Set',
+  rosto: 'Rosto',
+  cabelo: 'Cabelo',
+  camisa: 'Camisa',
+  calca: 'Calça',
+  acessorios: 'Acessórios'
+};
 
   const [tab, setTab] = useState('loja');
   const [categoriaAtiva, setCategoriaAtiva] = useState('set');
@@ -249,7 +256,8 @@ function LojaPage() {
                 </div>
                 <div className="item-section">
                   <div className="item-header">
-                    <h4 className="item-section-title">{categoriaAtiva.toUpperCase()}</h4>
+                <h4 className="item-section-title">{nomesFormatados[categoriaAtiva] || categoriaAtiva}</h4>
+
                     <Link
                       to={itemSelecionado ? `/LojaItem/${itemSelecionado.id}` : '#'}
                       state={{ item: itemSelecionado }}

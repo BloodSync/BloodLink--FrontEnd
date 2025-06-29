@@ -69,6 +69,36 @@ import cicatriz from '../../assets/cicatriz.png';
 import acessorio4 from '../../assets/acessorio4.png';
 import tapaolho from '../../assets/tapaolho.png';
 
+import bloomi1 from '../../assets/Bloomii1.png';
+import bloomiiIdle from '../../assets/Bloomii1.gif';
+
+import bloomi2 from '../../assets/Bloomii2.png';
+import bloomiiforte from '../../assets/Bloomii2.gif';
+
+import bloomi3 from '../../assets/Bloomii3.png';
+import bloomiifeliz from '../../assets/Bloomii3.gif';
+
+import bloomi4 from '../../assets/Bloomii4.png';
+import bloomiilinky from '../../assets/Bloomii4.gif';
+
+import bloomiuniforme from '../../assets/BloomiiUniforme.png';
+import bloomiiC from '../../assets/BloodLinkUniforme.png';
+
+
+import proa1 from '../../assets/proa1.png';
+import jailson from '../../assets/jaja.gif';
+
+import proa2 from '../../assets/proa2.png';
+import aurora from '../../assets/aurora.gif';
+
+import proa3 from '../../assets/proa3.png';
+import julio from '../../assets/julio.gif';
+
+import proa4 from '../../assets/proa4.png';
+import manto1 from '../../assets/manto1.png';
+import proa5 from '../../assets/proa5.png';
+import manto2 from '../../assets/manto2.png';
+
 export const itensLoja = [
     {
         id: '1',
@@ -145,6 +175,7 @@ export const itensLoja = [
         descricao: 'Estilo casual e moderno para os Bloomiis. *Contém um Bloomii',
         previews: [bloomiin]
     },
+    
 ];
 export const itensMiniLojinha = {
     set: [
@@ -180,7 +211,7 @@ export const itensMiniLojinha = {
             descricao: 'Bora jogar! *Contém um Bloomii animado',
             previews: [gameGif]
         },
-           {
+        {
             id: '11',
             nome: 'Linky',
             preco: 350,
@@ -189,8 +220,8 @@ export const itensMiniLojinha = {
             previews: [LinkyGif]
         },
     ],
-     rosto: [
-         {
+    rosto: [
+        {
             id: '12',
             nome: 'Seriedade',
             preco: 200,
@@ -199,7 +230,7 @@ export const itensMiniLojinha = {
             tipo: 'rosto',
             previews: [seriedade]
         },
-           {
+        {
             id: '13',
             nome: 'Bloomimir',
             preco: 200,
@@ -219,7 +250,7 @@ export const itensMiniLojinha = {
             tipo: 'cabelo',
             previews: [punk]
         },
-          {
+        {
             id: '16',
             nome: 'Rabo de Cavalo',
             preco: 220,
@@ -230,10 +261,10 @@ export const itensMiniLojinha = {
         },
 
     ],
-   
+
     camisa: [
 
-             {
+        {
             id: '3',
             nome: 'Pijaminhamon',
             preco: 150,
@@ -242,7 +273,7 @@ export const itensMiniLojinha = {
             tipo: 'camisa',
             previews: [pijaminha]
         },
-          {
+        {
             id: '17',
             nome: 'Regatinha Amarela',
             preco: 200,
@@ -251,7 +282,7 @@ export const itensMiniLojinha = {
             tipo: 'camisa',
             previews: [regatinha]
         },
-           {
+        {
             id: '18',
             nome: 'BlusãoLink',
             preco: 200,
@@ -260,7 +291,7 @@ export const itensMiniLojinha = {
             tipo: 'camisa',
             previews: [blusao]
         },
-           {
+        {
             id: '19',
             nome: 'Regatinha Amarela',
             preco: 200,
@@ -271,7 +302,7 @@ export const itensMiniLojinha = {
         },
     ],
     calca: [
-          {
+        {
             id: '20',
             nome: 'Bermas',
             preco: 200,
@@ -280,7 +311,7 @@ export const itensMiniLojinha = {
             tipo: 'calca',
             previews: [bermas]
         },
-            {
+        {
             id: '21',
             nome: 'Saia Branquinha',
             preco: 200,
@@ -289,7 +320,7 @@ export const itensMiniLojinha = {
             tipo: 'calca',
             previews: [saia]
         },
-             {
+        {
             id: '22',
             nome: 'No estilo',
             preco: 200,
@@ -298,11 +329,11 @@ export const itensMiniLojinha = {
             tipo: 'calca',
             previews: [estiloso]
         },
-     
-     
+
+
     ],
     acessorios: [
-             {
+        {
             id: '23',
             nome: 'Maneiro até demais',
             preco: 150,
@@ -311,7 +342,7 @@ export const itensMiniLojinha = {
             tipo: 'acessorio',
             previews: [oclinhos]
         },
-              {
+        {
             id: '24',
             nome: 'Reizinho',
             preco: 150,
@@ -320,7 +351,7 @@ export const itensMiniLojinha = {
             tipo: 'acessorio',
             previews: [rei]
         },
-       {
+        {
             id: '25',
             nome: 'Cicatriz misteriosa',
             preco: 150,
@@ -329,7 +360,7 @@ export const itensMiniLojinha = {
             tipo: 'acessorio',
             previews: [cicatriz]
         },
-               {
+        {
             id: '24',
             nome: 'Tapa olho',
             preco: 150,
@@ -340,3 +371,26 @@ export const itensMiniLojinha = {
         },
     ]
 };
+
+export const setsSecretos = [
+    {
+        id: 's1',
+        nome: 'Set Especial BloodLink',
+        preco: 1400,
+        imagem: bloomi4, 
+        descricao: 'Set especial com os Bloomiis que fazem a Vitalink existir! *Contém quatro Bloomiis animados e um item de categoria camisa',
+        tipo: 'set',
+        partes: [bloomi1,bloomi2,bloomi3,bloomi4,bloomiuniforme],
+        previews: [bloomiiIdle,bloomiiforte,bloomiifeliz,bloomiilinky,bloomiiC]
+    },
+     {
+        id: 's2',
+        nome: 'Set Especial PROA',
+        preco: 1900,
+        imagem: proa1, 
+        descricao: 'Set especial do Instituto Proa, com os professores que ajudaram na jornada da BloodLink. *Contém três Bloomiis animados e dois itens de categoria camiseta especiais',
+        tipo: 'set',
+        partes: [proa1,proa2,proa3,proa4,proa5],
+        previews: [jailson,aurora,julio,manto1,manto2]
+    },
+];
