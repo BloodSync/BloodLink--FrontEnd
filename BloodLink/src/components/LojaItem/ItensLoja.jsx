@@ -388,7 +388,7 @@ export const setsSecretos = [
         nome: 'Set Especial PROA',
         preco: 1900,
         imagem: proa1,
-        descricao: 'Set especial do Instituto Proa, com os professores que ajudaram na jornada da BloodLink. *Contém três Bloomiis animados e dois itens de categoria camiseta especiais',
+        descricao: 'Set especial dedicado ao Instituto Proa, com os professores que ajudaram na jornada da BloodLink. *Contém três Bloomiis animados e dois itens de categoria camiseta especiais',
         tipo: 'set',
         partes: [proa1, proa2, proa3, proa4, proa5],
         previews: [jailson, aurora, julio, manto1, manto2]
