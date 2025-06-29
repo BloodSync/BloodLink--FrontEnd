@@ -83,30 +83,21 @@
   width: 35rem;
   height: 15rem;
 }
-.item-box.destaque:hover{
-      flex-basis: 38%;
-}
+
 .item-box.medio {
   width: 12rem;
   height: 17rem;
 }
-.item-box.medio:hover{
-      flex-basis: 13%;
-}
+
 .item-box.mediano{
  width: 10rem;
   height: 18rem;
-}
-.item-box.mediano:hover{
-      flex-basis: 10%;
 }
 .item-box.pequeno {
   width: 8rem;
   height: 15rem;
 }
-.item-box.pequeno:hover{
-      flex-basis: 18%;
-}
+
 /* Cores das barrinhas */
 .gold {
   background-color: #AB5E10;

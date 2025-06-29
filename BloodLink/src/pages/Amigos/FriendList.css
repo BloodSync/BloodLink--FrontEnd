@@ -40,6 +40,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    
 }
 
 .sidebar-title-friends {
@@ -82,4 +83,89 @@
 .friends-content {
   flex: 1;
   min-width: 0; 
+}
+
+@media (max-width: 1024px) {
+  .friendsContent {
+    padding: 6rem 4rem; /* reduz espaço lateral */
+  }
+
+  .bottom-section {
+    flex-direction: column; /* empilha sidebar e conteúdo */
+  }
+
+  .sidebar-friends {
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .sidebar-title-friends {
+    font-size: 1.2rem;
+  }
+
+  .friend-list-title {
+    font-size: 1.8rem;
+  }
+
+  .friend-list-txt {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .friendsContent {
+    padding: 4rem 2rem;
+  }
+
+  .friends-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .friends-header img.avatar {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .friend-list-title {
+    font-size: 1.6rem;
+  }
+
+  .friend-list-txt {
+    font-size: 1rem;
+  }
+
+  .sidebar-title-friends {
+    font-size: 1.1rem;
+  }
+
+  .sidebar-button {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .friendsContent {
+    padding: 3rem 1rem;
+  }
+
+  .friend-list-title {
+    font-size: 1.3rem;
+  }
+
+  .friend-list-txt {
+    font-size: 0.95rem;
+  }
+
+  .sidebar-button {
+    font-size: 0.8rem;
+  }
+
+  .friends-header img.avatar {
+    width: 5rem;
+    height: 5rem;
+    border-width: 0.2rem;
+  }
 }

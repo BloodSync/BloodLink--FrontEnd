@@ -1,4 +1,4 @@
-/*Banner*/
+/* Base */
 .account-banner {
   background: url('../../assets/profile.png');
   color: white;
@@ -8,7 +8,7 @@
   gap: 1.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.284);
 }
-/*Distâncias*/
+
 .user-info {
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@
 
 .user-avatar {
   width: 3.2rem;
-  height: 3.2em;
+  height: 3.2rem;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid white;
@@ -60,4 +60,94 @@
 .stat-label {
   font-size: 0.85rem;
   opacity: 0.8;
+}
+
+/* Responsividade */
+
+/* Até 768px - tablets e celulares em modo paisagem */
+@media (max-width: 768px) {
+  .account-banner {
+    padding: 1.5rem;
+  }
+
+  .user-info {
+    gap: 1rem;
+  }
+
+  .user-avatar {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .user-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .user-info p {
+    font-size: 0.85rem;
+  }
+
+  .stats {
+    gap: 1.2rem;
+  }
+
+  .stat-icon {
+    font-size: 1.3rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Até 480px - celulares pequenos */
+@media (max-width: 480px) {
+  .account-banner {
+    padding: 1rem;
+  }
+
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .user-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .user-info p {
+    font-size: 0.75rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-box {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .stat-icon {
+    font-size: 1.1rem;
+  }
+
+  .stat-value {
+    font-size: 0.9rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
 }

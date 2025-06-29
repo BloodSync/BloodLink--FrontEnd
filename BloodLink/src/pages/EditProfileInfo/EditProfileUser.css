@@ -1,3 +1,4 @@
+/* Base */
 .edit-profile {
   display: flex;
   min-height: 100vh;
@@ -107,7 +108,8 @@
   border-bottom: 2px solid #f1c40f;
   background: rgba(255, 255, 255, 0.45);
 }
-/*Dica icone*/
+
+/* Dica icone */
 .tooltip-wrapper {
   position: relative;
   display: inline-block;
@@ -130,7 +132,7 @@
   border-radius: 0.5rem;
   position: absolute;
   z-index: 10;
-  bottom: 120%; 
+  bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -142,6 +144,7 @@
   visibility: visible;
   opacity: 1;
 }
+
 /* Container do dropdown */
 .dropdown-titulo {
   position: relative;
@@ -151,7 +154,7 @@
   user-select: none;
 }
 
-/*Título selecionado */
+/* Título selecionado */
 .dropdown-button {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -202,6 +205,7 @@
   transition: background 0.25s ease;
   font-weight: 500;
 }
+
 .dropdown-item:hover {
   color: #000;
   font-weight: 700;
@@ -234,4 +238,100 @@
 .buttons-profileE:active {
   background: #00404d;
   transform: scale(0.98);
+}
+
+/* Responsividade */
+
+/* Até 1024px */
+@media (max-width: 1024px) {
+  .edit-profile {
+    flex-direction: column;
+    margin: 2rem 3rem;
+  }
+
+  .sidebar-edit-profile {
+    width: 100%;
+    padding: 2rem 0;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .tab-button-edit {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+    text-align: center;
+    flex: 1;
+  }
+
+  .editprofile-content {
+    padding: 2rem 2rem 3rem;
+    width: 100%;
+  }
+
+  .editprofile-header {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .editprofile-header img.avatar {
+    width: 4rem;
+    height: 4rem;
+    border-width: 0.3rem;
+  }
+
+  .editprofile-title {
+    font-size: 1.6rem;
+  }
+
+  .editprofile-txt {
+    font-size: 1.1rem;
+  }
+}
+
+/* Até 600px */
+@media (max-width: 600px) {
+  .sidebar-edit-profile {
+    padding: 1rem 0;
+    gap: 0.8rem;
+  }
+
+  .tab-button-edit {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+
+  .editprofile-content {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .editprofile-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .editprofile-header img.avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-width: 0.2rem;
+  }
+
+  .editprofile-title {
+    font-size: 1.4rem;
+  }
+
+  .editprofile-txt {
+    font-size: 1rem;
+  }
+
+  .buttons-edit-profile {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .buttons-profileE {
+    padding: 0.5rem 2rem;
+    font-size: 0.9rem;
+  }
 }

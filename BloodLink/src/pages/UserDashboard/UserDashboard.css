@@ -15,11 +15,16 @@
   align-items: center;
   margin-bottom: 4rem;
   flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.main-card-text {
+  flex: 1 1 300px;
 }
 
 .main-card-text h4 {
   font-size: 1.2rem;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 }
 
 .main-card-text p {
@@ -50,6 +55,7 @@
   gap: 2rem;
   margin-bottom: 4rem;
   margin-top: 3rem;
+  flex-wrap: wrap;
 }
 
 .bloomii-img {
@@ -63,9 +69,65 @@
 .bloomii-img:hover {
   transform: scale(1.1);
 }
+
 .main-text {
   font-size: 2rem;
   color: #212121;
   font-weight: 500;
   margin: 0;
+}
+
+/* ------------------ RESPONSIVO ------------------ */
+@media (max-width: 768px) {
+  .main-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .main-card-text h4 {
+    font-size: 1rem;
+  }
+
+  .main-card-text p {
+    font-size: 1.2rem;
+  }
+
+  .main-card-text button {
+    padding: 0.6rem 1.5rem;
+  }
+
+  .top-row {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .bloomii-img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .main-text {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-card-text h4 {
+    font-size: 0.95rem;
+  }
+
+  .main-card-text p {
+    font-size: 1.05rem;
+  }
+
+  .main-text {
+    font-size: 1.3rem;
+  }
+
+  .bloomii-img {
+    width: 4rem;
+    height: 4rem;
+  }
 }

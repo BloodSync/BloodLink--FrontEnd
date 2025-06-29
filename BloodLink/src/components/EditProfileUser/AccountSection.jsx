@@ -1,7 +1,7 @@
 import './AccountSection.css';
 import { FaFire, FaUserFriends } from 'react-icons/fa';
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
-import minhaFoto from '../../assets/avatar.jpg';
+import LinkyFenix from '../../assets/Linky-Fenix.png';
 
 export default function AccountSection() {
   return (
@@ -17,7 +17,7 @@ export default function AccountSection() {
 
       <div className="account-banner">
         <div className="user-info">
-          <img src={minhaFoto} alt="Avatar do usuário" className="user-avatar" />
+          <img src={LinkyFenix} alt="Avatar do usuário" className="user-avatar" />
           <div>
             <h3>@Usuario</h3>
             <p>| Lobo Solitário</p>

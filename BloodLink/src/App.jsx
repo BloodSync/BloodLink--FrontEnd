@@ -1,19 +1,12 @@
-import './App.css'
-import Home from './components/Homepage/Home.Jsx'
-import ChatBot from './components/LinkyBot/LinkyBot.jsx';
-import { BrowserRouter } from 'react-router';
+import './App.css';
+import { BrowserRouter } from 'react-router-dom'; // CORRETO!
 import { Router } from './routes/index.routes';
 
 function App() {
-
   return (
-
-    <>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
 

@@ -5,7 +5,7 @@ import BloomiiSection from '../../components/EditProfileUser/BloomiiSection.jsx'
 import AccountSection from '../../components/EditProfileUser/AccountSection.jsx';
 import PrivacySection from '../../components/EditProfileUser/PrivacySection.jsx';
 import { Link } from 'react-router-dom';
-import minhaFoto from '../../assets/avatar.jpg';
+import LinkyFenix from '../../assets/Linky-Fenix.png';
 
 
 const sections = {
@@ -38,7 +38,7 @@ export default function EditProfileTab() {
 
       <div className="editprofile-content">
         <div className="editprofile-header">
-          <img src={minhaFoto} className="avatar" />
+          <img src={LinkyFenix} className="avatar" />
           <h2 className="editprofile-title">Usuário &gt;&gt; </h2> <p className="editprofile-txt"> Editar perfil </p>
         </div>
         {sections[activeTab]}

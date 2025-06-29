@@ -4,12 +4,12 @@ import { Link, Outlet } from 'react-router-dom';
 import { IoIosArrowBack } from "react-icons/io";
 import { showNav } from "../../utils/showNav";
 import { MdHome } from "react-icons/md";
-import { HiUser } from "react-icons/hi";
+import { HiUser, HiOutlineLogin  } from "react-icons/hi";
 import { GiHeartDrop } from "react-icons/gi";
 import { BiSolidShoppingBagAlt } from "react-icons/bi";
 import { FaGamepad } from "react-icons/fa6";
 import { IoMdSettings } from "react-icons/io";
-import { HiOutlineLogin } from "react-icons/hi";
+import LinkyFenix from '../../assets/Linky-Fenix.png';
 
 function Navbar() {
   return (
@@ -20,7 +20,7 @@ function Navbar() {
           <IoIosArrowBack className="sidenav-close" />
         </div>
         <div className="profile-card">
-          <img className="profile" src="/src/avatar.jpg" alt="Ícone do perfil" />
+          <img className="profile" src={LinkyFenix} alt="Ícone do perfil" />
           <p className="username">
             @Usuario
           </p>
@@ -78,4 +78,3 @@ function Navbar() {
   );
 }
 export default Navbar;
-

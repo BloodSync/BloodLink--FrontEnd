@@ -1,10 +1,41 @@
 import './vitalink.css';
 import React, { useState } from 'react';
-import minhaFoto from '../../assets/avatar.jpg';
-
+import LinkyFenix from '../../assets/Linky-Fenix.png';
+import Linky from '../../assets/Linky-Mission.png';
+import MissionBg from '../../assets/Missao-Banner.jpg';
+import Icon from '../../assets/Conquista.png';
 import { Link } from 'react-router-dom';
-import { FiPlusCircle, FiTrash2,FiCheckCircle } from "react-icons/fi";
+import { FiPlusCircle, FiTrash2, FiCheckCircle } from "react-icons/fi";
 
+const missoes = [
+  {
+    titulo: "BLOODLINKER",
+    descricao: "Faça sua primeira doação.",
+    forca: 10,
+    vitalidade: 20,
+    influencia: 20,
+    mon:200,
+    selo: "Missão permanente",
+  },
+  {
+    titulo: "NO ESTILO",
+    descricao: "Personalize seu Bloomii.",
+    forca: 5,
+    vitalidade: 10,
+    influencia: 40,
+     mon:200,
+    selo: "Missão semanal",
+  },
+  {
+    titulo: "SEM LIMITES",
+    descricao: "Consiga 10 Conquistas.",
+    forca: 2,
+    vitalidade: 5,
+    influencia: 25,
+     mon:200,
+    selo: "Missão Permanente",
+  },
+];
 
 function Vitalink() {
   const [mostrarMaisAtividades, setMostrarMaisAtividades] = useState(false);
@@ -17,31 +48,31 @@ function Vitalink() {
     { texto: 'Usuário', data: '11 de junho' },
   ];
 
-const adicionarMeta = () => {
-  if (novaMeta.trim() !== '') {
-    setMetas([...metas, { texto: novaMeta, concluida: false }]);
-    setNovaMeta('');
-  }
-};
-const removerMeta = (indexRemover) => {
-  setMetas(metas.filter((_, index) => index !== indexRemover));
-};
-const alternarMetaConcluida = (index) => {
-  const novasMetas = [...metas];
-  novasMetas[index].concluida = !novasMetas[index].concluida;
-  setMetas(novasMetas);
-};
+  const adicionarMeta = () => {
+    if (novaMeta.trim() !== '') {
+      setMetas([...metas, { texto: novaMeta, concluida: false }]);
+      setNovaMeta('');
+    }
+  };
+  const removerMeta = (indexRemover) => {
+    setMetas(metas.filter((_, index) => index !== indexRemover));
+  };
+  const alternarMetaConcluida = (index) => {
+    const novasMetas = [...metas];
+    novasMetas[index].concluida = !novasMetas[index].concluida;
+    setMetas(novasMetas);
+  };
 
 
   return (
     <div className="VitalinkBg">
 
-        <div className="vitalink-header">
-          <h1 className="vitalink-title">Vitalink</h1>
-          <div className="vitalink-tabs">
-           
-            </div>
+      <div className="vitalink-header">
+        <h1 className="vitalink-title">Vitalink</h1>
+        <div className="vitalink-tabs">
+
         </div>
+      </div>
       <div className="vitalink-container">
         <div className="vitalink-content">
           <div className="vitalink-left">
@@ -51,7 +82,7 @@ const alternarMetaConcluida = (index) => {
               <div className="atividade-item">
                 <p className="atividade-data">Hoje</p>
                 <div className="atividade-linha">
-                  <img src={minhaFoto} alt="profile" className="atividade-avatar" />
+                  <img src={LinkyFenix} alt="profile" className="atividade-avatar" />
                   <p><span className="azul">Usuário</span> completou suas missões diárias!</p>
                 </div>
               </div>
@@ -59,7 +90,7 @@ const alternarMetaConcluida = (index) => {
               <div className="atividade-item">
                 <p className="atividade-data">13 de junho</p>
                 <div className="atividade-linha">
-                  <img src={minhaFoto} alt="profile" className="atividade-avatar" />
+                  <img src={LinkyFenix} alt="profile" className="atividade-avatar" />
                   <p><span className="azul">Usuário</span> e <span className="azul">Jonas</span> agora são amigos.</p>
                 </div>
               </div>
@@ -86,30 +117,32 @@ const alternarMetaConcluida = (index) => {
             </div>
 
             <div className="missoes-lista">
-              {(subTab === 'todas' ? [1, 2, 3] : [2]).map((_, i) => (
+              {(subTab === 'todas' ? missoes : [missoes[1]]).map((missao, i) => (
                 <div key={i} className="missao-card">
                   <div className="missao-img-wrapper">
-                    <img src={minhaFoto} alt="missao" className="missao-img" />
+                    <img src={MissionBg} alt="missao" className="missao-img" />
                     <div className="missao-autor">
-                      <img src={minhaFoto} alt="autor" className="missao-avatar" />
+                      <img src={Linky} alt="autor" className="missao-avatar" />
                       <span className="proposto">PROPOSTO POR LINKY</span>
                     </div>
                   </div>
                   <div className="missao-info">
-                    <h3 className="missao-titulo">CORAÇÃO ATENTO</h3>
-                    <p className="missao-desc">Faça sua primeira doação.</p>
+                    <h3 className="missao-titulo">{missao.titulo}</h3>
+                    <p className="missao-desc">{missao.descricao}</p>
                     <div className="missao-recompensas">
-                      <p className="missao-rewards">+10 de força</p>
-                      <p className="missao-rewards">+20 de vitalidade</p>
-                      <p className="missao-rewards">+20 de Influência</p>
+                      <p className="missao-rewards">+{missao.forca} de força</p>
+                      <p className="missao-rewards">+{missao.vitalidade} de vitalidade</p>
+                      <p className="missao-rewards">+{missao.influencia} de Influência</p>
+                      <p className="missao-rewards">+{missao.mon} Mon </p>
                     </div>
-                    <p className="missao-selo">Missão permanente</p>
+                    <p className="missao-selo">{missao.selo}</p>
                     <hr />
                     <button className="missao-btn">Aceitar missão</button>
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
 
           <div className="vitalink-right">
@@ -121,7 +154,7 @@ const alternarMetaConcluida = (index) => {
               </div>
               <div className="conquistas-grid-vitalink">
                 {[...Array(6)].map((_, i) => (
-                  <img key={i} src={minhaFoto} alt="Conquistas" className="conquista-img" />
+                  <img key={i} src={Icon} alt="Conquistas" className="conquista-img" />
                 ))}
               </div>
               <Link to="/Achievements">
@@ -130,51 +163,51 @@ const alternarMetaConcluida = (index) => {
             </div>
 
             {/* Metas */}
-     <div className="metas-box">
-      <h3>Minhas Metas</h3>
+            <div className="metas-box">
+              <h3>Minhas Metas</h3>
 
-      <div className="metas-form">
-        <input
-          type="text"
-          value={novaMeta}
-          onChange={(e) => setNovaMeta(e.target.value)}
-          placeholder="Digite uma nova meta"
-          className="input-metas"
-        />
-        <button className="nova-meta-btn" onClick={adicionarMeta}>
-          <FiPlusCircle size={24} />
-        </button>
-      </div>
-
-      <ul className="metas-lista">
-        {metas.map((meta, index) => (
-          <li key={index} className="meta-item">
-            <span className={meta.concluida ? 'meta-texto concluida' : 'meta-texto'}>
-              {meta.texto}
-            </span>
-            <div className="meta-botoes">
-              <button
-                className="concluir-meta-btn"
-                onClick={() => alternarMetaConcluida(index)}
-                aria-label="Concluir meta"
-              >
-                <FiCheckCircle
-                  size={18}
-                  className={meta.concluida ? 'icone verde' : 'icone cinza'}
+              <div className="metas-form">
+                <input
+                  type="text"
+                  value={novaMeta}
+                  onChange={(e) => setNovaMeta(e.target.value)}
+                  placeholder="Digite aqui..."
+                  className="input-metas"
                 />
-              </button>
-              <button
-                className="remover-meta-btn"
-                onClick={() => removerMeta(index)}
-                aria-label="Remover meta"
-              >
-                <FiTrash2 size={18} className="icone vermelho" />
-              </button>
+                <button className="nova-meta-btn" onClick={adicionarMeta}>
+                  <FiPlusCircle size={24} />
+                </button>
+              </div>
+
+              <ul className="metas-lista">
+                {metas.map((meta, index) => (
+                  <li key={index} className="meta-item">
+                    <span className={meta.concluida ? 'meta-texto concluida' : 'meta-texto'}>
+                      {meta.texto}
+                    </span>
+                    <div className="meta-botoes">
+                      <button
+                        className="concluir-meta-btn"
+                        onClick={() => alternarMetaConcluida(index)}
+                        aria-label="Concluir meta"
+                      >
+                        <FiCheckCircle
+                          size={18}
+                          className={meta.concluida ? 'icone verde' : 'icone cinza'}
+                        />
+                      </button>
+                      <button
+                        className="remover-meta-btn"
+                        onClick={() => removerMeta(index)}
+                        aria-label="Remover meta"
+                      >
+                        <FiTrash2 size={18} className="icone vermelho" />
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </li>
-        ))}
-      </ul>
-    </div>
 
             {/* Ranking */}
             <Link to="/FriendsList">
@@ -183,7 +216,7 @@ const alternarMetaConcluida = (index) => {
                 <div className="ranking-content-vitalink">
                   <div className="ranking-item-vitalink">
                     <span className="rank-pos-vitalink">1º</span>
-                    <img src={minhaFoto} alt="avatar" className="ranking-avatar-vitalink" />
+                    <img src={LinkyFenix} alt="avatar" className="ranking-avatar-vitalink" />
                     <div className="ranking-info-vitalink">
                       <span className="ranking-nome-vitalink">Ingrid</span>
                       <span className="ranking-xp-vitalink">2500 XP</span>
@@ -191,7 +224,7 @@ const alternarMetaConcluida = (index) => {
                   </div>
                   <div className="ranking-item-vitalink">
                     <span className="rank-pos-vitalink">2º</span>
-                    <img src={minhaFoto} alt="avatar" className="ranking-avatar-vitalink" />
+                    <img src={LinkyFenix} alt="avatar" className="ranking-avatar-vitalink" />
                     <div className="ranking-info-vitalink">
                       <span className="ranking-nome-vitalink">Jonas</span>
                       <span className="ranking-xp-vitalink">2000 XP</span>

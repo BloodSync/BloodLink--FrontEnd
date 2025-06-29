@@ -1,6 +1,7 @@
 import "./Conquistas.css";
 import ConquistaCard from "../../components/ConquistasC/ConquistasC";
-import Icon from '../../assets/avatar.jpg';
+import Icon from '../../assets/Conquista.png';
+import AvatarUser from '../../assets/Linky-Fenix.png';
 
 export default function Conquistas() {
   const conquistasObtidas = [
@@ -84,7 +85,7 @@ export default function Conquistas() {
   return (
     <div className="conquistas-wrapper">
       <div className="conquistas-header">
-        <img src={Icon} alt="Avatar do usuário" />
+        <img src={AvatarUser} alt="Avatar do usuário" />
         <h2>Usuário &gt;&gt; Conquistas</h2>
       </div>
 

@@ -265,3 +265,132 @@
 .AboutUs-BgHide {
   background-color: white;
 }
+
+@media (max-width: 1024px) {
+  .about-hero {
+    height: 25rem;
+  }
+
+  .overlay {
+    padding: 2rem;
+  }
+
+  .hero-center-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-belief {
+    padding: 3rem 1rem;
+  }
+
+  .about-mission-vision {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .mission,
+  .vision {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .about-mission-vision::before {
+    display: none;
+  }
+
+  .about-values {
+    padding: 4rem 3rem;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .about-team {
+    padding: 3rem 2rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .AboutUs-Vetor,
+  .AboutUs-Vetor2 {
+    padding: 8rem 2rem;
+    background-size: cover;
+  }
+
+  .nav-bar-AboutUs {
+    right: 2rem;
+    gap: 2rem;
+  }
+
+  .logo-about-us {
+    height: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    height: 20rem;
+  }
+
+  .overlay {
+    padding: 1.5rem;
+  }
+
+  .hero-center-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-center-content p {
+    font-size: 0.9rem;
+  }
+
+  .about-belief p {
+    padding-left: 0;
+  }
+
+  .about-values {
+    padding: 3rem 1.5rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-team {
+    padding: 2rem 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-bar-AboutUs {
+    flex-direction: column;
+    right: 1rem;
+    gap: 1rem;
+  }
+
+  .AboutUs-Vetor,
+  .AboutUs-Vetor2 {
+    padding: 5rem 1rem;
+  }
+
+  .about-mission-vision {
+    padding: 2rem 1rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .Values-text {
+    font-size: 1.8rem;
+  }
+}

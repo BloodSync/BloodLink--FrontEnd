@@ -1,4 +1,3 @@
-
 import "./AddFriend.css"
 
 export default function AdicionarAmigos() {

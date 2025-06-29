@@ -156,3 +156,55 @@ h2 {
     text-decoration: none;
     margin-top: 2rem;
 }
+
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+  .LogIn {
+    padding: 2.5rem 2rem;
+  }
+
+  .logologin img {
+    height: 3.2rem;
+  }
+
+  .logologin h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .continuar-btn {
+    width: 100%;
+  }
+
+  .login-Google-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginBg {
+    padding: 1.5rem;
+  }
+
+  .LogIn {
+    padding: 2rem 1.5rem;
+  }
+
+  .logologin h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .continuar-btn,
+  .login-Google-button {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}

@@ -1,58 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LojaCarrossel.css';
-import minhaFoto from '../../assets/avatar.jpg';
 import { Link } from 'react-router-dom';
+import { itensLoja } from '../LojaItem/ItensLoja';
+
+
+const tamanhos = ['destaque', 'medio', 'mediano'];
+const cores = ['gold', 'purple', 'green'];
 
 function LojaSection() {
   return (
     <>
       <div className="novos-grid">
-        {/* Primeira linha fixa com 3 itens */}
+
+        {/* Primeira linha fixa com 3 itens (IDs 1, 2, 3) */}
         <div className="linha-superior">
-          <div className="item-box destaque">
-            <div className="item-img-wrapper">
-              <img src={minhaFoto} alt="Set Bloomiis" />
-              <div className="img-overlay" />
-              <span className="item-label">SET BLOOMIIS</span> <p className="item-label">750MON</p>
-            </div>
-            <div className="item-bar gold" />
-          </div>
+          {itensLoja.slice(0, 3).map((item, index) => {
+            const tamanhos = ['destaque', 'medio', 'mediano'];
+            const cores = ['gold', 'purple', 'green'];
 
-          <div className="item-box medio">
-            <div className="item-img-wrapper">
-              <img src={minhaFoto} alt="Item 1" />
-              <div className="img-overlay" />
-              <span className="item-label">ITEM</span><p className="item-label">500MON</p>
-            </div>
-            <div className="item-bar purple" />
-          </div>
-
-          <div className="item-box mediano">
-            <div className="item-img-wrapper">
-              <img src={minhaFoto} alt="Item 2" />
-              <div className="img-overlay" />
-              <span className="item-label">ITEM</span><p className="item-label">200MON</p>
-            </div>
-            <div className="item-bar green" />
-          </div>
+            return (
+              <Link key={item.id} to={`/LojaItem/${item.id}`}>
+                <div className={`item-box ${tamanhos[index]}`}>
+                  <div className="item-img-wrapper">
+                    <img src={item.imagem} alt={item.nome} />
+                    <div className="img-overlay" />
+                    <span className="item-label">{item.nome.toUpperCase()}</span>
+                    <p className="item-label">{item.preco}MON</p>
+                  </div>
+                  <div className={`item-bar ${cores[index]}`} />
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Segunda linha com os pequenos */}
+
+        {/* Segunda linha com os pequenos (IDs 4 em diante) */}
         <div className="linha-inferior">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="item-box pequeno">
-              <div className="item-img-wrapper">
-                <img src={minhaFoto} alt={`Item ${i}`} />
-                <div className="img-overlay" />
-                <span className="item-label">ITEM</span> <p className="item-label">100MON</p>
+          {itensLoja.slice(3).map((item) => (
+            <Link key={item.id} to={`/LojaItem/${item.id}`}>
+              <div className="item-box pequeno">
+                <div className="item-img-wrapper">
+                  <img src={item.imagem} alt={item.nome} />
+                  <div className="img-overlay" />
+                  <span className="item-label">{item.nome}</span>
+                  <p className="item-label">{item.preco}MON</p>
+                </div>
+                <div className="item-bar green" />
               </div>
-              <div className="item-bar green" />
-            </div>
+            </Link>
           ))}
         </div>
-      </div>
 
+      </div>
     </>
   );
 }
+
 export default LojaSection;

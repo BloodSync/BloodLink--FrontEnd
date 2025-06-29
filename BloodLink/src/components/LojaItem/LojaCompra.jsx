@@ -1,67 +1,102 @@
-import './LojaCompra.css';
+import { useParams, Link, useLocation } from 'react-router-dom';
+import { itensLoja } from '../LojaItem/ItensLoja';
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { IoChevronBackCircle } from "react-icons/io5";
-import avatar from '../../assets/avatar.jpg';
-import meuBloomii from '../../assets/Bloomii-Setgamer.gif';
-import { Link } from 'react-router-dom';
+import avatar from '../../assets/VitalinkC.png';
+import { useState } from 'react';
+import './LojaCompra.css';
 
 export default function ItemPage() {
+  const { id } = useParams();
+const location = useLocation();
+const item =
+  location.state?.item || itensLoja.find((item) => item.id === id);
+
+if (!item) return (
+  <div className="LojaBuyBg">
+    <div className="buy-item-page">
+      <p className="not-found-msg">Item não encontrado. 😢</p>
+      <Link to="/UserStore">
+        <button className="back-btn-loja">Voltar à Loja</button>
+      </Link>
+    </div>
+  </div>
+);
+
+ const [previewAtiva, setPreviewAtiva] = useState(
+  item.previews?.[0] || item.preview
+);
+
+
+  const handleParteClick = (index) => {
+    if (item.previews && item.previews[index]) {
+      setPreviewAtiva(item.previews[index]);
+    }
+  };
+
   return (
-    <>
-      <div className="LojaBuyBg ">
-        <div className="buy-item-page">
-          <div className="top-bar">
-            <Link to="/UserStore">
-              <button className="back-btn-loja">
-                <IoChevronBackCircle />
-              </button>
+    <div className="LojaBuyBg">
+      <div className="buy-item-page">
+        <div className="top-bar">
+          <Link to="/UserStore">
+            <button className="back-btn-loja">
+              <IoChevronBackCircle />
+            </button>
+          </Link>
+          <div className="top-info">
+            <Link to="/UserProfile">
+              <img src={avatar} alt="Banner" className="banner-img" />
             </Link>
-            <div className="top-info">
-              <Link to="/UserProfile">
-                <img src={avatar} alt="Banner" className="banner-img" />
-              </Link>
-              <span className="coin-display-loja">
-                <RiMoneyRupeeCircleFill /> 500 Mon
+            <span className="coin-display-loja">
+              <RiMoneyRupeeCircleFill /> 500 Mon
+            </span>
+          </div>
+        </div>
+
+        <div className="content">
+          <div className="left-panel">
+            <h2 className="item-title">{item.nome}</h2>
+
+            <div className="item-icons">
+              {item.tipo === 'set' && item.partes ? (
+                item.partes.map((parte, index) => (
+                  <img
+                    key={index}
+                    src={parte}
+                    alt={`Parte ${index + 1}`}
+                    className="item-icon"
+                    onClick={() => handleParteClick(index)}
+                    style={{ cursor: 'pointer' }}
+                  />
+                ))
+              ) : (
+                <img src={item.imagem} alt="Item" className="item-icon" />
+              )}
+            </div>
+
+            <hr className="divider-store" />
+
+            <div className="price-box">
+              <span className="item-price-loja">
+                <RiMoneyRupeeCircleFill /> {item.preco} Mon
               </span>
             </div>
+
+            <div className="buttons">
+              <button className="buy-btn">COMPRAR</button>
+              <Link to="/Vitalink">
+                <button className="buy-btn">CONSEGUIR MON</button>
+              </Link>
+            </div>
+
+            <p className="description-loja">{item.descricao}</p>
           </div>
 
-          <div className="content">
-            <div className="left-panel">
-              <h2 className="item-title">Nome do item</h2>
-              <div className="item-icons">
-                <img src={avatar} alt="Item" className="item-icon" />
-                <img src={avatar} alt="Item" className="item-icon" />
-              </div>
-
-              <hr className="divider-store" />
-
-              <div className="price-box">
-                <span className="item-price-loja">
-                  <RiMoneyRupeeCircleFill />  300 Mon
-                </span>
-              </div>
-
-              <div className="buttons">
-                  <button className="buy-btn">COMPRAR</button>
-                <Link to="/Vitalink">
-                  <button className="buy-btn">CONSEGUIR MON</button>
-                </Link>
-              </div>
-
-              <p className="description-loja">
-                Descrição Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
-              </p>
-            </div>
-
-            <div className="right-panel">
-              <img src={meuBloomii} alt="Avatar" className="avatar-img" />
-            </div>
-
+          <div className="right-panel">
+            <img src={previewAtiva} alt="Preview do item" className="avatar-img" />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

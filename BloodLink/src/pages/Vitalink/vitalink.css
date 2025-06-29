@@ -16,8 +16,12 @@
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
+    padding-left: 8rem;
+  padding-right: 2rem;
+  transition: padding-left 0.4s ease;
   z-index: 1;
 }
+
 
 .vitalink-header {
   position: relative;
@@ -89,7 +93,7 @@
 .atividade-avatar {
   width: 2rem;
   height: 2rem;
-  border-left:3px solid #000;
+  border-right:3px solid #650909;
 }
 
 .azul {
@@ -233,7 +237,7 @@
 }
 
 .missao-btn:hover {
-  background-color: #0189AB;
+  background-color: #075062;
   border-color: #0189AB;
 }
 
@@ -434,7 +438,7 @@
 .ranking-avatar-vitalink {
   width: 3rem;
   height: 3rem;
-  border-right: 0.3rem solid #191919;
+  border-right: 0.3rem solid #650909;
   object-fit: cover;
 }
 
@@ -453,4 +457,124 @@
   font-weight: 300;
   font-size: 0.9rem;
   color: #0189AB;
+}
+
+@media (max-width: 1024px) {
+  .vitalink-content {
+    flex-direction: column;
+  }
+
+  .vitalink-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .conquistas-grid-vitalink {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .missao-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .vitalink-header {
+    height: 30vh;
+    padding-bottom: 1rem;
+  }
+
+  .vitalink-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .missao-card {
+    width: 100%;
+  }
+
+  .conquistas-grid-vitalink {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .metas-form {
+    flex-direction: column;
+  }
+
+  .ranking-item-vitalink {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .ranking-avatar-vitalink {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .atividade-linha {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .vitalink-title {
+    font-size: 2rem;
+  }
+
+  .atividade-title {
+    font-size: 1.2rem;
+  }
+
+  .missao-titulo {
+    font-size: 1rem;
+  }
+
+  .missao-desc {
+    font-size: 0.75rem;
+  }
+
+  .missao-rewards,
+  .missao-selo {
+    font-size: 0.7rem;
+  }
+
+  .metas-box {
+    padding: 1rem;
+  }
+
+  .input-metas {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .nova-meta-btn {
+    font-size: 1rem;
+    height: auto;
+    padding: 0.8rem;
+  }
+
+  .ranking-title-vitalink {
+    font-size: 1.1rem;
+  }
+
+  .ranking-nome-vitalink {
+    font-size: 0.9rem;
+  }
+
+  .conquistas-grid-vitalink {
+    grid-template-columns: 1fr;
+  }
+
+  .conquista-img {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .missao-btn {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
 }

@@ -21,6 +21,9 @@ import FriendsSideTab from '../pages/Amigos/FriendList';
 import Conquistas from '../pages/ConquistasUser/Conquistas';
 import PaymentWizard from '../pages/Pagamento/Pagamento';
 
+import LojaPage from '../pages/Loja/loja';
+
+
 export function Router() {
   return (
     <Routes>
@@ -44,6 +47,10 @@ export function Router() {
         <Route path="UserDonate" element={<Doacao />} />
         <Route path="UserStore" element={<Loja />} />
         <Route path="LojaItem" element={<ItemPage />} />
+      <Route path="/UserStore" element={<LojaPage />} />
+      <Route path="/LojaItem/:id" element={<ItemPage />} />
+
+
         <Route path="Vitalink" element={<Vitalink />} />
         <Route path="Settings" element={<Configuracao />} />
 

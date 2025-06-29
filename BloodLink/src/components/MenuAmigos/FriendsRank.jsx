@@ -1,5 +1,5 @@
 import "./FriendsRank.css"
-import avatar from '../../assets/avatar.jpg';
+import AvatarAmigosRank from '../../assets/Linky-Fenix.png';
 
 const ranking = [
   { nome: "André", streak: 105 },
@@ -19,7 +19,7 @@ export default function RankingAmigos() {
       <div className="ranking-list">
         {ranking.map((amigo, index) => (
           <div className="ranking-card" key={index}>
-          <div className="ranking-pos-friends">{index + 1}°</div> <img src={avatar} alt={amigo.nome} />
+          <div className="ranking-pos-friends">{index + 1}°</div> <img src={AvatarAmigosRank} alt={amigo.nome} />
             <div className="ranking-info">
               <strong> {amigo.nome}</strong>
               <p>Streak {amigo.streak} dias</p>

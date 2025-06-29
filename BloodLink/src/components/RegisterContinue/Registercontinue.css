@@ -196,3 +196,63 @@ h2 {
   text-decoration: none;
   margin-top: 1rem;
 }
+
+
+
+/* =================== RESPONSIVO =================== */
+@media (max-width: 768px) {
+  .RegisterContinue {
+    padding: 2.5rem 2rem;
+  }
+
+  .logoRegisterContinue img {
+    height: 3.2rem;
+  }
+
+  .logoRegisterContinue h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .recaptcha-mock {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .RegisterContinue {
+    padding: 2rem 1.2rem;
+  }
+
+  .logoRegisterContinue h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .button-group button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recaptcha-mock {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .continuar-btn {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+}

@@ -146,7 +146,6 @@ body {
   width: 3.5rem;
   height: 3.5rem;
   object-fit: cover;
-  border: 0.3rem solid #000000;
 }
 
 /* Ícones de conquistas */
@@ -263,4 +262,195 @@ body {
 .userprofile-bloomii-sprite {
   width: 26rem;
   height: auto;
+}
+
+/*Responsividade*/
+/* Ajustes gerais para telas menores */
+@media (max-width: 1200px) {
+  .userprofile-page1 {
+    padding-left: 4rem;
+    margin: 3rem auto;
+    max-width: 90rem;
+  }
+
+  .user-cover-photo {
+    height: 45vh;
+    max-height: 30rem;
+    padding: 1rem 2rem;
+    gap: 3rem;
+  }
+
+  .user-cover-photo h2 {
+    font-size: 1.4rem;
+  }
+
+  .userprofile-editbutton {
+    top: 2rem;
+    right: 3rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .userprofile-content {
+    gap: 1.5rem;
+  }
+
+  .userprofile-bloomii-card {
+    padding: 2rem 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .userprofile-page1 {
+    padding-left: 2rem;
+    margin: 2rem auto;
+  }
+
+  .user-cover-photo {
+    height: 40vh;
+    max-height: 25rem;
+    padding: 1rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .user-cover-photo h2 {
+    font-size: 1.2rem;
+  }
+
+  .userprofile-bottom-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .userprofile-bio,
+  .userprofile-type,
+  .userprofile-avatarpic {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .userprofile-type strong {
+    font-size: 1.5rem;
+  }
+
+  .userprofile-avatarpic {
+    text-align: left;
+  }
+
+  .userprofile-editbutton {
+    top: 1rem;
+    right: 2rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .userprofile-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .userprofile-ranking-card,
+  .userprofile-bloomii-card {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .userprofile-bloomii-card {
+    padding: 2rem;
+  }
+
+  .bloomii-header h3 {
+    font-size: 1.8rem;
+  }
+
+  .bloomii-text p {
+    font-size: 1.1rem;
+  }
+
+  .bloomii-text ul {
+    font-size: 1rem;
+  }
+
+  .userprofile-usernamep {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .userprofile-page1 {
+    padding-left: 1rem;
+    margin: 1rem auto;
+  }
+
+  .user-cover-photo {
+    height: 30vh;
+    max-height: 18rem;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .user-cover-photo h2 {
+    font-size: 1rem;
+  }
+
+  .userprofile-editbutton {
+    top: 0.8rem;
+    right: 1rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .userprofile-bottom-line {
+    gap: 1rem;
+  }
+
+  .userprofile-bio,
+  .userprofile-type,
+  .userprofile-avatarpic {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .userprofile-type strong {
+    font-size: 1.2rem;
+  }
+
+  .userprofile-avatarpic {
+    text-align: left;
+  }
+
+  .userprofile-usernamep {
+    font-size: 1.3rem;
+  }
+
+  .userprofile-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .userprofile-ranking-card,
+  .userprofile-bloomii-card {
+    padding: 1.5rem;
+  }
+
+  .bloomii-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .bloomii-text p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .bloomii-text ul {
+    font-size: 0.9rem;
+    gap: 1rem;
+  }
+
+  .userprofile-bloomii-sprite {
+    width: 100%;
+    max-width: 20rem;
+  }
 }

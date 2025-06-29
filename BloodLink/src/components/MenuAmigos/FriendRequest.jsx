@@ -1,5 +1,6 @@
 import "./FriendsRequest.css"
-import avatar from '../../assets/avatar.jpg';
+import AvatarPedidos from '../../assets/Linky-Fenix.png';
+
 
 export default function PedidosAmizade() {
   return (
@@ -9,7 +10,7 @@ export default function PedidosAmizade() {
       </div>
 
       <div className="friend-request-card">
-        <img src={avatar} alt="Avatar de Nicolas" />
+        <img src={AvatarPedidos} alt="Avatar de Nicolas" />
         <div className="friend-request-info">
           <strong>Nicolas</strong>
           <p>Quer ser seu amigo!</p>

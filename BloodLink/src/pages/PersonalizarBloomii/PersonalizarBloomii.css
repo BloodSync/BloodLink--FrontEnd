@@ -215,3 +215,133 @@
   z-index: 9999;
   font-weight: bold;
 }
+
+@media (max-width: 1024px) {
+  .bloomii-wrapper {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .sidebarBloomii {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  .triangle-decoration {
+    display: none;
+  }
+
+  .customization-area {
+    padding: 2rem 1.5rem;
+  }
+
+  .skin-color-picker {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 5rem;
+  }
+
+  .items-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .item-slot {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .bloomii-image {
+    height: 18rem;
+  }
+
+  .custom-title {
+    font-size: 2.2rem;
+  }
+
+  .icon-grid {
+    gap: 1rem;
+  }
+
+  .user-bar {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bloomii-wrapper {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .sidebarBloomii {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .bloomii-image {
+    height: 14rem;
+  }
+
+  .custom-title {
+    font-size: 1.8rem;
+  }
+
+  .skin-color-picker {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .diamond-color {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .items-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .item-slot {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .user-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .user-logo {
+    height: 2.5rem;
+  }
+
+  .switch-side {
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .save-message {
+    font-size: 0.9rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.8rem 1.2rem;
+  }
+}

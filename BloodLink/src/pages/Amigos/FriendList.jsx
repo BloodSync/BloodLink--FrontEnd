@@ -6,7 +6,8 @@ import PedidosAmizade from "../../components/MenuAmigos/FriendRequest";
 import RankingAmigos from "../../components/MenuAmigos/FriendsRank";
 import RankingGeral from "../../components/MenuAmigos/Ranking";
 import { Link } from 'react-router-dom';
-import minhaFoto from '../../assets/avatar.jpg';
+import AvatarUser from '../../assets/Linky-Fenix.png';
+
 
 const sections = {
     'Lista de Amigos': <ListaAmigos />,
@@ -32,7 +33,7 @@ export default function FriendsSideTab() {
             <div className="friendsContent">
               
                     <div className="friends-header">
-                        <img src={minhaFoto} className="avatar" />
+                        <img src={AvatarUser} className="avatar" />
                         <h2 className="friend-list-title">Usuário &gt;&gt; </h2>
                         <p className="friend-list-txt"> Amigos e Ranking </p>
                     </div>

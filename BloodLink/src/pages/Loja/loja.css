@@ -7,7 +7,7 @@
 
 /* Container principal */
 .loja-wrapper {
-  padding: 8rem 15rem;
+  padding: 8rem 20rem;
   color: #ffffff;
 }
 
@@ -199,6 +199,7 @@
 }
 
 .preview-box {
+  position: relative; /* necessário para o botão absoluto */
   flex: 0 0 20rem;
   background: linear-gradient(to top, #040F24, transparent);
   border-bottom: 1rem solid #AD6D2D;
@@ -209,14 +210,6 @@
   height: 100%;
 }
 
-.preview-title {
-  font-weight: 700;
-  font-size: 1rem;
-  color: white;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
 .preview-img {
   width: 100%;
   height: 20rem; 
@@ -224,6 +217,58 @@
   margin: auto; 
   display: block;
 }
+
+.preview-layer {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.preview-img.base {
+  position: relative;
+  z-index: 1;
+}
+.preview-img.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+
+}
+.preview-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.preview-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.limpar-preview-icon {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.limpar-preview-icon:hover {
+  color: #d32f2f;
+}
+
 /* Itens */
 .item-section {
   flex: 1;
@@ -231,6 +276,7 @@
   background-color: #031924;
   border-radius: 1rem;
   padding: 1.5rem;
+  min-height: 30rem; /* ou o valor que quiser, ex: 30rem */
 }
 
 .item-header {
@@ -274,19 +320,31 @@
   border-radius: 0.8rem;
   padding: 0;
   width: 6rem;
+  height: 6rem; /* tamanho fixo do card */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-img-wrapper {
   position: relative;
   width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .item-img {
-  width: 100%;
+  width: auto;      
+  max-width: 80%; 
+  height: 4rem;   
   border-radius: 0.5rem 0.5rem 0 0;
   display: block;
   border-bottom: 0.3rem solid #AD6D2D;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .item-price {
@@ -305,4 +363,197 @@
   width: 1rem;
   height: 1rem;
   color: #FF8000;
+}
+
+
+/*Responsividade*/
+/* Para telas até 1200px */
+@media (max-width: 1200px) {
+  .loja-wrapper {
+    padding: 6rem 8rem;
+  }
+
+  .categorias-header {
+    gap: 10rem;
+    flex-wrap: wrap;
+  }
+
+  .categorias-grid {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .loja-preview-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .preview-box {
+    flex: 1 1 15rem;
+    height: auto;
+  }
+
+  .item-section {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .item-grid {
+    gap: 2rem;
+    justify-content: center;
+  }
+}
+
+/* Para telas até 768px */
+@media (max-width: 768px) {
+  .loja-wrapper {
+    padding: 4rem 3rem;
+  }
+
+  .loja-tabs {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .categorias-header {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categorias-grid {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .loja-preview-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview-box {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+  }
+
+  .item-section {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .item-grid {
+    gap: 1rem;
+  }
+
+  .item-card {
+    width: 5.5rem;
+  }
+
+  .user-thumb {
+    width: 14rem;
+    height: 3.2rem;
+  }
+
+  .user-coins {
+    font-size: 0.9rem;
+  }
+
+  .coin-amount {
+    font-size: 1.2rem;
+  }
+}
+
+/* Para telas até 480px */
+@media (max-width: 480px) {
+  .loja-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .loja-tabs {
+    gap: 0.5rem;
+  }
+
+  .tab-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .categorias-header {
+    gap: 1rem;
+  }
+
+  .categorias-title {
+    font-size: 1.5rem;
+  }
+
+  .categorias-grid {
+    gap: 0.5rem;
+  }
+
+  .categoria-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .categoria-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .loja-preview-section {
+    gap: 1rem;
+  }
+
+  .preview-box {
+    max-width: 100%;
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .preview-title {
+    font-size: 0.9rem;
+  }
+
+  .item-section {
+    padding: 0.8rem;
+  }
+
+  .item-section-title {
+    font-size: 1.2rem;
+  }
+
+  .item-grid {
+    gap: 1rem;
+  }
+
+  .item-card {
+    width: 4.5rem;
+  }
+
+  .item-price {
+    font-size: 0.7rem;
+  }
+
+  .user-thumb {
+    width: 12rem;
+    height: 2.5rem;
+  }
+
+  .user-coins {
+    font-size: 0.8rem;
+  }
+
+  .coin-amount {
+    font-size: 1rem;
+  }
 }

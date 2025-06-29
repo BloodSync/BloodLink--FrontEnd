@@ -18,6 +18,8 @@ import Bloomii2 from '../../assets/normalzinha.gif';
 import Bloomii3 from '../../assets/fortinha.gif';
 import Footer from "../Footer/Footer.jsx";
 
+
+
 //Animações scroll
 const Section = ({ children, animation = "fadeInUp" }) => {
   const controls = useAnimation();

@@ -81,3 +81,68 @@
   gap: 3rem;
   padding: 0 2rem;
 }
+
+
+
+/*Rank geral*/
+.top3-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-bottom: 2rem;
+}
+
+.top-card {
+  background: linear-gradient(145deg, #123C53, #2e80ad);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  animation: brilho 2s infinite alternate;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  animation: brilho-pulsante 2.5s infinite ease-in-out;
+}
+
+.top-card img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 3px solid rgb(255, 255, 255);
+  object-fit: cover;
+}
+
+.ranking-pos-friends1 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0.5rem;
+}
+
+.ranking-info1 strong {
+  display: block;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.ranking-info1 p {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+@keyframes brilho-pulsante {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2),
+                0 0 20px rgba(255, 215, 0, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6),
+                0 0 35px rgba(255, 215, 0, 0.3);
+    transform: scale(1.03);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2),
+                0 0 20px rgba(255, 215, 0, 0.1);
+    transform: scale(1);
+  }
+}

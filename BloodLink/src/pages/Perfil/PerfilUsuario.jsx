@@ -1,6 +1,7 @@
 import './perfilUsuario.css';
-import minhaFoto from '../../assets/avatar.jpg';
+import LinkyFenix from '../../assets/Linky-Fenix.png';
 import meuBloomii from '../../assets/Bloomii-Setgamer.gif';
+import Conquistas from '../../assets/Conquista.png';
 import { BsPencilFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
@@ -26,7 +27,7 @@ function UserProfile() {
               </div>
 
               <div className="userprofile-avatarpic">
-                <img src={minhaFoto} alt="Foto de perfil" className="userprofile-pic" />
+                <img src={LinkyFenix} alt="Foto de perfil" className="userprofile-pic" />
                 <p className="userprofile-usernamep">Usuário</p>
               </div>
             </div>
@@ -70,11 +71,11 @@ function UserProfile() {
                 </h3>
               </Link>
               <ul className="userprofile-achievements" >
-                <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
-                <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
-                <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
-                <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
-                <li><img src={minhaFoto} alt="" className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
               </ul>
               <Link to="/FriendsList">
                 <h3>
@@ -83,21 +84,21 @@ function UserProfile() {
               </Link>
               <ul className="userprofile-friend-list2">
                 <li>
-                  <img src={minhaFoto} alt="" />
+                  <img src={LinkyFenix} alt="" />
                   <div>
                     <p>Kadu</p>
                     <p>Streak 50 dias</p>
                   </div>
                 </li>
                 <li>
-                  <img src={minhaFoto} alt="" />
+                  <img src={LinkyFenix} alt="" />
                   <div>
                     <p>Guilherme</p>
                     <p>Streak 10 dias</p>
                   </div>
                 </li>
                 <li>
-                  <img src={minhaFoto} alt="" />
+                  <img src={LinkyFenix} alt="" />
                   <div>
                     <p>Sergio</p>
                     <p>Streak 5 dias</p>

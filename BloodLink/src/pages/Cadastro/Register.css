@@ -195,3 +195,65 @@ input {
     text-decoration: none;
     margin-top: 2rem;
 }
+
+
+/* ========== Responsividade ========== */
+
+@media (max-width: 768px) {
+  .Register {
+    padding: 2.5rem 2rem;
+  }
+
+  .logoRegister img {
+    height: 3.2rem;
+  }
+
+  .logoRegister h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .input-group input,
+  .username-wrapper {
+    padding: 0 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .inline-inputs {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Register {
+    padding: 2rem 1.2rem;
+  }
+
+  .logoRegister h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .continuar-btn,
+  .register-Google-button {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  .input-group input,
+  .username-wrapper {
+    font-size: 0.8rem;
+  }
+
+  .inline-inputs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
