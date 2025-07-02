@@ -25,7 +25,7 @@
 <table>
   <tr>
     <td width="150">
-      <img src="/BloodLink/src/assets/Linky-icon.png" alt="Linky" width="100"/>
+      <img src="/BloodLink/src/assets/Congrats.gif" alt="Linky" width="100"/>
     </td>
     <td>
       <strong>Linky</strong>, nossa mascote virtual, representa o espírito da solidariedade e do cuidado com o próximo.  
