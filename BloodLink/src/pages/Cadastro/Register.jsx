@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-import './Register.css';
-import logoImage from '../../assets/logo2.png';
-import logoGoogle from '../../assets/Logo-Google.png';
-import { Link } from 'react-router-dom'; //router
-
-function Cadastro() {
-    return (
-        <div className="RegisterBg">
-            <div className="Register">
-                <Link to="/">
-                    <div className="logoRegister">
-                        <img src={logoImage} alt="Logotipo de uma fênix vermelha estilizada, com asas amplas e penas vermelhas, voltada para a direita. O corpo da ave é simplificado, com um longo pescoço curvado e um bico pontiagudo. Uma longa cauda curva e ondulada se estende para trás, também com um design formando uma gota. Representando renascimento e poder." />
-                        <h1>
-                            <span>Blood</span> <span>Link</span>
-                        </h1>
-                    </div>
-                </Link>
-=======
 import "./Register.css";
 import logoImage from "../../assets/logo2.png"; // seu logo
 import logoGoogle from "../../assets/Logo-Google.png";
@@ -26,14 +7,14 @@ import { jwtDecode } from "jwt-decode";
 
 function Cadastro() {
   const navigate = useNavigate();
->>>>>>> 839aa146a9dd55bd3d3c8d8289dc2f21640045f3
+
 
   return (
     <div className="RegisterBg">
       <div className="Register">
         <Link to="/">
           <div className="logoRegister">
-            <img src={logoImage} alt="Logo BloodLink" />
+            <img src={logoImage} alt="Logotipo de uma fênix vermelha estilizada, com asas amplas e penas vermelhas, voltada para a direita. O corpo da ave é simplificado, com um longo pescoço curvado e um bico pontiagudo. Uma longa cauda curva e ondulada se estende para trás, também com um design formando uma gota. Representando renascimento e poder." />
             <h1>
               <span>Blood</span> <span>Link</span>
             </h1>
