@@ -247,7 +247,7 @@ function Home() {
             <img src={PartnersLogo} alt="Ícone em vermelho vibrante de um coração com uma linha de eletrocardiograma (ECG) atravessando o centro." />
             <img src={PartnersLogo} alt="Ícone em vermelho vibrante de um coração com uma linha de eletrocardiograma (ECG) atravessando o centro." />
           </div>
-          <a href="mailto:doei@bloodsync.com">
+          <a href="mailto:doe@bloodsync.com">
             <button className="become-partner-btn" data-i18n="partnersButton">Seja parceiro</button>
           </a>
         </section>

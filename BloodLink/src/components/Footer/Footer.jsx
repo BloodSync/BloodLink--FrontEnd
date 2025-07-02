@@ -44,7 +44,7 @@ function Footer() {
                         <div className="footer-column">
                             <h4 data-i18n="footerContact">Fale com a gente</h4>
                             <ul>
-                                <li><a href="mailto:doei@bloodsync.com" data-i18n="footerEmail">Email: doei@bloodsync.com</a></li>
+                                <li><a href="mailto:doei@bloodsync.com" data-i18n="footerEmail">Email: doe@bloodsync.com</a></li>
                             </ul>
                         </div>
                     </div>
