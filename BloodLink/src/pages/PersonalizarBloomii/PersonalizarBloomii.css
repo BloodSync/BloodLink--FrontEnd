@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .bloomii-wrapper {
@@ -157,10 +157,10 @@
   pointer-events: none; /* evita clicar na imagem do item, o clique fica no div pai */
   object-fit: contain; /* manter proporção */
 }
+
 .bloomii-avatar-img.overlay {
   z-index: 10;
 }
-
 
 .bloomii-user-bar {
   background: white;
@@ -386,11 +386,13 @@
   color: #d63630;
 }
 
+/* === Responsivo até 1024px === */
 @media (max-width: 1024px) {
   .bloomii-wrapper {
     flex-direction: column;
     width: 90%;
     height: auto;
+    margin: 2rem auto;
   }
 
   .bloomii-sidebar {
@@ -414,7 +416,7 @@
   .bloomii-skin-color-picker {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
 
   .bloomii-items-grid {
@@ -423,12 +425,13 @@
   }
 
   .bloomii-item-slot {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 6rem;
+    height: 6rem;
   }
 
   .bloomii-custom-title {
     font-size: 2.2rem;
+    text-align: center;
   }
 
   .bloomii-icon-grid {
@@ -438,14 +441,19 @@
   .bloomii-user-bar {
     font-size: 0.9rem;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 }
 
+/* === Responsivo até 600px === */
 @media (max-width: 600px) {
   .bloomii-wrapper {
     width: 95%;
     height: auto;
     flex-direction: column;
+    margin: 2rem auto;
   }
 
   .bloomii-sidebar {
@@ -461,12 +469,14 @@
   }
 
   .bloomii-custom-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    text-align: center;
   }
 
   .bloomii-skin-color-picker {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
+    margin-bottom: 3rem;
   }
 
   .bloomii-diamond-color {
@@ -486,7 +496,7 @@
 
   .bloomii-user-bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     font-size: 0.85rem;
     gap: 0.5rem;
   }
@@ -505,5 +515,15 @@
     bottom: 1.5rem;
     right: 1.5rem;
     padding: 0.8rem 1.2rem;
+  }
+
+  .bloomii-character-box {
+    width: 13rem;
+    height: 19rem;
+  }
+
+  .bloomii-avatar-layer {
+    width: 200px;
+    height: 280px;
   }
 }

@@ -33,7 +33,7 @@ export default function FriendsSideTab() {
             <div className="friendsContent">
               
                     <div className="friends-header">
-                        <img src={AvatarUser} className="avatar" />
+                        <img src={AvatarUser} className="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." />
                         <h2 className="friend-list-title">Usuário &gt;&gt; </h2>
                         <p className="friend-list-txt"> Amigos e Ranking </p>
                     </div>

@@ -20,7 +20,7 @@ import InfoCenter from '../pages/Information/CentralInfo';
 import FriendsSideTab from '../pages/Amigos/FriendList';
 import Conquistas from '../pages/ConquistasUser/Conquistas';
 import PaymentWizard from '../pages/Pagamento/Pagamento';
-
+import QuizGame from '../pages/Linkizz/Linkizz';
 import LojaPage from '../pages/Loja/loja';
 
 
@@ -43,7 +43,7 @@ export function Router() {
         <Route path="EditProfile" element={<EditProfileTab />} />
         <Route path="FriendsList" element={<FriendsSideTab />} />
         <Route path="Achievements" element={<Conquistas />} />
-
+        <Route path="Linkizz" element={<QuizGame />} />
         <Route path="UserDonate" element={<Doacao />} />
         <Route path="UserStore" element={<Loja />} />
         <Route path="LojaItem" element={<ItemPage />} />

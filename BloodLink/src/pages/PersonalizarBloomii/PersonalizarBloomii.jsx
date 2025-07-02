@@ -114,7 +114,7 @@ function Bloomii() {
 
           <div className="bloomii-character-box">
             <div className="bloomii-avatar-layer">
-              <img src={selectedSkin.img} alt="Base avatar" className="bloomii-avatar-img base" />
+              <img src={selectedSkin.img} alt="Base Bloomii avatar" className="bloomii-avatar-img base" />
               {Object.entries(equippedItems).map(([category, item], i) =>
                 item ? (
                   <img
@@ -129,7 +129,7 @@ function Bloomii() {
           </div>
 
           <div className="bloomii-user-bar">
-            <img src={logoImage} alt="Logo BloodLink" className="bloomii-user-logo" />
+            <img src={logoImage} alt="Logotipo de uma fênix vermelha estilizada, com asas amplas e penas vermelhas, voltada para a direita. O corpo da ave é simplificado, com um longo pescoço curvado e um bico pontiagudo. Uma longa cauda curva e ondulada se estende para trás, também com um design formando uma gota. Representando renascimento e poder." className="bloomii-user-logo" />
             <span className="bloomii-user-name">@Usuário</span>
 
             <button onClick={handleSave} className="bloomii-save-button">
@@ -208,7 +208,6 @@ function Bloomii() {
               ))
             ) : null}
           </div>
-
 
           {/* Sempre mostrar o switch-side (parte dos sets) junto com o diamante (quando diamante visível) */}
           {!selectedCategory && (

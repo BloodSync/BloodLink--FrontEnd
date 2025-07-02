@@ -1,4 +1,3 @@
-
 export default function ConquistaCard({ icon, title, description, date, unlocked }) {
   return (
     <div className={`conquista-card ${unlocked ? 'unlocked' : 'locked'}`}>

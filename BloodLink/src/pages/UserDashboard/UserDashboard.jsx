@@ -18,7 +18,7 @@ function Home1() {
               <button>Hemocentros perto de você</button>
             </Link>
           </div>
-          <img src={logoImageWhite} alt="Ícone BloodLink" className="logo-white" />
+          <img src={logoImageWhite} alt="A imagem mostra o logotipo da BloodLink estilizado de uma fênix na cor branca, em um fundo vermelho sólido. A fênix está em perfil, voltada para a direita, com suas asas amplas e uma cauda longa e curvilínea que se estende para cima e para trás, lembrando chamas ou um movimento ascendente. O design é limpo e moderno, transmitindo uma sensação de ascensão, renovação e poder." className="logo-white" />
         </div>
 
         <h2 className="Dashboard-title">Conteúdo para você</h2>
@@ -31,7 +31,7 @@ function Home1() {
       <div className="Dashboard-section">
         <div className="top-row">
           <Link to="/userStore" >
-            <img src={IconLoja} alt="Bloomii avatar"
+            <img src={IconLoja} alt="Arte em pixel de um dos Bloomis da equipe! de cabelo preto longo e marinha chiquinha, ela possui um óculos redendo , pele morena e um sorriso. O fundo dessa imagem é vermelho."
               className="bloomii-img" />
           </Link>
           <h2 className="main-text">Visite a loja e personalize seu Bloomii do seu jeitinho.</h2>

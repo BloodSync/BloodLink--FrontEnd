@@ -48,10 +48,10 @@ export default function InfoCenter() {
         <>
           <p>Doar sangue é mais que um ato de solidariedade — na BloodLink, você também é reconhecido por isso!</p>
           <ul>
-            <li><strong>MONs:</strong> a moeda da plataforma, ganha com doações e participação em campanhas.</li>
+            <li><strong>MONs:</strong> a moeda da plataforma, ganha com doações e participação no Vitalink.</li>
             <li><strong>Ranking:</strong> compare sua dedicação com outros usuários da comunidade.</li>
-            <li><strong>Conquistas:</strong> desbloqueie selos únicos ao bater metas de doação e engajamento.</li>
-            <li><strong>Missões diárias:</strong> receba tarefas simples, como divulgar a doação de sangue ou responder quizzes informativos.</li>
+            <li><strong>Conquistas:</strong> desbloqueie selos únicos ao bater metas de doação e engajamento na plataforma.</li>
+            <li><strong>Missões diárias:</strong> receba tarefas simples, como beber água ou até responder quizzes informativos.</li>
           </ul>
           <p>A cada ação, você fortalece a comunidade e inspira outras pessoas a fazerem o bem. A solidariedade também pode ser divertida!</p>
         </>

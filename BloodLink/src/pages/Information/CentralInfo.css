@@ -1,6 +1,6 @@
 /* Plano de fundo geral */
 .info-center-bg {
-  background: linear-gradient(180deg, #e9f2fa 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #334d6441 0%, #ffffff 100%);
   min-height: 100vh;
   color: #1b1b1b;
   position: relative;
@@ -51,7 +51,7 @@
 
 .info-sidebar li:hover,
 .info-sidebar .active-link {
-  background-color: #1b4d68;
+  background-color: #073954b0;
   color: white;
   font-weight: bold;
 }
@@ -68,7 +68,7 @@
 
 .info-content h2 {
   margin-bottom: 2rem;
-  color: #1b4d68;
+  color: #073954;
   font-size: 2rem;
   font-weight: 700;
 }

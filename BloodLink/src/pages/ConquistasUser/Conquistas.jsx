@@ -85,7 +85,7 @@ export default function Conquistas() {
   return (
     <div className="conquistas-wrapper">
       <div className="conquistas-header">
-        <img src={AvatarUser} alt="Avatar do usuário" />
+        <img src={AvatarUser} alt="A imagem mostra um ícone pixelizado de um troféu dourado em um fundo preto escuro. O troféu tem um corpo largo, uma base menor e duas alças curvadas para cima em cada lado. Há uma faixa vertical escura na frente do troféu. Acima e em ambos os lados do troféu, há quatro pequenas cruzes pixelizadas que representam brilho ou estrelas." />
         <h2>Usuário &gt;&gt; Conquistas</h2>
       </div>
 

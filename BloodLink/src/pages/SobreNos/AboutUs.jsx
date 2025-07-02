@@ -12,13 +12,10 @@ import logoImageWhite from '../../assets/logo-white.png';
 import { Link } from 'react-router-dom';
 import Andre from '../../assets/Andre.jpeg';
 import Ingrid from '../../assets/Ingrid.jpg';
-import AnaJulia from '../../assets/AnaJulia.JPG';
+import AnaJulia from '../../assets/AnaJulia.png';
 import Guilherme from '../../assets/Guilherme.jpg';
 import Jonas from '../../assets/Jonas.jpeg';
 import Gabriel from '../../assets/Gabriel.jpeg';
-
-
-
 
 
 function AboutUs() {
@@ -29,7 +26,7 @@ function AboutUs() {
                 <header className="about-hero">
                     <div className="overlay">
                         <div className="top-bar">
-                            <img src={logoImageWhite} alt="BloodLink logo branco" className="logo-about-us" />
+                            <img src={logoImageWhite} alt="A imagem mostra o logotipo da BloodLink estilizado de uma fênix na cor branca, em um fundo vermelho sólido. A fênix está em perfil, voltada para a direita, com suas asas amplas e uma cauda longa e curvilínea que se estende para cima e para trás, lembrando chamas ou um movimento ascendente. O design é limpo e moderno, transmitindo uma sensação de ascensão, renovação e poder." className="logo-about-us" />
                             <nav className="nav-bar-AboutUs">
                                 <Link to="/" className="nav-link">Home</Link>
                                 <Link to="/InformationCenter" className="nav-link">Central de Informações</Link>
@@ -96,7 +93,7 @@ function AboutUs() {
                         <div className="team-grid">
                             <div className="team-card">
                                 <a href="https://www.linkedin.com/in/andr%C3%A9-luiz-santos/" target="_blank" rel="noopener noreferrer">
-                                    <img src={Andre} alt="BloodLink" className="img-placeholder" />
+                                    <img src={Andre} alt="Um homem jovem com cabelo crespo curto e brincos nas orelhas. Ele veste uma camiseta azul marinho com um logotipo circular branco 'PROA' no peito." className="img-placeholder" />
                                 </a>
                                 <p className="team-name">André</p>
                                 <p className="team-role">Project Owner</p>
@@ -105,7 +102,7 @@ function AboutUs() {
 
                             <div className="team-card">
                                 <a href="http://www.linkedin.com/in/ingrid-bassi" target="_blank" rel="noopener noreferrer">
-                                    <img src={Ingrid} alt="BloodLink" div className="img-placeholder" />
+                                    <img src={Ingrid} alt="Uma mulher jovem com cabelo preto amarrado, usando um colar choker e piercings na orelha direita. Ela veste uma camiseta azul marinho com o logotipo 'PROA'." div className="img-placeholder" />
                                 </a>
                                 <p className="team-name">Ingrid Bassi </p>
                                 <p className="team-role">Scrum Master</p>
@@ -114,7 +111,7 @@ function AboutUs() {
 
                             <div className="team-card">
                                 <a href="https://www.linkedin.com/in/ana-julia-dos-santos-silva-806919246/" target="_blank" rel="noopener noreferrer">
-                                    <img src={AnaJulia} alt="BloodLink" div className="img-placeholder" />
+                                    <img src={AnaJulia} alt="Uma mulher jovem com cabelo escuro e óculos, sorrindo. Ela veste uma camiseta azul marinho com o logotipo 'PROA'." div className="img-placeholder" />
                                 </a>
                                 <p className="team-name">Ana Julia</p>
                                 <p className="team-role">Social Manager </p>
@@ -123,7 +120,7 @@ function AboutUs() {
 
                             <div className="team-card">
                                 <a href="https://www.linkedin.com/in/guilhermelsilvapfor/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
-                                    <img src={Guilherme} alt="BloodLink" div className="img-placeholder" />
+                                    <img src={Guilherme} alt="Um homem jovem de óculos e cabelo escuro, com barba e bigode. Ele veste uma camiseta azul marinho com o logotipo 'PROA'." div className="img-placeholder" />
                                 </a>
                                 <p className="team-name">Guilherme Loures </p>
                                 <p className="team-role">Dev</p>
@@ -132,7 +129,7 @@ function AboutUs() {
 
                             <div className="team-card">
                                 <a href="https://www.linkedin.com/in/jonas-henrique-pereira-de-almeida-798720224/" target="_blank" rel="noopener noreferrer">
-                                    <img src={Jonas} alt="BloodLink" div className="img-placeholder" />
+                                    <img src={Jonas} alt="Um homem jovem com cabelo afro, bigode e cavanhaque. Ele veste uma camiseta azul marinho com o logotipo 'PROA'." div className="img-placeholder" />
                                 </a>
                                 <p className="team-name">Jonas Henrique</p>
                                 <p className="team-role">Dev</p>
@@ -140,8 +137,8 @@ function AboutUs() {
                             </div>
 
                             <div className="team-card">
-                                   <a href="https://www.linkedin.com/in/gabriel-souza-almeida-032406263/" target="_blank" rel="noopener noreferrer">
-                                <img src={Gabriel} alt="BloodLink" div className="img-placeholder" />
+                                <a href="https://www.linkedin.com/in/gabriel-souza-almeida-032406263/" target="_blank" rel="noopener noreferrer">
+                                    <img src={Gabriel} alt="Um homem jovem de óculos, com cabelo curto e sorriso. Ele veste uma camiseta azul marinho com o logotipo 'PROA'." div className="img-placeholder" />
                                 </a>
                                 <p className="team-name">Gabriel de Souza </p>
                                 <p className="team-role">Dev</p>

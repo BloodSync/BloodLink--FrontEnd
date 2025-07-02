@@ -27,7 +27,7 @@ function UserProfile() {
               </div>
 
               <div className="userprofile-avatarpic">
-                <img src={LinkyFenix} alt="Foto de perfil" className="userprofile-pic" />
+                <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." className="userprofile-pic" />
                 <p className="userprofile-usernamep">Usuário</p>
               </div>
             </div>
@@ -53,7 +53,7 @@ function UserProfile() {
                   </ul>
                 </div>
                 <div className="bloomii-sprite-area">
-                  <img src={meuBloomii} alt="Bloomii" className="userprofile-bloomii-sprite" />
+                  <img src={meuBloomii} alt="Seu Bloomii estilizado do seu jeito!" className="userprofile-bloomii-sprite" />
                 </div>
               </div>
             </div>
@@ -71,11 +71,11 @@ function UserProfile() {
                 </h3>
               </Link>
               <ul className="userprofile-achievements" >
-                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
-                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
-                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
-                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
-                <li><img src={Conquistas } alt="" className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="A imagem mostra um ícone pixelizado de um troféu dourado em um fundo preto escuro. O troféu tem um corpo largo, uma base menor e duas alças curvadas para cima em cada lado. Há uma faixa vertical escura na frente do troféu. Acima e em ambos os lados do troféu, há quatro pequenas cruzes pixelizadas que representam brilho ou estrelas." className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="A imagem mostra um ícone pixelizado de um troféu dourado em um fundo preto escuro. O troféu tem um corpo largo, uma base menor e duas alças curvadas para cima em cada lado. Há uma faixa vertical escura na frente do troféu. Acima e em ambos os lados do troféu, há quatro pequenas cruzes pixelizadas que representam brilho ou estrelas." className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="A imagem mostra um ícone pixelizado de um troféu dourado em um fundo preto escuro. O troféu tem um corpo largo, uma base menor e duas alças curvadas para cima em cada lado. Há uma faixa vertical escura na frente do troféu. Acima e em ambos os lados do troféu, há quatro pequenas cruzes pixelizadas que representam brilho ou estrelas." className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="A imagem mostra um ícone pixelizado de um troféu dourado em um fundo preto escuro. O troféu tem um corpo largo, uma base menor e duas alças curvadas para cima em cada lado. Há uma faixa vertical escura na frente do troféu. Acima e em ambos os lados do troféu, há quatro pequenas cruzes pixelizadas que representam brilho ou estrelas." className="achievements-icon" /></li>
+                <li><img src={Conquistas } alt="A imagem mostra um ícone pixelizado de um troféu dourado em um fundo preto escuro. O troféu tem um corpo largo, uma base menor e duas alças curvadas para cima em cada lado. Há uma faixa vertical escura na frente do troféu. Acima e em ambos os lados do troféu, há quatro pequenas cruzes pixelizadas que representam brilho ou estrelas." className="achievements-icon" /></li>
               </ul>
               <Link to="/FriendsList">
                 <h3>
@@ -84,21 +84,21 @@ function UserProfile() {
               </Link>
               <ul className="userprofile-friend-list2">
                 <li>
-                  <img src={LinkyFenix} alt="" />
+                  <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." />
                   <div>
                     <p>Kadu</p>
                     <p>Streak 50 dias</p>
                   </div>
                 </li>
                 <li>
-                  <img src={LinkyFenix} alt="" />
+                  <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." />
                   <div>
                     <p>Guilherme</p>
                     <p>Streak 10 dias</p>
                   </div>
                 </li>
                 <li>
-                  <img src={LinkyFenix} alt="" />
+                  <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." />
                   <div>
                     <p>Sergio</p>
                     <p>Streak 5 dias</p>

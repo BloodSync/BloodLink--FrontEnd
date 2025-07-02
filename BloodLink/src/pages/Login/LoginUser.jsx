@@ -10,7 +10,7 @@ function Login() {
       <div className="LogIn">
         <Link to="/">
           <div className="logologin">
-            <img src={logoImage} alt="Logo BloodLink" />
+            <img src={logoImage} alt="Logotipo de uma fênix vermelha estilizada, com asas amplas e penas vermelhas, voltada para a direita. O corpo da ave é simplificado, com um longo pescoço curvado e um bico pontiagudo. Uma longa cauda curva e ondulada se estende para trás, também com um design formando uma gota. Representando renascimento e poder." />
             <h1>
               <span>Blood</span> <span>Link</span>
             </h1>

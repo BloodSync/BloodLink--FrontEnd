@@ -146,3 +146,122 @@
     transform: scale(1);
   }
 }
+/* ---------- Responsividade para o Ranking ---------- */
+
+@media (max-width: 1024px) {
+  .ranking-columns {
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .ranking-list {
+    margin-left: 0;
+  }
+
+  .ranking-card {
+    font-size: 1.3rem;
+  }
+
+  .ranking-card img {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .ranking-pos-friends {
+    font-size: 1.3rem;
+  }
+
+  .ranking-info strong {
+    font-size: 1rem;
+  }
+
+  .ranking-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top3-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .top-card {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .top-card img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .ranking-pos-friends1 {
+    font-size: 1.3rem;
+  }
+
+  .ranking-info1 strong {
+    font-size: 1rem;
+  }
+
+  .ranking-info1 p {
+    font-size: 0.8rem;
+  }
+
+  .ranking-card {
+    font-size: 1.1rem;
+  }
+
+  .ranking-card img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-titulo-rank {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .ranking-pos-friends {
+    font-size: 1.1rem;
+  }
+
+  .ranking-card {
+    font-size: 1rem;
+    gap: 0.8rem;
+  }
+
+  .ranking-card img {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .ranking-info strong {
+    font-size: 0.9rem;
+  }
+
+  .ranking-info p {
+    font-size: 0.8rem;
+  }
+
+  .top-card img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .ranking-pos-friends1 {
+    font-size: 1.2rem;
+  }
+
+  .ranking-info1 strong {
+    font-size: 0.95rem;
+  }
+
+  .ranking-info1 p {
+    font-size: 0.75rem;
+  }
+}

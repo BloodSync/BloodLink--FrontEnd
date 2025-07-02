@@ -1,0 +1,276 @@
+/* === Tela inicial === */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  background-color: #f0faff;
+  text-align: center;
+  gap: 2rem;
+}
+
+.logo-text {
+  font-size: 4rem;
+  color: #531616;
+  font-weight: bold;
+}
+
+.start-left button {
+  padding: 0.75rem 2rem;
+  background-color: #531616;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.start-image {
+  max-width: 19rem;
+  height: auto;
+}
+
+/* === Quiz === */
+.quiz-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #debcbc;
+}
+
+.question-box {
+  background: #f8f8f8;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.card-flip {
+  width: 155px;
+  height: 100px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  perspective: 1000px;
+  transition: border 0.3s;
+}
+
+.card-flip.selected {
+  border: 3px solid #aa2323;
+}
+
+.card-inner {
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back {
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.card-front {
+  display: none;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quiz-container button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #661515;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* === Barra de progresso === */
+.progress-wrapper {
+  width: 100%;
+  max-width: 600px;
+  background-color: #58585847;
+  height: 12px;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: #531616;
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+/* === Feedback da Linky === */
+.feedback-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #c47f7f;
+  padding: 1rem 2rem 1rem 4.5rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+
+
+.feedback-box .linky-mini {
+  position: absolute;
+  left: 1rem;
+  width: 5rem;
+  height: auto;
+}
+
+/* === Tela de resultado === */
+.result-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0faff;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Wrapper com imagem + bolha */
+.linky-message-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Imagem da Linky */
+.linky-mini1 {
+  width: 11rem;
+  height: auto;
+  flex-shrink: 0; 
+}
+
+/* Balão de fala */
+.linky-message {
+  position: relative;
+  background:   #531616;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  max-width: 70%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Setinha do balão apontando pra Linky */
+.linky-message::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 2.8rem;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid  #531616;
+}
+
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 2.5rem;
+  }
+
+  .question-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .card-flip {
+    width: 130px;
+    height: 90px;
+  }
+
+  .linky-message {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .linky-mini1 {
+    width: 8rem;
+  }
+
+  .feedback-box {
+    padding: 1rem 1.5rem 1rem 4rem;
+  }
+
+  .feedback-box .linky-mini {
+    width: 4rem;
+  }
+
+  .progress-wrapper {
+    max-width: 90%;
+  }
+
+  .wheel-container {
+    width: 90vw;
+    height: 90vw;
+    max-width: 320px;
+    max-height: 320px;
+  }
+
+  .spin-button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-flip {
+    width: 100px;
+    height: 80px;
+  }
+
+  .quiz-container button {
+    font-size: 0.9rem;
+  }
+
+  .logo-text {
+    font-size: 2rem;
+  }
+
+  .start-image {
+    max-width: 14rem;
+  }
+}

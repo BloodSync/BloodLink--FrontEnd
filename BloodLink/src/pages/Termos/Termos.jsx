@@ -48,7 +48,7 @@ function TermsPage() {
       <div className="TermsBg">
         <nav className={`navbar ${showNavbar ? "" : "navbar-hidden"}`}>
           <div className="navbar-left">
-            <img src={logoImageWhite} alt="BloodLink" className="navbar-logo" />
+            <img src={logoImageWhite} alt="A imagem mostra o logotipo da BloodLink estilizado de uma fênix na cor branca, em um fundo vermelho sólido. A fênix está em perfil, voltada para a direita, com suas asas amplas e uma cauda longa e curvilínea que se estende para cima e para trás, lembrando chamas ou um movimento ascendente. O design é limpo e moderno, transmitindo uma sensação de ascensão, renovação e poder." className="navbar-logo" />
             <span className="navbar-title">BloodLink</span>
           </div>
           <div className="navbar-right">

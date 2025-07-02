@@ -4,14 +4,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .sets-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2.2rem;
+  justify-content: center;
 }
 
+/* Card base */
 .set-card {
   margin-top: 5rem;
   position: relative;
@@ -23,6 +27,7 @@
   align-items: center;
   justify-content: center;
   border-bottom: 1rem solid #ffffff;
+  box-sizing: border-box;
 }
 
 .set-img {
@@ -67,4 +72,51 @@
 
 .set-card:hover .set-title {
   opacity: 1;
+}
+
+/* Responsividade */
+
+/* Tablets e laptops (1024px e menos) */
+@media (max-width: 1024px) {
+  .set-card {
+    width: 10rem;
+    height: 18rem;
+  }
+  .set-title {
+    font-size: 0.9rem;
+  }
+  .sets-grid {
+    gap: 1.8rem;
+  }
+}
+
+/* Tablets pequenos e grandes smartphones (768px e menos) */
+@media (max-width: 768px) {
+  .set-card {
+    width: 9rem;
+    height: 16rem;
+    margin-top: 3rem;
+  }
+  .set-title {
+    font-size: 0.85rem;
+  }
+  .sets-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Smartphones pequenos (480px e menos) */
+@media (max-width: 480px) {
+  .sets-grid {
+    gap: 1rem;
+  }
+  .set-card {
+    width: 7.5rem;
+    height: 13rem;
+    margin-top: 2rem;
+    border-bottom-width: 0.6rem;
+  }
+  .set-title {
+    font-size: 0.75rem;
+  }
 }

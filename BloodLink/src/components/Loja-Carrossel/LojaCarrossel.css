@@ -5,6 +5,7 @@
   align-items: center;
   gap: 4rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Linha de cima centralizada */
@@ -15,7 +16,9 @@
   gap: 2rem;
   flex-wrap: wrap;
   width: 100%;
+  box-sizing: border-box;
 }
+
 /* Linha de baixo com largura fixa para servir de base */
 .linha-inferior {
   display: flex;
@@ -24,13 +27,29 @@
   justify-content: center;
   width: 100%;
   max-width: 60rem;
+  box-sizing: border-box;
 }
 
 /* Estrutura base */
 .item-box.destaque {
-  width: 32rem;
-  height: 12rem;
+  width: 35rem;
+  height: 15rem;
   position: relative;
+}
+
+.item-box.medio {
+  width: 12rem;
+  height: 17rem;
+}
+
+.item-box.mediano {
+  width: 10rem;
+  height: 18rem;
+}
+
+.item-box.pequeno {
+  width: 8rem;
+  height: 15rem;
 }
 
 /* Imagem */
@@ -78,26 +97,6 @@
   margin-top: 0;
 }
 
-/* Tamanhos */
-.item-box.destaque {
-  width: 35rem;
-  height: 15rem;
-}
-
-.item-box.medio {
-  width: 12rem;
-  height: 17rem;
-}
-
-.item-box.mediano{
- width: 10rem;
-  height: 18rem;
-}
-.item-box.pequeno {
-  width: 8rem;
-  height: 15rem;
-}
-
 /* Cores das barrinhas */
 .gold {
   background-color: #AB5E10;
@@ -109,4 +108,115 @@
 
 .green {
   background-color: #3A9935;
+}
+
+/* -------- Responsividade -------- */
+
+/* Larguras até 1024px (tablets e laptops pequenos) */
+@media (max-width: 1024px) {
+  .item-box.destaque {
+    width: 28rem;
+    height: 12rem;
+  }
+
+  .item-box.medio {
+    width: 10rem;
+    height: 15rem;
+  }
+
+  .item-box.mediano {
+    width: 9rem;
+    height: 16rem;
+  }
+
+  .item-box.pequeno {
+    width: 7rem;
+    height: 13rem;
+  }
+
+  .linha-inferior {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .linha-superior {
+    gap: 1.5rem;
+  }
+}
+
+/* Larguras até 768px (tablets menores e grandes smartphones) */
+@media (max-width: 768px) {
+  .item-box.destaque {
+    width: 22rem;
+    height: 10rem;
+  }
+
+  .item-box.medio {
+    width: 8rem;
+    height: 12rem;
+  }
+
+  .item-box.mediano {
+    width: 7.5rem;
+    height: 13rem;
+  }
+
+  .item-box.pequeno {
+    width: 6rem;
+    height: 10rem;
+  }
+
+  .linha-superior {
+    gap: 1rem;
+  }
+
+  .linha-inferior {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Larguras até 480px (smartphones pequenos) */
+@media (max-width: 480px) {
+  .novos-grid {
+    gap: 2rem;
+  }
+
+  .linha-superior,
+  .linha-inferior {
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 0 0.5rem;
+  }
+
+  .item-box.destaque {
+    width: 16rem;
+    height: 8rem;
+    margin-top: 1rem;
+  }
+
+  .item-box.medio {
+    width: 6.5rem;
+    height: 10rem;
+  }
+
+  .item-box.mediano {
+    width: 6rem;
+    height: 10rem;
+  }
+
+  .item-box.pequeno {
+    width: 5rem;
+    height: 8rem;
+  }
+
+  .item-label {
+    font-size: 0.85rem;
+    bottom: 0.3rem;
+    left: 0.3rem;
+  }
+
+  .item-bar {
+    height: 0.4rem;
+  }
 }

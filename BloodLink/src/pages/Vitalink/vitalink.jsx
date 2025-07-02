@@ -14,7 +14,7 @@ const missoes = [
     forca: 10,
     vitalidade: 20,
     influencia: 20,
-    mon:200,
+    mon: 200,
     selo: "Missão permanente",
   },
   {
@@ -23,7 +23,7 @@ const missoes = [
     forca: 5,
     vitalidade: 10,
     influencia: 40,
-     mon:200,
+    mon: 200,
     selo: "Missão semanal",
   },
   {
@@ -32,7 +32,7 @@ const missoes = [
     forca: 2,
     vitalidade: 5,
     influencia: 25,
-     mon:200,
+    mon: 200,
     selo: "Missão Permanente",
   },
 ];
@@ -70,19 +70,22 @@ function Vitalink() {
       <div className="vitalink-header">
         <h1 className="vitalink-title">Vitalink</h1>
         <div className="vitalink-tabs">
-
         </div>
       </div>
       <div className="vitalink-container">
         <div className="vitalink-content">
           <div className="vitalink-left">
+            <Link to="/Linkizz" className="bloomii-loja-link">
+              <h2>Linkizz Especial Demoday!</h2><br/>
+            </Link>
+
             {/* Atividades */}
             <div className="atividade-section">
               <h2 className="atividade-title">Atividade</h2>
               <div className="atividade-item">
                 <p className="atividade-data">Hoje</p>
                 <div className="atividade-linha">
-                  <img src={LinkyFenix} alt="profile" className="atividade-avatar" />
+                  <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." className="atividade-avatar" />
                   <p><span className="azul">Usuário</span> completou suas missões diárias!</p>
                 </div>
               </div>
@@ -122,7 +125,7 @@ function Vitalink() {
                   <div className="missao-img-wrapper">
                     <img src={MissionBg} alt="missao" className="missao-img" />
                     <div className="missao-autor">
-                      <img src={Linky} alt="autor" className="missao-avatar" />
+                      <img src={Linky} alt="Avatar em estilo pixel art do rosto da Linky. Com cabelo preto, pele morena, fita de cabelo vermelho, coque, óculos, olhos verdes e um sorriso." className="missao-avatar" />
                       <span className="proposto">PROPOSTO POR LINKY</span>
                     </div>
                   </div>
@@ -146,6 +149,7 @@ function Vitalink() {
           </div>
 
           <div className="vitalink-right">
+
             {/* Conquistas */}
             <div className="conquistas-box-vitalink">
               <div className="conquista-txt">
@@ -154,7 +158,7 @@ function Vitalink() {
               </div>
               <div className="conquistas-grid-vitalink">
                 {[...Array(6)].map((_, i) => (
-                  <img key={i} src={Icon} alt="Conquistas" className="conquista-img" />
+                  <img key={i} src={Icon} alt="A imagem mostra um ícone pixelizado de um troféu dourado em um fundo preto escuro. O troféu tem um corpo largo, uma base menor e duas alças curvadas para cima em cada lado. Há uma faixa vertical escura na frente do troféu. Acima e em ambos os lados do troféu, há quatro pequenas cruzes pixelizadas que representam brilho ou estrelas." className="conquista-img" />
                 ))}
               </div>
               <Link to="/Achievements">
@@ -216,7 +220,7 @@ function Vitalink() {
                 <div className="ranking-content-vitalink">
                   <div className="ranking-item-vitalink">
                     <span className="rank-pos-vitalink">1º</span>
-                    <img src={LinkyFenix} alt="avatar" className="ranking-avatar-vitalink" />
+                    <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." className="ranking-avatar-vitalink" />
                     <div className="ranking-info-vitalink">
                       <span className="ranking-nome-vitalink">Ingrid</span>
                       <span className="ranking-xp-vitalink">2500 XP</span>
@@ -224,7 +228,7 @@ function Vitalink() {
                   </div>
                   <div className="ranking-item-vitalink">
                     <span className="rank-pos-vitalink">2º</span>
-                    <img src={LinkyFenix} alt="avatar" className="ranking-avatar-vitalink" />
+                    <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." className="ranking-avatar-vitalink" />
                     <div className="ranking-info-vitalink">
                       <span className="ranking-nome-vitalink">Jonas</span>
                       <span className="ranking-xp-vitalink">2000 XP</span>

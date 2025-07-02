@@ -38,7 +38,7 @@ export default function EditProfileTab() {
 
       <div className="editprofile-content">
         <div className="editprofile-header">
-          <img src={LinkyFenix} className="avatar" />
+          <img src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." className="avatar" />
           <h2 className="editprofile-title">Usuário &gt;&gt; </h2> <p className="editprofile-txt"> Editar perfil </p>
         </div>
         {sections[activeTab]}

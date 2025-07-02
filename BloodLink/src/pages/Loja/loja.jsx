@@ -109,7 +109,7 @@ const nomesFormatados = {
               </div>
               <div className="loja-info">
                 <Link to="/UserProfile">
-                  <img src={Bg} alt="Avatar" className="user-thumb" />
+                  <img src={Bg} alt="A imagem é um padrão de fundo abstrato e colorido, com formas orgânicas e geométricas em tons vibrantes sobre um fundo cinza claro. As formas incluem um círculo azul sólido, uma figura em forma de mão azul escura, uma forma amarela curvada, uma espiral vermelha, e formas alongadas pretas e rosas. Há também pequenos símbolos de cruzes pretas e formas em zigue-zague pretas espalhadas, adicionando textura. A imagem parece ser uma seção cortada de um padrão maior, com algumas formas aparecendo incompletas nas bordas." className="user-thumb" />
                 </Link>
                 <p className="user-coins">
                   <RiMoneyRupeeCircleFill className="coin-icon" />

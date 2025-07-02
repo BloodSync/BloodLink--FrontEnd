@@ -1,9 +1,12 @@
 import mainSet from '../../assets/SetBloomii1.png';
+
 import alegriaMii from '../../assets/AlegriaMii.png';
-import neveMii from '../../assets/NeveMii.png';
-import magiaMii from '../../assets/MagiaMii.png';
 import alegriaGif from '../../assets/SetBloomii11.gif';
+
+import neveMii from '../../assets/NeveMii.png';
 import neveGif from '../../assets/SetBloomii12.gif';
+
+import magiaMii from '../../assets/MagiaMii.png';
 import magiaGif from '../../assets/SetBloomii13.gif';
 
 import set2 from '../../assets/HoraDoChazinho.png';
@@ -177,6 +180,7 @@ export const itensLoja = [
     },
 
 ];
+
 export const itensMiniLojinha = {
     set: [
         {
