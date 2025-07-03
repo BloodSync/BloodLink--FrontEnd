@@ -199,7 +199,7 @@
 }
 
 .preview-box {
-  position: relative; /* necessário para o botão absoluto */
+  position: relative;
   flex: 0 0 20rem;
   background: linear-gradient(to top, #040F24, transparent);
   border-bottom: 1rem solid #AD6D2D;

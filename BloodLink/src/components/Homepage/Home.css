@@ -433,6 +433,18 @@ body {
   transform: scale(0.9);
   opacity: 0.6;
 }
+.avatar-selector button {
+  background: none;
+  border: none;
+  color: #666; 
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.avatar-selector button:hover {
+  color: #333;
+}
 
 /* Parte 3 do site - Conteúdo */
 .part-three {
