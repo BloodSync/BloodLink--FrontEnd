@@ -107,14 +107,14 @@ const allQuestions = [
 ];
 
 const prizes = [
-  { label: "Nada desta vez...", weight: 40 },
-  { label: "Prêmio consolo.", weight: 25 },
-  { label: "Pacotinho de doces", weight: 15 },
-  { label: "1 chance de rodar novamente!", weight: 10 },
-  { label: "Ecobag BloodLink.", weight: 4 },
-  { label: "Pelúcia de coração (pequeno)", weight: 3 },
-  { label: "Pelúcia de coração (médio)", weight: 2 },
-  { label: "Tubet", weight: 1 },
+  { label: "Nada desta vez...", weight: 8 },                     // 8.1%
+  { label: "Pacotinho de doces", weight: 35 },                               // 35.4%
+  { label: "2 Pacotinhos de docinhos", weight: 20 },          // 20.2%
+  { label: "1 chance de rodar novamente!", weight: 15 },         // 15.2%
+  { label: "Mini Ecobag BloodLink.", weight: 3 },                     // 3.0%
+  { label: "Pelúcia de coração (pequeno)", weight: 2 },          // 2.0%
+  { label: "Pelúcia de coração (médio)", weight: 1 },            // 1.0%
+  { label: "Potinho de chocolate Blood", weight: 15 },                                // 15.2%
 ];
 
 function getWeightedRandomIndex(prizes) {
@@ -160,9 +160,12 @@ function QuizGame() {
         setSliceWidth(wheelRef.current.children[0].offsetWidth);
     }
   }, [started, finished]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleConfirm = () => {
-    if (!selected) return;
+    if (!selected || isTransitioning) return;
+    setIsTransitioning(true); // Evita múltiplos cliques
+
     const correct = selected === questions[current].answer;
     setIsCorrect(correct);
     setFeedback(correct ? "Boa! Tá certinho!" : "Eiiii! Essa não era a resposta certa.");
@@ -171,6 +174,7 @@ function QuizGame() {
     setTimeout(() => {
       setFeedback(null);
       setIsCorrect(null);
+
       if (current === 2) {
         setFinished(true);
       } else {
@@ -178,15 +182,18 @@ function QuizGame() {
         setSelected(null);
         setShowQuestion(true);
       }
+
+      setIsTransitioning(false); // Libera novamente após transição
     }, 1620);
   };
+
   const spinWheel = () => {
     if (isSpinning || !sliceWidth || !containerWidth) return;
 
     // Se já girou antes e NÃO caiu na chance de repetir, não deixa girar de novo
     if (hasSpun && selectedPrize !== "1 chance de rodar novamente!") return;
 
-     const prizeIndex = getWeightedRandomIndex(prizes);
+    const prizeIndex = getWeightedRandomIndex(prizes);
 
     const EXTEND_FACTOR = 10;
     const extendedPrizes = Array.from({ length: EXTEND_FACTOR }, () => prizes).flat();
@@ -204,21 +211,21 @@ function QuizGame() {
       setXPos(targetOffset);
     }, 50);
 
-setTimeout(() => {
-  setIsSpinning(false);
-  setTimeout(() => {
-    setSelectedPrize(prizes[prizeIndex].label);
-
-    if (prizes[prizeIndex].label === "1 chance de rodar novamente!") {
-      // Quando for o prêmio de girar de novo:
+    setTimeout(() => {
+      setIsSpinning(false);
       setTimeout(() => {
-        setHasSpun(false); // libera o botão para girar de novo
-        setSelectedPrize(null); // limpa a mensagem
-        setXPos(0); // reseta a posição da roleta para o começo
-      }, 3000); // espera 3 segundos antes de resetar e liberar
-    }
-  }, 700);
-}, 4300);
+        setSelectedPrize(prizes[prizeIndex].label);
+
+        if (prizes[prizeIndex].label === "1 chance de rodar novamente!") {
+          // Quando for o prêmio de girar de novo:
+          setTimeout(() => {
+            setHasSpun(false); // libera o botão para girar de novo
+            setSelectedPrize(null); // limpa a mensagem
+            setXPos(0); // reseta a posição da roleta para o começo
+          }, 3000); // espera 3 segundos antes de resetar e liberar
+        }
+      }, 700);
+    }, 4300);
 
   };
 

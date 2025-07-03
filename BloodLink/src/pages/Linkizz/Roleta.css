@@ -95,3 +95,54 @@
   font-size: 1.2rem;
   font-weight: 700;
 }
+@media (max-width: 768px) {
+  .wheel-container {
+    height: 8rem;
+  }
+
+  .wheel-slice {
+    flex: 0 0 6rem;
+    font-size: 0.9rem;
+    padding: 0 0.3rem;
+  }
+
+  .wheel-pointer {
+    bottom: 80px;
+    font-size: 2rem;
+  }
+
+  .spin-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.6rem;
+  }
+
+  .prize-message {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wheel-container {
+    height: 6rem;
+  }
+
+  .wheel-slice {
+    flex: 0 0 5rem;
+    font-size: 0.8rem;
+    padding: 0 0.2rem;
+  }
+
+  .wheel-pointer {
+    bottom: 60px;
+    font-size: 1.8rem;
+  }
+
+  .spin-button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .prize-message {
+    font-size: 0.95rem;
+  }
+}
