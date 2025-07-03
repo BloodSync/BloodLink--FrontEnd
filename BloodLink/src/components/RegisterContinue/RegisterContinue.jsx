@@ -1,12 +1,54 @@
 import './Registercontinue.css';
 import logoImage from '../../assets/logo2.png';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios';
 
 function CadastroInfo() {
     const [tipoSanguineo, setTipoSanguineo] = useState('');
-    const [acaoSangue, setAcaoSangue] = useState('');
-    const [sexo, setSexo] = useState('');
+  const [acaoSangue, setAcaoSangue] = useState('');
+  const [sexo, setSexo] = useState('');
+  const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userId = localStorage.getItem('userId'); // ID salvo após o POST inicial no cadastro
+
+    if (!userId) {
+      alert('Usuário não identificado. Por favor, faça o cadastro novamente.');
+      navigate('/cadastro');
+      return;
+    }
+
+    try {
+      await axios.put(`http://localhost:5287/api/usuario/${userId}`, {
+  id: parseInt(userId),
+  nome: localStorage.getItem('nome'),
+  email: localStorage.getItem('email'),
+  dataNascimento: localStorage.getItem('dataNascimento'),
+  cpf: localStorage.getItem('cpf') || null,
+  telefone: localStorage.getItem('telefone') || null,
+  endereco: localStorage.getItem('endereco') || null,
+  cep: localStorage.getItem('cep') || null,
+  tipoSanguineo,
+  sexo,
+  acaoSangue,
+  ativo: true,
+  moedas: 0
+});
+
+
+      alert('Cadastro concluído com sucesso!');
+      navigate('/PersonalizarBloomii');
+    } catch (error) {
+      console.error('Erro ao atualizar usuário:', error);
+      alert('Erro ao finalizar cadastro.');
+    }
+  };
+
+
+
 
     return (
         <div className="RegisterContinueBg">
@@ -22,7 +64,7 @@ function CadastroInfo() {
 
                 <h2>Informações de usuário</h2>
 
-                <form className="form-register-continue">
+                <form className="form-register-continue" onSubmit={handleSubmit}>
                     <div className="input-bloodtype">
                         <label>Qual seu tipo sanguíneo?</label>
                         <div className="button-group">
@@ -87,11 +129,10 @@ function CadastroInfo() {
                         <div className="recaptcha-logo"></div>
                     </div>
 
-                    <Link to="/PersonalizarBloomii">
-                        <button type="submit" className="continuar-btn">
-                            Registrar-se
-                        </button>
-                    </Link>
+                   <button type="submit" className="continuar-btn">
+  Registrar-se
+</button>
+
 
                     <a href="cadastro" className="voltar-cadastro">
                         &lt; Voltar

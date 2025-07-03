@@ -1,17 +1,42 @@
-
 import './SidebarUser.css';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from "react-icons/io";
 import { showNav } from "../../utils/showNav";
 import { MdHome } from "react-icons/md";
-import { HiUser, HiOutlineLogin  } from "react-icons/hi";
+import { HiUser, HiOutlineLogin } from "react-icons/hi";
 import { GiHeartDrop } from "react-icons/gi";
 import { BiSolidShoppingBagAlt } from "react-icons/bi";
 import { FaGamepad } from "react-icons/fa6";
 import { IoMdSettings } from "react-icons/io";
 import LinkyFenix from '../../assets/Linky-Fenix.png';
+import { useEffect, useState } from 'react';
+import { getUsuarioById } from '../../services/usuarioService';
+import { useAuth } from '../../context/AuthContext';
 
 function Navbar() {
+  const { user, logout } = useAuth();
+  const [usuarioData, setUsuarioData] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchUsuario = async () => {
+      try {
+        if (!user?.id) return;
+        const data = await getUsuarioById(user.id);
+        setUsuarioData(data);
+      } catch (error) {
+        console.error('Erro ao buscar usuário:', error);
+      }
+    };
+
+    fetchUsuario();
+  }, [user]);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <>
       <div className="sidenav">
@@ -19,42 +44,41 @@ function Navbar() {
         <div onClick={showNav} role="button" aria-label="Fechar menu">
           <IoIosArrowBack className="sidenav-close" />
         </div>
+
         <div className="profile-card">
-          <img className="profile" src={LinkyFenix} alt="A imagem apresenta um ícone de perfil em pixel art, destacando a parte superior da personagem Linky. Ela possui pele em tom marrom claro, cabelos pretos com franja lisa e usa uma fita vermelha amarrada na cabeça. Seus óculos retangulares de armação fina emolduram olhos verdes semicerrados, transmitindo uma expressão serena e alegre. Um sorriso discreto revela parte dos dentes superiores, reforçando sua simpatia. Sobre seu ombro direito, repousa uma pequena fênix vermelha, adicionando um toque mágico e carismático à cena." />
-          <p className="username">
-            @Usuario
-          </p>
-          <p className="bio">
-            Nem todos os segredos estão escondidos. Alguns apenas sabem onde não olhar.
-          </p>
+          <img className="profile" src={LinkyFenix} alt="Perfil do usuário" />
+
+          <p className="username">@{usuarioData?.username || user?.nome || 'Carregando...'}</p>
+
+          <p className="bio">{usuarioData?.bio || 'Bem-vindo(a)!'}</p>
 
           <div className="level-container">
-            <p className="level">Nível 19</p>
-            <p className="level-xp"> 800 XP </p>
+            <p className="level">Nível {usuarioData?.nivel || 0}</p>
+            <p className="level-xp">{usuarioData?.xp || 0} XP</p>
           </div>
 
-          <p className="streak">🔥 Streak 40 dias!</p>
+          <p className="streak">🔥 Streak {usuarioData?.streak || 0} dias!</p>
         </div>
 
         {/* Menu de Navegação */}
         <nav className="nav-menu">
-          <Link to="UserDashboard" className="nav-item active">
+          <Link to="/userdashboard" className="nav-item active">
             <MdHome />
             <span className="nav-text">Home</span>
           </Link>
-          <Link to="UserProfile" className="nav-item">
+          <Link to="/userprofile" className="nav-item">
             <HiUser />
             <span className="nav-text">Perfil</span>
           </Link>
-          <Link to="UserDonate" className="nav-item red">
+          <Link to="/userdonate" className="nav-item red">
             <GiHeartDrop />
             <span className="nav-text">Doe Sangue</span>
           </Link>
-          <Link to="UserStore" className="nav-item">
+          <Link to="/userstore" className="nav-item">
             <BiSolidShoppingBagAlt />
             <span className="nav-text">Loja</span>
           </Link>
-          <Link to="Vitalink" className="nav-item">
+          <Link to="/vitalink" className="nav-item">
             <FaGamepad />
             <span className="nav-text">Vitalink</span>
           </Link>
@@ -62,14 +86,14 @@ function Navbar() {
           <hr />
 
           <div className="others-elements">
-            <Link to="Settings" className="nav-item">
+            <Link to="/settings" className="nav-item">
               <IoMdSettings />
               <span className="nav-text">Configurações</span>
             </Link>
-            <Link to="/" className="nav-item">
+            <button onClick={handleLogout} className="nav-item logout-button">
               <HiOutlineLogin />
               <span className="nav-text">Sair</span>
-            </Link>
+            </button>
           </div>
         </nav>
       </div>
@@ -77,4 +101,5 @@ function Navbar() {
     </>
   );
 }
+
 export default Navbar;

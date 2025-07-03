@@ -1,53 +1,104 @@
-import React from "react";
+import React, { useState } from "react";
 import logoImage from "../../assets/logo2.png";
-import logoGoogle from "../../assets/Logo-Google.png";
 import "./LoginUser.css";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
+import { useAuth } from '../../context/AuthContext';
+import axios from "axios";
 
 function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  // Login com e-mail e senha
+  const handleFormLogin = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await axios.post("http://localhost:5287/api/auth/login", {
+      email,
+      senha,
+    });
+
+    const { token, user } = response.data;
+
+    console.log("Usuário recebido no login:", user); // ✅ Confirme se tem ID
+
+    login(token, user);
+    navigate("/userdashboard");
+  } catch (error) {
+    console.error("Erro no login:", error.response?.data || error.message);
+    alert("Login falhou. Verifique suas credenciais.");
+  }
+};
+
+
+  // Login com Google
+  const handleGoogleLogin = async (credentialResponse) => {
+    try {
+      const tokenGoogle = credentialResponse.credential;
+
+      const response = await axios.post("http://localhost:5287/api/auth/google-login", {
+        token: tokenGoogle,
+      });
+
+      const token = response.data.token;
+      login(token); // salva JWT do sistema
+      navigate("/userdashboard");
+    } catch (error) {
+      console.error("Erro no login com Google:", error.response?.data || error.message);
+      alert("Login com Google falhou.");
+    }
+  };
+
   return (
     <div className="loginBg">
       <div className="LogIn">
         <Link to="/">
           <div className="logologin">
-            <img src={logoImage} alt="Logotipo de uma fênix vermelha estilizada, com asas amplas e penas vermelhas, voltada para a direita. O corpo da ave é simplificado, com um longo pescoço curvado e um bico pontiagudo. Uma longa cauda curva e ondulada se estende para trás, também com um design formando uma gota. Representando renascimento e poder." />
-            <h1>
-              <span>Blood</span> <span>Link</span>
-            </h1>
+            <img src={logoImage} alt="Logotipo da BloodLink" />
+            <h1><span>Blood</span> <span>Link</span></h1>
           </div>
         </Link>
 
         <h2>Entrar</h2>
 
-        <form className="label-login">
+        <form className="label-login" onSubmit={handleFormLogin}>
           <label>E-mail</label>
-          <input type="email" name="email" placeholder="Exemplo@hotmail.com" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Exemplo@hotmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
           <label>Senha</label>
-          <input type="password" name="senha" placeholder="Digite sua senha" />
+          <input
+            type="password"
+            name="senha"
+            placeholder="Digite sua senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
 
-          <div class="containerGoogle-Login">
-              <GoogleLogin
-                onSuccess={(credentialResponse) => {
-                  console.log(credentialResponse);
-                  console.log(jwtDecode(credentialResponse.credential));  // Login com o google
-                  navigate("/userdashboard"); 
-                }}
-                onError={() => console.log("Login failed")}
-              />
+          <div className="containerGoogle-Login">
+            <GoogleLogin
+              onSuccess={handleGoogleLogin}
+              onError={() => console.log("Login com Google falhou")}
+            />
           </div>
+
           <div className="buttons-login">
             <div className="buttons-row">
-              <Link to="/UserDashboard">
-                <button type="submit" className="continuar-btn">
-                  Entrar
-                </button>
-              </Link>
+              <button type="submit" className="continuar-btn">
+                Entrar
+              </button>
               <Link to="/cadastro">
-                <button type="submit" className="continuar-btn">
+                <button type="button" className="continuar-btn">
                   Registrar-se
                 </button>
               </Link>
@@ -61,4 +112,5 @@ function Login() {
     </div>
   );
 }
+
 export default Login;

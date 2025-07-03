@@ -25,7 +25,41 @@
 }
 
 .esquerda,
+
 .direita {
   flex: 1;
-  min-width: 300px;
+  min-width: 400px;
+}
+
+.grade-horarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  padding-right: 30vh;
+}
+
+.botao-horario {
+  padding: 0.75rem 1.5rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  min-width: 100px;
+  text-align: center;
+}
+
+.botao-horario:hover {
+  background-color: #ddd;
+}
+
+.botao-horario.selecionado {
+  background-color: #ff5c4d;
+  color: white;
+  box-shadow: 0 0 0 2px #ffb5ae;
 }
