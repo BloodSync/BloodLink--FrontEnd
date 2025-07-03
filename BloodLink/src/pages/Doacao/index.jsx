@@ -14,6 +14,8 @@ export default function Doacao() {
   const [hemocentroSelecionado, setHemocentroSelecionado] = useState(null);
   const [modalAberto, setModalAberto] = useState(false);
   const [historico, setHistorico] = useState([]);
+  const [horarioSelecionado, setHorarioSelecionado] = useState('');
+
 
   useEffect(() => {
     if (selectedDate && hemocentroSelecionado) {
@@ -21,18 +23,27 @@ export default function Doacao() {
     }
   }, [selectedDate, hemocentroSelecionado]);
 
-  const handleConfirmarDoacao = () => {
-    setHistorico((prev) => [
-      ...prev,
-      {
-        data: selectedDate.toLocaleDateString('pt-BR'),
-        hemocentro: hemocentroSelecionado.nome,
-      },
-    ]);
-    setModalAberto(false);
-    setSelectedDate(null);
-    setHemocentroSelecionado(null);
-  };
+  useEffect(() => {
+  if (selectedDate && hemocentroSelecionado && horarioSelecionado) {
+    setModalAberto(true);
+  }
+}, [selectedDate, hemocentroSelecionado, horarioSelecionado]);
+
+ const handleConfirmarDoacao = () => {
+  setHistorico((prev) => [
+    ...prev,
+    {
+      data: selectedDate.toLocaleDateString('pt-BR'),
+      hemocentro: hemocentroSelecionado.nome,
+      horario: horarioSelecionado,
+    },
+  ]);
+  setModalAberto(false);
+  setSelectedDate(null);
+  setHemocentroSelecionado(null);
+  setHorarioSelecionado('');
+};
+
 
   return (
     <div className="pagina-doacao">
@@ -51,6 +62,19 @@ export default function Doacao() {
 
             <div className="direita">
               <SeletorHemocentro onSelect={setHemocentroSelecionado} />
+             <div className="grade-horarios">
+  {["08:00", "09:00", "10:00", "11:00", "14:00", "15:00"].map((h) => (
+    <button
+      key={h}
+      className={`botao-horario ${horarioSelecionado === h ? 'selecionado' : ''}`}
+      onClick={() => setHorarioSelecionado(h)}
+    >
+      {h}
+    </button>
+  ))}
+</div>
+
+
             </div>
           </div>
         ) : (
@@ -62,6 +86,7 @@ export default function Doacao() {
           onClose={() => setModalAberto(false)}
           onConfirm={handleConfirmarDoacao}
           data={selectedDate}
+          horario={horarioSelecionado}
           hemocentro={hemocentroSelecionado}
         />
       </main>

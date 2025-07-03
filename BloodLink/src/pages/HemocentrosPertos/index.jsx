@@ -1,222 +1,137 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
-import L from 'leaflet';
-import 'leaflet-routing-machine';
+import React, { useState, useEffect } from 'react';
+import './styles.css';
+import api from '../../services/api';
 
-// Fix para ícones do Leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-});
+const API_KEY = 'AIzaSyDudwxbki8hOQI9szZh50Azo9eBPAws860';
 
-const hemocentrosBase = [
-  { nome: 'Hemocentro SP', lat: -23.5555, lng: -46.6396 },
-  { nome: 'Fundação Pró-Sangue', lat: -23.5615, lng: -46.6544 },
-  { nome: 'Hospital das Clínicas', lat: -23.5561, lng: -46.6685 },
-  { nome: 'Santa Casa', lat: -23.5456, lng: -46.6423 },
-  { nome: 'Hospital São Paulo', lat: -23.5995, lng: -46.6411 },
-  { nome: 'Hospital do Servidor Público Municipal', lat: -23.56673554083246, lng: -46.63930368403072 },
-  { nome: 'Banco de Sangue - Hospital Beneficência Portuguesa de São Paulo', lat: -23.56991961973283, lng: -46.641827747525745 },
-];
+function carregarScriptGoogleMaps(apiKey) {
+  return new Promise((resolve, reject) => {
+    if (window.google && window.google.maps) {
+      resolve();
+      return;
+    }
 
-// Função para calcular distância (Haversine)
-const calcularDistancia = (lat1, lon1, lat2, lon2) => {
-  const R = 6371;
-  const dLat = ((lat2 - lat1) * Math.PI) / 180;
-  const dLon = ((lon2 - lon1) * Math.PI) / 180;
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLon / 2) ** 2;
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+    script.async = true;
+    script.defer = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+const statusLabels = {
+  normal: { texto: 'Estoque normal', cor: 'green' },
+  alerta: { texto: 'Estoque em alerta', cor: 'orange' },
+  critico: { texto: 'Estoque crítico', cor: 'red' },
 };
 
-// Componente para mover o mapa quando as coordenadas mudam
-const MoverMapa = ({ coords }) => {
-  const map = useMap();
-  useEffect(() => {
-    if (coords) map.setView([coords.lat, coords.lng], 13);
-  }, [coords, map]);
-  return null;
-};
-
-// Componente para exibir rota entre dois pontos
-const Rota = ({ origem, destino }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    if (!origem || !destino) return;
-
-    const rotaControl = L.Routing.control({
-      waypoints: [
-        L.latLng(origem.lat, origem.lng),
-        L.latLng(destino.lat, destino.lng),
-      ],
-      routeWhileDragging: false,
-      show: false,
-      addWaypoints: false,
-      draggableWaypoints: false,
-      createMarker: () => null,
-    }).addTo(map);
-
-    return () => map.removeControl(rotaControl);
-  }, [origem, destino, map]);
-
-  return null;
-};
-
-// Componente principal do Mapa
-const Mapa = () => {
+const PaginaHemocentros = () => {
   const [cep, setCep] = useState('');
   const [userCoords, setUserCoords] = useState(null);
-  const [hemocentrosOrdenados, setHemocentrosOrdenados] = useState([]);
-  const [filtro5km, setFiltro5km] = useState(false);
-  const [hemocentroSelecionado, setHemocentroSelecionado] = useState(null);
-  const mapaRef = useRef(null);
+  const [hemocentros, setHemocentros] = useState([]);
+  const [listaFinal, setListaFinal] = useState([]);
 
-  const buscarCep = async () => {
+  // 🔁 Carrega hemocentros do back-end
+  useEffect(() => {
+    const carregarHemocentros = async () => {
+      try {
+        const resposta = await api.get('/hemocentro');
+        setHemocentros(resposta.data);
+      } catch (erro) {
+        console.error('Erro ao carregar hemocentros:', erro);
+        alert('Erro ao carregar hemocentros');
+      }
+    };
+
+    carregarHemocentros();
+  }, []);
+
+  const buscarCoordenadasPorGeocoding = async (cep) => {
     try {
-      const resp = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-      const data = await resp.json();
-      if (data.erro) {
-        alert('CEP não encontrado.');
-        return;
+      const res = await api.get(`/geocode/${cep}`);
+      if (res.data.status === 'OK' && res.data.results.length) {
+        return res.data.results[0].geometry.location;
       }
-
-      const endereco = `${data.logradouro}, ${data.bairro}, ${data.localidade}, ${data.uf}`;
-
-      const respGeo = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(endereco)}`
-      );
-      const geo = await respGeo.json();
-
-      if (!geo.length) {
-        alert('Não foi possível localizar.');
-        return;
-      }
-
-      const { lat, lon } = geo[0];
-      const coords = { lat: parseFloat(lat), lng: parseFloat(lon) };
-      setUserCoords(coords);
-
-      const hemocentrosComDist = hemocentrosBase.map((h) => {
-        const distancia = calcularDistancia(coords.lat, coords.lng, h.lat, h.lng);
-        return { ...h, distancia: distancia.toFixed(2) };
-      });
-
-      hemocentrosComDist.sort((a, b) => a.distancia - b.distancia);
-      setHemocentrosOrdenados(hemocentrosComDist);
-    } catch (error) {
-      alert('Erro ao buscar CEP');
+    } catch (erro) {
+      console.error('Erro ao buscar coordenadas:', erro);
     }
+    return null;
   };
 
-  const focarNoMapa = (lat, lng, hemocentro) => {
-    if (mapaRef.current) {
-      mapaRef.current.setView([lat, lng], 15);
-      setHemocentroSelecionado(hemocentro);
-    }
-  };
+  const buscarHemocentros = async () => {
+    const cepLimpo = cep.replace(/\D/g, '');
+    if (!/^\d{8}$/.test(cepLimpo)) return alert('CEP inválido');
 
-  const hemocentrosFiltrados = filtro5km
-    ? hemocentrosOrdenados.filter((h) => parseFloat(h.distancia) <= 5)
-    : hemocentrosOrdenados;
+    await carregarScriptGoogleMaps(API_KEY);
+
+    const origem = await buscarCoordenadasPorGeocoding(cepLimpo);
+    if (!origem) return alert('CEP não encontrado');
+
+    setUserCoords(origem);
+
+    const destinations = hemocentros.map(h => ({
+      lat: h.latitude,
+      lng: h.longitude
+    }));
+
+    const distanceService = new window.google.maps.DistanceMatrixService();
+    distanceService.getDistanceMatrix(
+      {
+        origins: [origem],
+        destinations,
+        travelMode: window.google.maps.TravelMode.DRIVING,
+        unitSystem: window.google.maps.UnitSystem.METRIC,
+      },
+      (response, status) => {
+        if (status !== 'OK') return alert('Erro ao calcular distâncias');
+
+        const results = response.rows[0].elements;
+
+        const listaOrdenada = hemocentros.map((h, i) => ({
+          ...h,
+          distanciaTexto: results[i].distance?.text || 'Indisponível',
+          distanciaValor: results[i].distance?.value || Infinity,
+        })).sort((a, b) => a.distanciaValor - b.distanciaValor);
+
+        setListaFinal(listaOrdenada);
+      }
+    );
+  };
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
-      {/* SIDEBAR */}
-      <div style={{ width: '20rem', padding: '2rem', borderRight: '1px solid #ccc', overflowY: 'auto' }}>
-        <h2>Buscar Hemocentros</h2>
-        <input
-          type="text"
-          value={cep}
-          placeholder="Digite seu CEP"
-          onChange={(e) => setCep(e.target.value)}
-          style={{ width: '100%', marginBottom: '10px' }}
-        />
-        <button onClick={buscarCep} style={{ width: '100%' }}>
-          Buscar
-        </button>
+    <div className="container-hemocentros">
+      <h2>Buscar Hemocentros Próximos</h2>
+      <input
+        type="text"
+        className="input-cep"
+        value={cep}
+        onChange={(e) => setCep(e.target.value)}
+        placeholder="Digite seu CEP"
+      />
+      <button onClick={buscarHemocentros}>Buscar</button>
 
-        <div style={{ marginTop: '20px' }}>
-          <label>
-            <input
-              type="checkbox"
-              checked={filtro5km}
-              onChange={() => setFiltro5km((prev) => !prev)}
-            />
-            {'  '}Mostrar apenas até 5km
-          </label>
-        </div>
-
-        <hr />
-
-        <h3>Hemocentros próximos:</h3>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
-          {hemocentrosFiltrados.map((h, i) => (
-            <li key={i} style={{ marginBottom: '10px' }}>
-              <strong>{h.nome}</strong>
-              <br />
-              {h.distancia} km
-              <br />
-              <button onClick={() => focarNoMapa(h.lat, h.lng, h)}>
-                Ver no mapa
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* MAPA */}
-      <div style={{ flex: 1 }}>
-        <MapContainer
-          center={[-23.5505, -46.6333]}
-          zoom={12}
-          style={{ height: '100%', width: '100%' }}
-          whenCreated={(mapInstance) => (mapaRef.current = mapInstance)}
-        >
-          <TileLayer
-            attribution="© OpenStreetMap"
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-
-          {userCoords && (
-            <Marker position={[userCoords.lat, userCoords.lng]}>
-              <Popup>Você está aqui</Popup>
-            </Marker>
-          )}
-
-          {hemocentrosFiltrados.map((h, i) => (
-            <Marker key={i} position={[h.lat, h.lng]}>
-              <Popup>
-                <strong>{h.nome}</strong>
-                <br />
-                Distância: {h.distancia} km
-              </Popup>
-            </Marker>
-          ))}
-
-          {userCoords && <MoverMapa coords={userCoords} />}
-          
-          {userCoords && hemocentroSelecionado && (
-            <Rota
-              origem={userCoords}
-              destino={{
-                lat: hemocentroSelecionado.lat,
-                lng: hemocentroSelecionado.lng,
-              }}
-            />
-          )}
-        </MapContainer>
+      <div className="lista-cards">
+        {listaFinal.map((h, i) => (
+          <div className="card-hemocentro" key={i}>
+            <h3>{h.nome}</h3>
+            <p>Distância: {h.distanciaTexto}</p>
+            <p style={{ color: statusLabels[h.status]?.cor || 'gray' }}>
+              {statusLabels[h.status]?.texto || 'Status desconhecido'}
+            </p>
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&origin=${userCoords.lat},${userCoords.lng}&destination=${h.latitude},${h.longitude}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver rota
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Mapa;
+export default PaginaHemocentros;

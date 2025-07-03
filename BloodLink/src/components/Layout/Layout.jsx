@@ -1,12 +1,14 @@
-
+import { Outlet } from 'react-router-dom';
 import ChatBot from '../LinkyBot/LinkyBot';
-import Sidebar from '../Sidebar/SidebarUser'
+import Sidebar from '../Sidebar/SidebarUser';
 
-export default function Layout({ children }) {
+export default function Layout() {
   return (
     <div>
       <Sidebar />
-      <main>{children}</main>
+      <main>
+        <Outlet />  
+      </main>
       <ChatBot />
     </div>
   );
