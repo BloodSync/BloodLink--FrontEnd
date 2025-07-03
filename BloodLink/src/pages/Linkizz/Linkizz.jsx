@@ -37,8 +37,73 @@ const allQuestions = [
   {
     question: "Qual intervalo ideal entre doações para homens?",
     options: ["4 meses", "2 meses", "3 meses"],
-    answer: "3 meses", // Corrigi aqui pois tava incompleto
+    answer: "3 meses",
   },
+  {
+    question: "Qual a frequência máxima de doações por ano para homens?",
+    options: ["6 vezes", "4 vezes", "3 vezes"],
+    answer: "4 vezes",
+  },
+  {
+    question: "Qual a frequência máxima de doações por ano para mulheres?",
+    options: ["2 vezes", "3 vezes", "4 vezes"],
+    answer: "3 vezes",
+  },
+  {
+    question: "Pessoas com piercings recentes podem doar sangue?",
+    options: ["Sim, sem problemas", "Apenas após 6 meses", "Apenas após 1 ano"],
+    answer: "Apenas após 6 meses",
+  },
+  {
+    question: "Qual desses alimentos é recomendado após a doação?",
+    options: ["Frutas e líquidos", "Apenas carne vermelha", "Nada por 2 horas"],
+    answer: "Frutas e líquidos",
+  },
+  {
+    question: "Qual documento é necessário para doar sangue?",
+    options: ["CPF", "Título de eleitor", "Documento com foto"],
+    answer: "Documento com foto",
+  },
+  {
+    question: "Quem amamenta pode doar sangue?",
+    options: ["Não", "Apenas após 12 meses do parto", "Sim, se o bebê tiver mais de 2 meses"],
+    answer: "Apenas após 12 meses do parto",
+  },
+  {
+    question: "Qual desses fatores impedem temporariamente a doação?",
+    options: ["Vacina recente", "Tomar café", "Ter colesterol alto"],
+    answer: "Vacina recente",
+  },
+  {
+    question: "Homens e mulheres têm o mesmo limite de doações ao ano?",
+    options: ["Sim", "Não", "Depende do peso"],
+    answer: "Não",
+  },
+  {
+    question: "É necessário estar em jejum para doar sangue?",
+    options: ["Sim", "Não, deve-se estar alimentado", "Apenas líquidos são permitidos"],
+    answer: "Não, deve-se estar alimentado",
+  },
+  {
+    question: "Por que o sangue doado é testado antes do uso?",
+    options: ["Para descobrir o tipo sanguíneo", "Para detectar doenças infecciosas", "Para medir o colesterol"],
+    answer: "Para detectar doenças infecciosas",
+  },
+  {
+    question: "Quem fez endoscopia pode doar sangue?",
+    options: ["Sim, após 6 meses", "Não pode nunca", "Somente após 1 ano"],
+    answer: "Sim, após 6 meses",
+  },
+  {
+    question: "Quem teve COVID-19 pode doar sangue após quanto tempo?",
+    options: ["15 dias após recuperação", "1 mês", "Nunca mais"],
+    answer: "15 dias após recuperação",
+  },
+  {
+    question: "Doar sangue pode transmitir doenças para o doador?",
+    options: ["Sim, pode", "Não, é seguro", "Só se estiver gripado"],
+    answer: "Não, é seguro",
+  }
 ];
 
 const prizes = [
@@ -73,7 +138,6 @@ function QuizGame() {
   const [feedback, setFeedback] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
 
-  // Estados para a roleta horizontal
   const [hasSpun, setHasSpun] = useState(false);
   const [selectedPrize, setSelectedPrize] = useState(null);
   const [xPos, setXPos] = useState(0);
@@ -89,7 +153,6 @@ function QuizGame() {
     setQuestions(shuffled.slice(0, 3));
   }, []);
 
-  // Captura o tamanho da área visível da roleta e da fatia (slice)
   useEffect(() => {
     if (containerRef.current && wheelRef.current) {
       setContainerWidth(containerRef.current.offsetWidth);
@@ -100,11 +163,9 @@ function QuizGame() {
 
   const handleConfirm = () => {
     if (!selected) return;
-
     const correct = selected === questions[current].answer;
     setIsCorrect(correct);
     setFeedback(correct ? "Boa! Tá certinho!" : "Eiiii! Essa não era a resposta certa.");
-
     if (correct) setScore((s) => s + 1);
 
     setTimeout(() => {
@@ -119,41 +180,48 @@ function QuizGame() {
       }
     }, 1620);
   };
-
   const spinWheel = () => {
-    if (hasSpun || isSpinning) return;
+    if (isSpinning || !sliceWidth || !containerWidth) return;
 
-    const prizeIndex = getWeightedRandomIndex(prizes);
+    // Se já girou antes e NÃO caiu na chance de repetir, não deixa girar de novo
+    if (hasSpun && selectedPrize !== "1 chance de rodar novamente!") return;
 
-    // Calcula o deslocamento para centralizar a fatia sorteada
-    const targetX = -(prizeIndex * sliceWidth + sliceWidth / 2 - containerWidth / 2);
+     const prizeIndex = getWeightedRandomIndex(prizes);
 
-    const extraSpins = sliceWidth * prizes.length * 4; // 4 voltas extras
+    const EXTEND_FACTOR = 10;
+    const extendedPrizes = Array.from({ length: EXTEND_FACTOR }, () => prizes).flat();
+
+    const stopAtIndex = prizes.length * 4 + prizeIndex;
+    const baseOffset = xPos; // começa de onde parou
+    const targetOffset = -(stopAtIndex * sliceWidth + sliceWidth / 2 - containerWidth / 2);
 
     setIsSpinning(true);
     setHasSpun(true);
     setSelectedPrize(null);
 
-    setXPos(0); // Reset posição antes de começar
-
+    setXPos(baseOffset); // mantém posição atual
     setTimeout(() => {
-      // Desliza para longe (4 voltas extras) + para a fatia certa
-      setXPos(targetX - extraSpins);
+      setXPos(targetOffset);
+    }, 50);
 
+setTimeout(() => {
+  setIsSpinning(false);
+  setTimeout(() => {
+    setSelectedPrize(prizes[prizeIndex].label);
+
+    if (prizes[prizeIndex].label === "1 chance de rodar novamente!") {
+      // Quando for o prêmio de girar de novo:
       setTimeout(() => {
-        setXPos(targetX);
-        setIsSpinning(false);
-        setSelectedPrize(prizes[prizeIndex].label);
+        setHasSpun(false); // libera o botão para girar de novo
+        setSelectedPrize(null); // limpa a mensagem
+        setXPos(0); // reseta a posição da roleta para o começo
+      }, 3000); // espera 3 segundos antes de resetar e liberar
+    }
+  }, 700);
+}, 4300);
 
-        if (prizes[prizeIndex].label === "1 chance de rodar novamente!") {
-          setTimeout(() => {
-            setHasSpun(false);
-            setSelectedPrize(null);
-          }, 2000);
-        }
-      }, 4500);
-    }, 100);
   };
+
 
   if (!started) {
     return (
@@ -164,7 +232,7 @@ function QuizGame() {
           </div>
           <h1 className="logo-text">LINKIZZ</h1>
           <p>
-            Responda as 3 perguntas organizadas por Linky para ter a chance de girar a super roleta! Por favor responda as perguntas em nosso stand.{" "}
+            Responda as 3 perguntas organizadas por Linky para ter a chance de girar a super roleta!
           </p>
           <button onClick={() => setStarted(true)}>Bora lá!</button>
         </div>
@@ -185,26 +253,31 @@ function QuizGame() {
               </div>
             </div>
 
-            {/* Roleta horizontal */}
-            <div ref={containerRef} className="wheel-container" style={{ overflow: "hidden" }}>
+            <div ref={containerRef} className="wheel-container">
               <motion.div
                 ref={wheelRef}
-                className="wheel"
+                className={`wheel ${isSpinning ? "spinning" : ""}`}
                 animate={{ x: xPos }}
-                transition={{ duration: 4.5, ease: "easeOut" }}
+                transition={{ duration: 4.3, ease: "easeOut" }}
               >
-                {prizes.map((prize, i) => (
+                {Array.from({ length: 10 }, () => prizes).flat().map((prize, i) => (
                   <div key={i} className="wheel-slice">
                     {prize.label}
                   </div>
                 ))}
               </motion.div>
+
               <div className="wheel-pointer">▼</div>
             </div>
 
-            <button onClick={spinWheel} disabled={hasSpun || isSpinning} className="spin-button">
+            <button
+              onClick={spinWheel}
+              disabled={hasSpun || isSpinning}
+              className="spin-button"
+            >
               {hasSpun ? "Já girou!" : "Girar Roleta"}
             </button>
+
 
             {selectedPrize && (
               <p className="prize-message">
@@ -238,11 +311,7 @@ function QuizGame() {
             <h3>{q?.question}</h3>
             {feedback && (
               <div className="feedback-box">
-                <img
-                  src={isCorrect ? LinkyHappy : LinkySad}
-                  alt="Linky"
-                  className="linky-mini"
-                />
+                <img src={isCorrect ? LinkyHappy : LinkySad} alt="Linky" className="linky-mini" />
                 <p>{feedback}</p>
               </div>
             )}
