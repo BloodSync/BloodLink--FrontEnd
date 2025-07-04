@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from '../components/Homepage/Home.Jsx';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+import Home from '../components/Homepage/Home.jsx';
 import Login from '../pages/Login/LoginUser';
 import Cadastro from '../pages/Cadastro/Register';
 import CadastroInfo from '../components/RegisterContinue/RegisterContinue';
@@ -21,44 +23,60 @@ import FriendsSideTab from '../pages/Amigos/FriendList';
 import Conquistas from '../pages/ConquistasUser/Conquistas';
 import PaymentWizard from '../pages/Pagamento/Pagamento';
 import QuizGame from '../pages/Linkizz/Linkizz';
-import LojaPage from '../pages/Loja/loja';
 
+import PrivateRoute from '../components/PrivateRoute/PrivateRoute.jsx';
 
 export function Router() {
+
+  // Rotas públicas — acessíveis para todos
+  const publicRoutes = [
+    { path: '/', element: <Home /> },
+    { path: 'cadastro', element: <Cadastro /> },
+    { path: 'cadastroInfo', element: <CadastroInfo /> },
+    { path: 'login', element: <Login /> },
+    { path: 'aboutUs', element: <AboutUs /> },
+    { path: 'terms', element: <TermsPage /> },
+    { path: 'informationCenter', element: <InfoCenter /> },
+    { path: 'pay', element: <PaymentWizard /> },
+  ];
+
+  // Rotas privadas — só acessíveis para usuários autenticados
+  const privateRoutes = [
+    { path: '', element: <Navigate to="userdashboard" replace /> }, // Redirect da raiz
+    { path: 'userdashboard', element: <Home1 /> },
+    { path: 'personalizarbloomii', element: <Bloomii /> },
+    { path: 'hemocentrosperto', element: <Mapa /> },
+    { path: 'userprofile', element: <Perfil /> },
+    { path: 'editprofile', element: <EditProfileTab /> },
+    { path: 'friendslist', element: <FriendsSideTab /> },
+    { path: 'achievements', element: <Conquistas /> },
+    { path: 'linkizz', element: <QuizGame /> },
+    { path: 'userdonate', element: <Doacao /> },
+    { path: 'userstore', element: <Loja /> },
+    { path: 'lojaitem/:id', element: <ItemPage /> },
+    { path: 'vitalink', element: <Vitalink /> },
+    { path: 'settings', element: <Configuracao /> },
+  ];
+
   return (
     <Routes>
+      {/* Renderiza rotas públicas normalmente */}
+      {publicRoutes.map(({ path, element }) => (
+        <Route key={path} path={path} element={element} />
+      ))}
 
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-
-        <Route path="cadastro" element={<Cadastro />} />
-        <Route path="cadastroInfo" element={<CadastroInfo />} />
-        <Route path="login" element={<Login />} />
-        <Route path="PersonalizarBloomii" element={<Bloomii />} />
-
-        <Route path="UserDashboard" element={<Home1 />} />
-        <Route path="hemocentrosPerto" element={<Mapa />} />
-
-        <Route path="UserProfile" element={<Perfil />} />
-        <Route path="EditProfile" element={<EditProfileTab />} />
-        <Route path="FriendsList" element={<FriendsSideTab />} />
-        <Route path="Achievements" element={<Conquistas />} />
-        <Route path="Linkizz" element={<QuizGame />} />
-        <Route path="UserDonate" element={<Doacao />} />
-        <Route path="UserStore" element={<Loja />} />
-        <Route path="LojaItem" element={<ItemPage />} />
-        <Route path="/UserStore" element={<LojaPage />} />
-        <Route path="/LojaItem/:id" element={<ItemPage />} />
-
-
-        <Route path="Vitalink" element={<Vitalink />} />
-        <Route path="Settings" element={<Configuracao />} />
-
-        <Route path="AboutUs" element={<AboutUs />} />
-        <Route path="Terms" element={<TermsPage />} />
-        <Route path="InformationCenter" element={<InfoCenter />} />
-        <Route path="Pay" element={<PaymentWizard />} />
+      {/* Rotas privadas protegidas pelo PrivateRoute */}
+      <Route element={<PrivateRoute />}>
+        {/* Todas as rotas privadas ficam dentro do Layout */}
+        <Route path="/" element={<Layout />}>
+          {privateRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Route>
       </Route>
+
+      {/* Rota coringa (opcional): redireciona para home se não encontrar rota */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
-}        
+}
