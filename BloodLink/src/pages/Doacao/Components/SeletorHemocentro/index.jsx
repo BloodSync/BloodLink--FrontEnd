@@ -26,7 +26,8 @@ export default function HemocentroSelector({ onSelect }) {
     <div className="hemocentro-container">
       <div className="dropdown-header">
         <label>Buscar hemocentro por:</label>
-        <select
+     
+        <select className="styled-select"
           value={option}
           onChange={(e) => {
             setOption(e.target.value);
@@ -34,8 +35,8 @@ export default function HemocentroSelector({ onSelect }) {
             onSelect(null);
           }}
         >
-          <option value="cep">CEP</option>
-          <option value="critico">Estado crítico</option>
+          <option value="cep">CEP ▼</option>
+          <option value="critico">Estado crítico ▼</option>
         </select>
       </div>
 

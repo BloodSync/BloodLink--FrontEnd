@@ -90,7 +90,7 @@ function Home() {
             <button className="modeButton" onClick={toggleDarkMode}>
               <img
                 src={darkMode ? "/img/white.png" : "/img/dark.png"}
-                alt="Alternar tema"
+                alt="Alternar tema. Icone de lua por padrão e quando clicada e aplicado o modo dark, o ícone muda para um sol"
                 className="modeToggle"
               />
             </button>
@@ -164,7 +164,20 @@ function Home() {
             {/* Parte 3 da Home - Bloomii */}
             {/* Parte 3 da Home - Carrossel */}
             <div className="avatar-controls">
-              <button onClick={prevAvatar}><ChevronLeft /></button>
+              <button
+                onClick={prevAvatar}
+                style={{
+                  backgroundColor: "#494949",
+                  border: "none",
+                  padding: "0.5rem",
+                  borderRadius: "0.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <ChevronLeft color="#fff" />
+              </button>
 
               <div className="avatar-list">
                 {avatars.map((avatar, index) => (
@@ -177,7 +190,20 @@ function Home() {
                 ))}
               </div>
 
-              <button onClick={nextAvatar}><ChevronRight /></button>
+                  <button
+                onClick={prevAvatar}
+                style={{
+                  backgroundColor: "#494949",
+                  border: "none",
+                  padding: "0.5rem",
+                  borderRadius: "0.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <ChevronRight color="#fff" />
+              </button>
             </div>
 
             <section className="part-three">

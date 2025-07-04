@@ -157,6 +157,24 @@ h2 {
     margin-top: 2rem;
 }
 
+.senha-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.senha-container input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.icone-olho {
+  position: absolute;
+  right: 0.8rem;
+  cursor: pointer;
+  color: #999;
+  font-size: 1.2rem;
+}
 
 /* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {

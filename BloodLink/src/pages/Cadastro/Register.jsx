@@ -5,10 +5,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
 function Cadastro() {
   const navigate = useNavigate();
 
+  // Login com e-mail e senha
   const [formData, setFormData] = useState({
     email: '',
     nome: '',
@@ -17,7 +19,9 @@ function Cadastro() {
     senha: '',
     confirmarSenha: '',
   });
-
+  const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [mostrarConfirmar, setMostrarConfirmar] = useState(false);
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -50,19 +54,19 @@ function Cadastro() {
     }
   };
 
- const handleGoogleRegister = async (credentialResponse) => {
-  try {
-    const decoded = jwtDecode(credentialResponse.credential); // ✅ Corrigido
-    console.log('Google user:', decoded);
+  const handleGoogleRegister = async (credentialResponse) => {
+    try {
+      const decoded = jwtDecode(credentialResponse.credential); // ✅ Corrigido
+      console.log('Google user:', decoded);
 
-    localStorage.setItem('google_email', decoded.email);
-    localStorage.setItem('google_nome', decoded.name);
+      localStorage.setItem('google_email', decoded.email);
+      localStorage.setItem('google_nome', decoded.name);
 
-    navigate('/cadastroinfo');
-  } catch (err) {
-    console.error('Erro ao registrar com Google:', err);
-  }
-};
+      navigate('/cadastroinfo');
+    } catch (err) {
+      console.error('Erro ao registrar com Google:', err);
+    }
+  };
 
   return (
     <div className="RegisterBg">
@@ -126,25 +130,34 @@ function Cadastro() {
           </div>
 
           <label>Senha</label>
-          <input
-            type="password"
-            name="senha"
-            placeholder="Digite sua senha"
-            value={formData.senha}
-            onChange={handleChange}
-            required
-          />
+          <div className="senha-container">
+            <input
+              type={mostrarSenha ? 'text' : 'password'}
+              name="senha"
+              placeholder="Digite sua senha"
+              value={formData.senha}
+              onChange={handleChange}
+              required
+            />
+            <span onClick={() => setMostrarSenha(!mostrarSenha)} className="icone-olho">
+              {mostrarSenha ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
+          </div>
 
           <label>Confirme a senha</label>
-          <input
-            type="password"
-            name="confirmarSenha"
-            placeholder="Digite sua senha novamente"
-            value={formData.confirmarSenha}
-            onChange={handleChange}
-            required
-          />
-
+          <div className="senha-container">
+            <input
+              type={mostrarConfirmar ? 'text' : 'password'}
+              name="confirmarSenha"
+              placeholder="Digite sua senha novamente"
+              value={formData.confirmarSenha}
+              onChange={handleChange}
+              required
+            />
+            <span onClick={() => setMostrarConfirmar(!mostrarConfirmar)} className="icone-olho">
+              {mostrarConfirmar ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
+          </div>
           <div className="containerGoogle">
             <GoogleLogin
               onSuccess={handleGoogleRegister}

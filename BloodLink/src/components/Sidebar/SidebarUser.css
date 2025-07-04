@@ -108,9 +108,42 @@
   font-size: 1rem;
   transition: transform 0.3s ease, color 0.3s ease;
   z-index: 2;
+  background-color: transparent;
 }
 
 .nav-item:hover {
+  transform: scale(1.05);
+  font-weight: 700;
+}
+.logout-button {
+  all: unset; /* zera tudo do botão: borda, padding, font, bg etc. */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Com sidebar expandida */
+.sidenav.active .logout-button {
+  justify-content: flex-start;
+}
+
+/* Ícone do botão */
+.logout-button svg {
+  font-size: 1.3rem;
+  pointer-events: none;
+}
+
+/* Efeito hover igual aos links */
+.logout-button:hover {
   transform: scale(1.05);
   font-weight: 700;
 }

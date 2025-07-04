@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { useAuth } from '../../context/AuthContext';
 import axios from "axios";
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
 function Login() {
   const navigate = useNavigate();
@@ -12,28 +13,28 @@ function Login() {
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-
+  const [mostrarSenha, setMostrarSenha] = useState(false); //mostra a senha no olho
   // Login com e-mail e senha
   const handleFormLogin = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await axios.post("http://localhost:5287/api/auth/login", {
-      email,
-      senha,
-    });
+    try {
+      const response = await axios.post("http://localhost:5287/api/auth/login", {
+        email,
+        senha,
+      });
 
-    const { token, user } = response.data;
+      const { token, user } = response.data;
 
-    console.log("Usuário recebido no login:", user); // ✅ Confirme se tem ID
+      console.log("Usuário recebido no login:", user); // ✅ Confirme se tem ID
 
-    login(token, user);
-    navigate("/userdashboard");
-  } catch (error) {
-    console.error("Erro no login:", error.response?.data || error.message);
-    alert("Login falhou. Verifique suas credenciais.");
-  }
-};
+      login(token, user);
+      navigate("/userdashboard");
+    } catch (error) {
+      console.error("Erro no login:", error.response?.data || error.message);
+      alert("Login falhou. Verifique suas credenciais.");
+    }
+  };
 
 
   // Login com Google
@@ -77,13 +78,18 @@ function Login() {
           />
 
           <label>Senha</label>
-          <input
-            type="password"
-            name="senha"
-            placeholder="Digite sua senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-          />
+          <div className="senha-container">
+            <input
+              type={mostrarSenha ? 'text' : 'password'}
+              name="senha"
+              placeholder="Digite sua senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+            <span onClick={() => setMostrarSenha(!mostrarSenha)} className="icone-olho">
+              {mostrarSenha ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
+          </div>
 
           <div className="containerGoogle-Login">
             <GoogleLogin

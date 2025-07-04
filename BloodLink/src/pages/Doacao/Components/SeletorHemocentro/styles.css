@@ -1,9 +1,11 @@
 .hemocentro-container {
-  background-color: #0D3247;
+  background-color: rgba(185, 198, 224, 0.339);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px); 
   padding: 1rem;
-  border-radius: 16px;
+  border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  max-width: 400px;
+  max-width: 35rem;
   margin-top: 1rem;
 }
 
@@ -11,20 +13,50 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+
 }
 
 .dropdown-header label {
   font-weight: bold;
+  
 }
 
+/* Campo de CEP */
 .busca-cep input {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #0f0f0f;
+  background-color: transparent;
+  color: #1e1e1e;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.styled-select {
+  background-color: transparent;
+  color: #222222;
+  font-weight: 700;
+  border: transparent;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
 }
 
+.styled-select option {
+  background-color: #0d2a3e48;
+  color: #2d2d2d;
+}
+
+.busca-cep input:focus {
+  border-color: #1a4a9b;
+  outline: none;
+}
+.cep{
+  background-color: none;
+}
 .lista-criticos ul,
 .busca-cep ul {
   list-style: none;
@@ -47,4 +79,24 @@
 .selected {
   background-color: #ff5c4d;
   color: white;
+}
+@media (max-width: 768px) {
+  .hemocentro-container {
+    padding: 1.5rem;
+  }
+
+  .dropdown-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .busca-cep input {
+    font-size: 0.95rem;
+  }
+
+  .lista-criticos li,
+  .busca-cep li {
+    font-size: 0.9rem;
+  }
 }
